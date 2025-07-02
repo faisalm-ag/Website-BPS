@@ -4,24 +4,94 @@
     <meta charset="UTF-8">
     <title>Penilaian BPS Kab. Tasikmalaya</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+        }
+        #app-content {
+            flex: 1 0 auto;
+        }
+
+        footer.footer-custom {
+            flex-shrink: 0;
+            width: 100%;
+            background-color: #007dc5;
+            color: white;
+            text-align: center;
+            padding: 1.25rem 0;
+        }
+        
+        body {
+             padding-top: 70px; 
+        }
+
+        .bg-bps-blue {
+            background-color: #007dc5 !important;
+        }
+
+        .text-bps {
+            color: #007dc5 !important;
+        }
+
+        .navbar-nav .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-menu-dark .dropdown-item:hover {
+            background-color: #0064a2;
+        }
+
+        .btn-primary {
+            background-color: #007dc5;
+            border-color: #007dc5;
+        }
+
+        .btn-primary:hover {
+            background-color: #005c9b;
+            border-color: #005c9b;
+        }
+        .footer-custom {
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        }
+    </style>
+
+    @stack('styles')
 </head>
-<body class="bg-light" style="padding: 70px;">
+<body class="bg-light">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-bps-blue shadow fixed-top">
     <div class="container">
-        <!-- Logo BPS + Text -->
+        <!-- Logo BPS -->
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-            <img src="{{ asset('/foto/logobps.png') }}" alt="Logo BPS" width="160px" height="awto" class="me-2">
+            <img src="{{ asset('/foto/logobps.png') }}" alt="Logo BPS" width="160px" height="auto" class="me-2">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menu ke kanan -->
+        <!-- Menu -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <!-- Home -->
@@ -45,7 +115,7 @@
                     <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" href="{{ route('indikator.priker') }}">Perilaku Kerja Pegawai</a></li>
                         <li><a class="dropdown-item" href="{{ route('indikator.leadbo') }}">Leadership Budaya Organisasi</a></li>
-                        <li><a class="dropdown-item" href="{{ route('indikator.pebo') }}">People Budaya Organisai</a></li>
+                        <li><a class="dropdown-item" href="{{ route('indikator.pebo') }}">People Budaya Organisasi</a></li>
                         <li><a class="dropdown-item" href="{{ route('indikator.sysbo') }}">System Budaya Organisasi</a></li>
                     </ul>
                 </li>
@@ -82,12 +152,21 @@
     </div>
 </nav>
 
-<!-- Konten -->
+<!-- Konten Halaman -->
 <div class="container py-4">
     @yield('content')
 </div>
 
-<!-- Bootstrap JS -->
+<!-- Footer -->
+<footer class="footer-custom">
+    <div class="container-fluid px-0">
+        <p class="mb-0">&copy; {{ date('Y') }} Badan Pusat Statistik Kabupaten Tasikmalaya</p>
+    </div>
+</footer>
+
+<!-- JS Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+@stack('scripts')
 </body>
 </html>

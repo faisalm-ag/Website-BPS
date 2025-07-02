@@ -1,9 +1,167 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="text-center">
-        <h1 class="fw-bold">Selamat Datang Angga Parindungan</h1>
-        <p class="lead">Sistem Penilaian Budaya Organisasi & Pegawai Teladan</p>
-        <p>BPS Kabupaten Tasikmalaya</p>
+
+<!-- Header -->
+<div class="header-bg d-flex align-items-center justify-content-center text-white text-center mb-5">
+    <div class="overlay"></div>
+    <div class="position-relative z-1">
+        <h1 class="fw-bold display-4">Selamat Datang</h1>
+        <p class="lead fs-3">Sistem Penilaian Budaya Organisasi & Pegawai Teladan</p>
+        <p class="fs-4">BPS Kabupaten Tasikmalaya</p>
     </div>
+</div>
+
+<!-- Pemenang Saat Ini -->
+<div class="container mb-5">
+    <div class="card text-center bg-gradient-blue text-white shadow-lg">
+        <div class="card-body py-5">
+            <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+            <h3 class="fw-bold mb-2">Selamat Kepada</h3>
+            <h2 class="display-5 fw-bold">Bapak Muhamad Sobari, S.ST., M.STAT.</h2>
+            <p class="fs-5">Pegawai Teladan Triwulan I Tahun 2025</p>
+        </div>
+    </div>
+</div>
+
+<!-- Daftar Pegawai Tiap Triwulan -->
+<div class="container mb-5">
+    <div class="row g-4">
+        @foreach ([1, 2, 3, 4] as $i)
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow text-center fade-up hover-grow">
+                <div class="card-header bg-{{ $i == 1 ? 'success' : ($i == 2 ? 'info' : ($i == 3 ? 'warning' : 'danger')) }} text-white">
+                    <h5 class="fw-bold mb-0">Triwulan {{ $i }} - 2025</h5>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-user-circle fa-4x text-muted mb-3"></i>
+                    @if ($i == 1)
+                        <h6 class="fw-bold text-success">Muhamad Sobari, S.ST., M.Stat.</h6>
+                        <p class="text-muted small">Pemenang Terbaru</p>
+                        <span class="badge bg-success mt-auto">Terpilih</span>
+                    @else
+                        <h6 class="text-muted">Belum Ditentukan</h6>
+                        <p class="text-muted small">Menunggu Penilaian</p>
+                        <span class="badge bg-secondary mt-auto">Coming Soon</span>
+                    @endif
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+
+<!-- Statistik Section -->
+<div class="container mb-5">
+    <div class="card bg-light shadow-sm">
+        <div class="card-body py-5 text-center">
+            <h3 class="fw-bold text-primary mb-4">Statistik Penilaian</h3>
+            <div class="row">
+                <div class="col-md-4 mb-3 fade-up">
+                    <i class="fas fa-users fa-2x text-primary mb-2"></i>
+                    <h4 class="fw-bold text-primary" id="pegawai-count">0</h4>
+                    <p class="text-muted">Total Pegawai</p>
+                </div>
+                <div class="col-md-4 mb-3 fade-up">
+                    <i class="fas fa-award fa-2x text-success mb-2"></i>
+                    <h4 class="fw-bold text-success" id="tw-count">0</h4>
+                    <p class="text-muted">Triwulan Penilaian</p>
+                </div>
+                <div class="col-md-4 mb-3 fade-up">
+                    <i class="fas fa-chart-line fa-2x text-warning mb-2"></i>
+                    <h4 class="fw-bold text-warning" id="trans-count">0%</h4>
+                    <p class="text-muted">Transparansi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google Maps Lokasi -->
+<div class="container mb-5">
+    <h4 class="text-center fw-bold text-primary mb-4">Lokasi Kantor BPS Kab. Tasikmalaya</h4>
+    <div class="ratio ratio-16x9 shadow rounded">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15853.02632042565!2d108.134168!3d-7.347883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e659262d3c09a17%3A0xd64eaf5d1a49a60a!2sBPS%20Kabupaten%20Tasikmalaya!5e0!3m2!1sid!2sid!4v1720173182812!5m2!1sid!2sid" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
 @endsection
+
+@push('styles')
+<style>
+    .header-bg {
+        background: url('/foto/homebps.png') no-repeat center center;
+        background-size: cover;
+        height: 400px;
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 125, 197, 0.7);
+    }
+
+    .bg-gradient-blue {
+        background: linear-gradient(135deg, #007dc5, #005b9f);
+    }
+
+    .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-in-out;
+    }
+
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hover-grow {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-grow:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+</style>
+@endpush
+
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
+<script>
+    // CountUp animation
+    document.addEventListener("DOMContentLoaded", function () {
+        const pegawai = new CountUp('pegawai-count', 50);
+        const tw = new CountUp('tw-count', 8);
+        const trans = new CountUp('trans-count', 100, {suffix: '%'});
+        pegawai.start();
+        tw.start();
+        trans.start();
+    });
+
+    // Scroll fade up animation
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+@endpush
