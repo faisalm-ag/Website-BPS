@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1 class="fw-bold">Selamat Datang</h1>
+        <h1 class="fw-bold">Selamat Datang Angga Parindungan</h1>
         <p class="lead">Sistem Penilaian Budaya Organisasi & Pegawai Teladan</p>
         <p>BPS Kabupaten Tasikmalaya</p>
     </div>
