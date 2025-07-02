@@ -10,7 +10,7 @@
 <body class="bg-light">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
     <div class="container">
         <!-- Logo BPS + Text -->
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
