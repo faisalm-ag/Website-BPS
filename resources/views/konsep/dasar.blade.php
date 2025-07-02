@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="mb-4 text-center">
         <h2 class="fw-bold">Dasar Hukum</h2>
