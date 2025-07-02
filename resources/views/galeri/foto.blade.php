@@ -21,10 +21,10 @@
         @foreach ($fotos as $foto)
         <div class="col-md-6 col-lg-4">
             <div class="card bg-dark text-white shadow-sm">
-                <img src="{{ asset('storage/galeri/foto/' . $foto['file']) }}" class="card-img-top" alt="{{ $foto['nama'] }}">
+                <img src="{{ asset('foto/' . $foto['file']) }}" class="card-img-top" alt="{{ $foto['nama'] }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ $foto['nama'] }}</h5>
-                    <a href="{{ asset('storage/galeri/foto/' . $foto['file']) }}" download class="btn btn-outline-light btn-sm">Download</a>
+                
                 </div>
             </div>
         </div>

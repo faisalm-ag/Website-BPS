@@ -37,7 +37,7 @@
         <h5 class="mb-3">{{ $piagam['judul'] }}</h5>
         <div class="ratio ratio-16x9" style="min-height: 500px;">
             <iframe 
-                src="{{ asset('storage/galeri/piagam/' . $piagam['file']) }}" 
+                src="{{ asset('piagam/' . $piagam['file']) }}" 
                 width="100%" 
                 height="100%" 
                 frameborder="0">

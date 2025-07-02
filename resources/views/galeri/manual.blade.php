@@ -9,7 +9,7 @@
 
     <div class="ratio ratio-16x9" style="min-height: 600px;">
         <iframe 
-            src="{{ asset('storage/galeri/manual/Sistem Informasi Penilaian Kinerja.pdf') }}" 
+            src="{{ asset('manual/Sistem Informasi Penilaian Kinerja.pdf') }}" 
             width="100%" 
             height="100%" 
             frameborder="0">

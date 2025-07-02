@@ -14,8 +14,7 @@
     <div class="container">
         <!-- Logo BPS + Text -->
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-            <img src="{{ asset('images/logo-bps.png') }}" alt="Logo BPS" width="40" height="40" class="me-2">
-            <span class="fw-bold">BPS Kab. Tasikmalaya</span>
+            <img src="{{ asset('/foto/logobps.png') }}" alt="Logo BPS" width="160px" height="awto" class="me-2">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -44,10 +43,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Indikator Penilaian</a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ route('indikator.priker') }}">PriKer</a></li>
-                        <li><a class="dropdown-item" href="{{ route('indikator.leadbo') }}">LeadBO</a></li>
-                        <li><a class="dropdown-item" href="{{ route('indikator.pebo') }}">PeBO</a></li>
-                        <li><a class="dropdown-item" href="{{ route('indikator.sysbo') }}">SysBO</a></li>
+                        <li><a class="dropdown-item" href="{{ route('indikator.priker') }}">Perilaku Kerja Pegawai</a></li>
+                        <li><a class="dropdown-item" href="{{ route('indikator.leadbo') }}">Leadership Budaya Organisasi</a></li>
+                        <li><a class="dropdown-item" href="{{ route('indikator.pebo') }}">People Budaya Organisai</a></li>
+                        <li><a class="dropdown-item" href="{{ route('indikator.sysbo') }}">System Budaya Organisasi</a></li>
                     </ul>
                 </li>
 
