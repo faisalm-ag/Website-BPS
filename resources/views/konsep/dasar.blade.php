@@ -5,7 +5,7 @@
 <div class="container">
     <div class="mb-4 text-center">
         <h2 class="fw-bold">Dasar Hukum</h2>
-        <p class="text-muted">Pelaksanaan Survei Budaya Organisasi BPS Kab. Tasikmalaya</p>
+        <p class="text-muted">Dasar Hukum Umum untuk pelaksanaan Survei Budaya Organisasi BPS Kab. Tasikmalaya adalah:</p>
     </div>
 
     <ol class="list-group list-group-numbered mb-4">
@@ -17,7 +17,7 @@
         <li class="list-group-item">Peraturan Menteri PANRB Nomor 10 Tahun 2011 tentang Pedoman Pelaksanaan Program Manajemen Perubahan</li>
         <li class="list-group-item">Peraturan Menteri PANRB Nomor 39 Tahun 2012 tentang Pedoman Pengembangan Budaya Kerja (Berita Negara Republik Indonesia Nomor 751 Tahun 2012)</li>
         <li class="list-group-item">Peraturan Menteri PANRB Nomor 27 Tahun 2014 tentang Pedoman Pembangunan Agen Perubahan di Instansi Pemerintah (Berita Negara Republik Indonesia Tahun 2014 Nomor 1455)</li>
-        <li class="list-group-item">Peraturan Menteri PANRB Nomor 25 Tahun 2020 tentang Road Map Reformasi Birokrasi 2020–2024 sebagaimana telah diubah dengan Permen PANRB Nomor 3 Tahun 2023 (Berita Negara Republik Indonesia Nomor 233 Tahun 2023)</li>
+        <li class="list-group-item">Peraturan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 25 Tahun 2020 tentang Road Map Reformasi Birokrasi 2020–2024 (Berita Negara Republik Indonesia Nomor 441 Tahun 2020) sebagaimana telah diubah dengan Peraturan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 3 Tahun 2023 tentang Perubahan Atas Peraturan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 25 Tahun 2020 tentang Road Map Reformasi Birokrasi 2020–2024 (Berita Negara Republik Indonesia Nomor 233 Tahun 2023)</li>
         <li class="list-group-item">Peraturan Kepala BPS Nomor 7 Tahun 2013 tentang Kode Etik Pegawai di Lingkungan Badan Pusat Statistik</li>
         <li class="list-group-item">Peraturan Kepala BPS Nomor 87 Tahun 2017 tentang Organisasi dan Tata Kerja Politeknik Statistika STIS</li>
         <li class="list-group-item">Peraturan BPS Nomor 7 Tahun 2020 tentang Organisasi dan Tata Kerja Badan Pusat Statistik (Berita Negara Republik Indonesia Tahun 2020 Nomor 1585)</li>
