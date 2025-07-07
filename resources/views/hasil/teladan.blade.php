@@ -40,6 +40,20 @@
             </div>
         </div>
 
+        <div class="col">
+            <div class="card shadow-sm h-100 border-0 transition hover-shadow">
+                <div class="card-header bg-secondary text-white text-center">
+                    <h5 class="mb-0">Triwulan III - 2025</h5>
+                </div>
+                <div class="card-body text-center">
+                    <img src="{{ asset('foto/pegawai/iis.jpg') }}" alt="Iis Irmawati" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
+                    <h5 class="fw-bold text-secondary">Aldy Abdu Aziz Muzadilah Phd</h5>
+                    <p class="text-muted">Tecnologi Sains</p>
+                    <span class="badge bg-secondary">Nilai: 100/100</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Tambahkan kartu lain di sini jika perlu -->
     </div>
 </div>
