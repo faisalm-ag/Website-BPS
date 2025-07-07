@@ -7,6 +7,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <div class="container-fluid px-3">
+    
     {{-- Header dengan Gradient Background --}}
     <div class="row mb-5">
         <div class="col-12">

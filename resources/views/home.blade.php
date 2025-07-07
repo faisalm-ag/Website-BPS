@@ -2,6 +2,65 @@
 
 @section('content')
 
+<!-- Info Banner - Menempel di Navbar -->
+<div class="info-banner bg-primary text-white shadow-sm">
+    <div class="container-fluid">
+        <div class="row align-items-center py-2">
+            <div class="col">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <span class="fw-medium">
+                        Pengumuman Pemenang Pegawai Teladan telah diumumkan! 
+                        <strong>Klik untuk melihat detail →</strong>
+                    </span>
+                </div>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-link text-white p-0 border-0" id="bannerToggle">
+                    <i class="fas fa-chevron-down" id="bannerIcon"></i>
+                </button>
+                <button class="btn btn-link text-white p-0 border-0 ms-2" id="bannerClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Collapsible Winner Section -->
+<div class="collapse" id="winnerBanner">
+    <div class="bg-gradient-primary text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="d-flex align-items-center">
+                        <div class="trophy-icon me-3">
+                            <i class="fas fa-trophy fa-2x text-warning"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Selamat Kepada Pemenang!</h5>
+                            <h4 class="fw-bold mb-1">Bapak Muhamad Sobari, S.ST., M.STAT.</h4>
+                            <p class="mb-0 opacity-75">Pegawai Teladan Triwulan I Tahun 2025</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <div class="d-flex align-items-center justify-content-md-end">
+                        <div class="me-3">
+                            <small class="opacity-75">Diumumkan pada:</small>
+                            <div class="fw-bold">15 Januari 2025</div>
+                        </div>
+                        <button class="btn btn-light btn-sm rounded-pill px-3">
+                            <i class="fas fa-external-link-alt me-1"></i>
+                            Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Header -->
 <div class="header-bg d-flex align-items-center justify-content-center text-white text-center mb-5">
     <div class="overlay"></div>
@@ -9,18 +68,6 @@
         <h1 class="fw-bold display-4">Selamat Datang</h1>
         <p class="lead fs-3">Sistem Penilaian Budaya Organisasi & Pegawai Teladan</p>
         <p class="fs-4">BPS Kabupaten Tasikmalaya</p>
-    </div>
-</div>
-
-<!-- Pemenang Saat Ini -->
-<div class="container mb-5">
-    <div class="card text-center bg-gradient-blue text-white shadow-lg">
-        <div class="card-body py-5">
-            <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
-            <h3 class="fw-bold mb-2">Selamat Kepada</h3>
-            <h2 class="display-5 fw-bold">Bapak Muhamad Sobari, S.ST., M.STAT.</h2>
-            <p class="fs-5">Pegawai Teladan Triwulan I Tahun 2025</p>
-        </div>
     </div>
 </div>
 
@@ -96,46 +143,7 @@
 @endsection
 
 @push('styles')
-<style>
-    .header-bg {
-        background: url('/foto/homebps.png') no-repeat center center;
-        background-size: cover;
-        height: 400px;
-        position: relative;
-        border-radius: 1rem;
-        overflow: hidden;
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 125, 197, 0.7);
-    }
-
-    .bg-gradient-blue {
-        background: linear-gradient(135deg, #007dc5, #005b9f);
-    }
-
-    .fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-in-out;
-    }
-
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .hover-grow {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .hover-grow:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    }
-</style>
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endpush
 
 @push('scripts')
@@ -163,5 +171,55 @@
     });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Banner Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const bannerToggle = document.getElementById('bannerToggle');
+        const bannerIcon = document.getElementById('bannerIcon');
+        const bannerClose = document.getElementById('bannerClose');
+        const winnerBanner = document.getElementById('winnerBanner');
+        const infoBanner = document.querySelector('.info-banner');
+
+        // Toggle banner on click
+        bannerToggle.addEventListener('click', function() {
+            const isCollapsed = !winnerBanner.classList.contains('show');
+            
+            if (isCollapsed) {
+                // Show winner banner
+                winnerBanner.classList.add('show');
+                bannerIcon.classList.add('rotated');
+                bannerIcon.classList.remove('fa-chevron-down');
+                bannerIcon.classList.add('fa-chevron-up');
+            } else {
+                // Hide winner banner
+                winnerBanner.classList.remove('show');
+                bannerIcon.classList.remove('rotated');
+                bannerIcon.classList.remove('fa-chevron-up');
+                bannerIcon.classList.add('fa-chevron-down');
+            }
+        });
+
+        // Click anywhere on banner to toggle
+        infoBanner.addEventListener('click', function(e) {
+            if (e.target.closest('#bannerClose')) {
+                return; // Don't toggle if close button is clicked
+            }
+            bannerToggle.click();
+        });
+
+        // Close banner completely
+        bannerClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            infoBanner.style.display = 'none';
+            winnerBanner.classList.remove('show');
+        });
+
+        // Auto-hide banner after 5 seconds if not interacted
+        setTimeout(() => {
+            if (!winnerBanner.classList.contains('show')) {
+                infoBanner.style.opacity = '0.8';
+            }
+        }, 5000);
+    });
 </script>
 @endpush

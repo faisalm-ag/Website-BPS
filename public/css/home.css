@@ -1,0 +1,108 @@
+/* Info Banner Styling */
+.info-banner {
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+    background: linear-gradient(135deg, #007bff, #0056b3) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.info-banner:hover {
+    background: linear-gradient(135deg, #0056b3, #004085) !important;
+}
+
+.info-banner .btn-link {
+    transition: transform 0.3s ease;
+}
+
+.info-banner .btn-link:hover {
+    transform: scale(1.1);
+}
+
+/* Winner Banner Styling */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3, #004085);
+    border-bottom: 3px solid #ffc107;
+}
+
+.trophy-icon {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Header Styling */
+.header-bg {
+    background: url('/foto/homebps.png') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(70, 70, 70, 0.6); /* Grayscale mendekati warna biru asli dengan opacity 0.6 */
+}
+
+.bg-gradient-blue {
+    background: linear-gradient(135deg, #007dc5, #005b9f);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-in-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hover-grow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Animation */
+#bannerIcon {
+    transition: transform 0.3s ease;
+}
+
+#bannerIcon.rotated {
+    transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-banner {
+        font-size: 12px;
+    }
+    
+    .info-banner .py-2 {
+        padding: 8px 0 !important;
+    }
+}
