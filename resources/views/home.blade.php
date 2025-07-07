@@ -2,15 +2,15 @@
 
 @section('content')
 
-<!-- Info Banner - Menempel di Navbar -->
-<div class="info-banner bg-primary text-white shadow-sm">
+<!-- Info Banner -->
+<div class="info-banner bg-gradient-gray text-white shadow-sm">
     <div class="container-fluid">
         <div class="row align-items-center py-2">
             <div class="col">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-info-circle me-2"></i>
                     <span class="fw-medium">
-                        Pengumuman Pemenang Pegawai Teladan telah diumumkan! 
+                        Pengumuman Pemenang Pegawai Teladan telah diumumkan!
                         <strong>Klik untuk melihat detail →</strong>
                     </span>
                 </div>
@@ -128,13 +128,13 @@
 <div class="container mb-5">
     <h4 class="text-center fw-bold text-primary mb-4">Lokasi Kantor BPS Kab. Tasikmalaya</h4>
     <div class="ratio ratio-16x9 shadow rounded">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15853.02632042565!2d108.134168!3d-7.347883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e659262d3c09a17%3A0xd64eaf5d1a49a60a!2sBPS%20Kabupaten%20Tasikmalaya!5e0!3m2!1sid!2sid!4v1720173182812!5m2!1sid!2sid" 
-            width="100%" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15853.02632042565!2d108.134168!3d-7.347883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e659262d3c09a17%3A0xd64eaf5d1a49a60a!2sBPS%20Kabupaten%20Tasikmalaya!5e0!3m2!1sid!2sid!4v1720173182812!5m2!1sid!2sid"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
         </iframe>
     </div>
@@ -144,6 +144,15 @@
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<style>
+/* Banner sticky di bawah navbar */
+.info-banner {
+    position: sticky;
+    top: 56px; /* Tinggi navbar */
+    z-index: 1020;
+    background-color: #0d6efd;
+}
+</style>
 @endpush
 
 @push('scripts')
@@ -183,15 +192,13 @@
         // Toggle banner on click
         bannerToggle.addEventListener('click', function() {
             const isCollapsed = !winnerBanner.classList.contains('show');
-            
+
             if (isCollapsed) {
-                // Show winner banner
                 winnerBanner.classList.add('show');
                 bannerIcon.classList.add('rotated');
                 bannerIcon.classList.remove('fa-chevron-down');
                 bannerIcon.classList.add('fa-chevron-up');
             } else {
-                // Hide winner banner
                 winnerBanner.classList.remove('show');
                 bannerIcon.classList.remove('rotated');
                 bannerIcon.classList.remove('fa-chevron-up');
@@ -202,7 +209,7 @@
         // Click anywhere on banner to toggle
         infoBanner.addEventListener('click', function(e) {
             if (e.target.closest('#bannerClose')) {
-                return; // Don't toggle if close button is clicked
+                return;
             }
             bannerToggle.click();
         });
@@ -214,7 +221,7 @@
             winnerBanner.classList.remove('show');
         });
 
-        // Auto-hide banner after 5 seconds if not interacted
+        // Auto-hide after 5 sec (optional)
         setTimeout(() => {
             if (!winnerBanner.classList.contains('show')) {
                 infoBanner.style.opacity = '0.8';
