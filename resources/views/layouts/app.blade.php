@@ -28,22 +28,22 @@
         footer.footer-custom {
             flex-shrink: 0;
             width: 100%;
-            background-color: #007dc5;
+            background-color: #6c757d;
             color: white;
             text-align: center;
             padding: 1.25rem 0;
         }
-        
+
         body {
-             padding-top: 70px; 
+             padding-top: 70px;
         }
 
         .bg-bps-blue {
-            background-color: #007dc5 !important;
+            background-color: #6c757d !important;
         }
 
         .text-bps {
-            color: #007dc5 !important;
+            color: #6c757d !important;
         }
 
         .navbar-nav .nav-link {
@@ -55,7 +55,7 @@
         }
 
         .dropdown-menu-dark .dropdown-item:hover {
-            background-color: #0064a2;
+            background-color: #5c636a;
         }
 
         .btn-primary {
