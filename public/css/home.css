@@ -1,9 +1,46 @@
-/* Info Banner Styling */
+/* =====================
+   Global & Layout Setup
+===================== */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 120px; /* Padding agar konten tidak tertimpa navbar + banner */
+    margin: 0;
+}
+
+/* =====================
+   Navbar & Footer
+===================== */
+
+.navbar {
+    z-index: 1050;
+}
+
+.bg-bps-blue {
+    background-color: #6c757d !important;
+}
+
+.footer-custom {
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    padding: 1.25rem 0;
+}
+
+/* =====================
+   Info Banner Styling
+===================== */
+
 .info-banner {
     position: sticky;
-    top: 56px; /* agar tidak menimpa navbar fixed-top */
+    top: 56px;
     z-index: 1040;
-    background: linear-gradient(135deg, #ced4da, #6c757d) !important; /* GRADASI ABU-ABU */
+    background: linear-gradient(135deg, #ced4da, #6c757d) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 14px;
     cursor: pointer;
@@ -11,7 +48,7 @@
 }
 
 .info-banner:hover {
-    background: linear-gradient(135deg, #6c757d, #495057) !important; /* ABU LEBIH GELAP */
+    background: linear-gradient(135deg, #6c757d, #495057) !important;
 }
 
 .info-banner .btn-link {
@@ -22,15 +59,13 @@
     transform: scale(1.1);
 }
 
-/* Winner Banner Styling */
-.bg-gradient-primary {
-    background: linear-gradient(135deg, #ced4da, #6c757d, #495057); /* Gradasi abu-abu */
-    border-bottom: 3px solid #ffc107;
-}
+/* =====================
+   Winner Banner
+===================== */
 
-/* Tambahan class opsional */
-.bg-gradient-gray {
-    background: linear-gradient(135deg, #ced4da, #6c757d);
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #ced4da, #6c757d, #495057);
+    border-bottom: 3px solid #ffc107;
     color: white;
 }
 
@@ -50,7 +85,10 @@
     }
 }
 
-/* Header Styling */
+/* =====================
+   Header Hero
+===================== */
+
 .header-bg {
     background: url('/foto/homebps.png') no-repeat center center;
     background-size: cover;
@@ -62,16 +100,13 @@
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(70, 70, 70, 0.6); /* Tetap abu dengan transparansi */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(70, 70, 70, 0.6);
 }
 
-.bg-gradient-blue {
-    background: linear-gradient(135deg, #007dc5, #005b9f);
-}
+/* =====================
+   Animations & Hover
+===================== */
 
 .fade-up {
     opacity: 0;
@@ -93,7 +128,6 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Icon Animation */
 #bannerIcon {
     transition: transform 0.3s ease;
 }
@@ -102,13 +136,97 @@
     transform: rotate(180deg);
 }
 
-/* Responsive */
+/* =====================
+   Responsive
+===================== */
+
 @media (max-width: 768px) {
     .info-banner {
         font-size: 12px;
     }
-
     .info-banner .py-2 {
         padding: 8px 0 !important;
+    }
+}
+
+/* =====================
+   Dark Mode Support
+===================== */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #f1f1f1;
+    }
+
+    .container {
+        background-color: transparent;
+    }
+
+    .card, .card-body {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border-color: #333;
+    }
+
+    .card-header {
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border-color: #444;
+    }
+
+    .text-muted {
+        color: #aaaaaa !important;
+    }
+
+    .bg-light {
+        background-color: #1e1e1e !important;
+    }
+
+    .text-dark {
+        color: #f1f1f1 !important;
+    }
+
+    .btn-light {
+        background-color: #333;
+        color: #fff;
+        border-color: #444;
+    }
+
+    .btn-light:hover {
+        background-color: #444;
+        border-color: #555;
+    }
+
+    input,
+    textarea,
+    select {
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border-color: #444;
+    }
+
+    .navbar,
+    .footer-custom {
+        background-color: #1a1a1a !important;
+        color: #f1f1f1;
+    }
+
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #343a40, #212529, #1a1a1a);
+        color: #f8f9fa;
+    }
+
+    .dropdown-menu-dark {
+        background-color: #2c2c2c;
+        color: #ffffff;
+    }
+
+    .dropdown-item {
+        color: #ffffff;
+    }
+
+    .dropdown-item:hover {
+        background-color: #444;
     }
 }
