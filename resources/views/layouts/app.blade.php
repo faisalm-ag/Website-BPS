@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <title>Penilaian BPS Kab. Tasikmalaya</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -16,91 +17,192 @@
 
     @stack('styles')
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-bps-blue shadow fixed-top">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-            <img src="{{ asset('/foto/logobps.png') }}" alt="Logo BPS" width="160px" class="me-2">
-        </a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-bps-blue shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
+                <img src="{{ asset('/foto/logobps.png') }}" alt="Logo BPS" width="160px" class="me-2">
+            </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Beranda</a></li>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Beranda</a></li>
 
-                <!-- Konsep Definisi -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Konsep Definisi</a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ route('konsep.dasar') }}">Dasar Hukum</a></li>
-                        <li><a class="dropdown-item" href="{{ route('konsep.nilai') }}">Nilai-Nilai Inti BPS</a></li>
-                        <li><a class="dropdown-item" href="{{ route('konsep.model') }}">Model Implementasi</a></li>
-                    </ul>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Konsep Definisi</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ route('konsep.dasar') }}">Dasar Hukum</a></li>
+                            <li><a class="dropdown-item" href="{{ route('konsep.nilai') }}">Nilai-Nilai Inti BPS</a></li>
+                            <li><a class="dropdown-item" href="{{ route('konsep.model') }}">Model Implementasi</a></li>
+                        </ul>
+                    </li>
 
-                <!-- Indikator Penilaian -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Indikator Penilaian</a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ route('indikator.priker') }}">Perilaku Kerja Pegawai</a></li>
-                        <li><a class="dropdown-item" href="{{ route('indikator.leadbo') }}">Leadership Budaya Organisasi</a></li>
-                        <li><a class="dropdown-item" href="{{ route('indikator.pebo') }}">People Budaya Organisasi</a></li>
-                        <li><a class="dropdown-item" href="{{ route('indikator.sysbo') }}">System Budaya Organisasi</a></li>
-                    </ul>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Indikator Penilaian</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ route('indikator.priker') }}">Perilaku Kerja Pegawai</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indikator.leadbo') }}">Leadership Budaya Organisasi</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indikator.pebo') }}">People Budaya Organisasi</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indikator.sysbo') }}">System Budaya Organisasi</a></li>
+                        </ul>
+                    </li>
 
-                <!-- Form Penilaian -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Form Penilaian</a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ route('form.budaya') }}">Budaya Organisasi</a></li>
-                        <li><a class="dropdown-item" href="{{ route('form.teladan') }}">Pegawai Teladan</a></li>
-                    </ul>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Form Penilaian</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ route('form.budaya') }}">Budaya Organisasi</a></li>
+                            <li><a class="dropdown-item" href="{{ route('form.teladan') }}">Pegawai Teladan</a></li>
+                        </ul>
+                    </li>
 
-                <!-- Hasil Penilaian -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hasil Penilaian</a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ route('hasil.budaya') }}">Budaya Organisasi</a></li>
-                        <li><a class="dropdown-item" href="{{ route('hasil.teladan') }}">Pegawai Teladan</a></li>
-                    </ul>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hasil Penilaian</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ route('hasil.budaya') }}">Budaya Organisasi</a></li>
+                            <li><a class="dropdown-item" href="{{ route('hasil.teladan') }}">Pegawai Teladan</a></li>
+                        </ul>
+                    </li>
 
-                <!-- Galeri -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Galeri</a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{ route('galeri.foto') }}">Foto</a></li>
-                        <li><a class="dropdown-item" href="{{ route('galeri.piagam') }}">Piagam Penghargaan</a></li>
-                        <li><a class="dropdown-item" href="{{ route('galeri.manual') }}">Manual Book</a></li>
-                    </ul>
-                </li>
-            </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Galeri</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ route('galeri.foto') }}">Foto</a></li>
+                            <li><a class="dropdown-item" href="{{ route('galeri.piagam') }}">Piagam Penghargaan</a></li>
+                            <li><a class="dropdown-item" href="{{ route('galeri.manual') }}">Manual Book</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Info Banner -->
+    <div class="info-banner text-white shadow-sm">
+        <div class="container-fluid">
+            <div class="row align-items-center py-2">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <span class="fw-medium">
+                            Pengumuman Pemenang Pegawai Teladan telah diumumkan!
+                            <strong>Klik untuk melihat detail →</strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-link text-white p-0 border-0" id="bannerToggle">
+                        <i class="fas fa-chevron-down" id="bannerIcon"></i>
+                    </button>
+                    <button class="btn btn-link text-white p-0 border-0 ms-2" id="bannerClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
 
-<!-- Konten Halaman -->
-<div class="container py-4 main-content">
-    @yield('content')
-</div>
-
-<!-- Footer -->
-<footer class="footer-custom text-center text-white py-4 bg-bps-blue mt-auto">
-    <div class="container">
-        <p class="mb-0">&copy; {{ date('Y') }} Badan Pusat Statistik Kabupaten Tasikmalaya</p>
+    <!-- Collapsible Winner Section -->
+    <div class="collapse" id="winnerBanner">
+        <div class="bg-gradient-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="d-flex align-items-center">
+                            <div class="trophy-icon me-3">
+                                <i class="fas fa-trophy fa-2x text-warning"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Selamat Kepada Pemenang!</h5>
+                                <h4 class="fw-bold mb-1">Bapak Muhamad Sobari, S.ST., M.Stat.</h4>
+                                <p class="mb-0 opacity-75">Pegawai Teladan Triwulan I Tahun 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                        <div class="d-flex align-items-center justify-content-md-end">
+                            <div class="me-3">
+                                <small class="opacity-75">Diumumkan pada:</small>
+                                <div class="fw-bold">15 Januari 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Konten Halaman -->
+    <div class="container py-4 main-content">
+        @yield('content')
+    </div>
 
-@stack('scripts')
+    <!-- Footer -->
+    <footer class="footer-custom text-center text-white py-4 bg-bps-blue mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; {{ date('Y') }} Badan Pusat Statistik Kabupaten Tasikmalaya</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome (ikon) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Script Toggle Banner -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bannerToggle = document.getElementById('bannerToggle');
+            const bannerIcon = document.getElementById('bannerIcon');
+            const bannerClose = document.getElementById('bannerClose');
+            const winnerBanner = document.getElementById('winnerBanner');
+            const infoBanner = document.querySelector('.info-banner');
+
+            if (bannerToggle && winnerBanner && bannerIcon && bannerClose && infoBanner) {
+                bannerToggle.addEventListener('click', function() {
+                    const isCollapsed = !winnerBanner.classList.contains('show');
+
+                    if (isCollapsed) {
+                        winnerBanner.classList.add('show');
+                        bannerIcon.classList.add('rotated');
+                        bannerIcon.classList.remove('fa-chevron-down');
+                        bannerIcon.classList.add('fa-chevron-up');
+                    } else {
+                        winnerBanner.classList.remove('show');
+                        bannerIcon.classList.remove('rotated');
+                        bannerIcon.classList.remove('fa-chevron-up');
+                        bannerIcon.classList.add('fa-chevron-down');
+                    }
+                });
+
+                infoBanner.addEventListener('click', function(e) {
+                    if (e.target.closest('#bannerClose')) return;
+                    bannerToggle.click();
+                });
+
+                bannerClose.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    infoBanner.style.display = 'none';
+                    winnerBanner.classList.remove('show');
+                });
+
+                setTimeout(() => {
+                    if (!winnerBanner.classList.contains('show')) {
+                        infoBanner.style.opacity = '0.8';
+                    }
+                }, 5000);
+            }
+        });
+    </script>
+
+    @stack('scripts')
 </body>
+
 </html>

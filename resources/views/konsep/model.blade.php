@@ -7,7 +7,7 @@
         <p class="text-muted fs-5">Kerangka LPS (Leadership - People - System)</p>
     </div>
 
-    <div class="fade-up mb-4">
+    <div class="fade-up mb-4 nilai">
         <p class="lead">Model implementasi budaya organisasi BPS dipengaruhi oleh tiga variabel utama yang saling terkait, yaitu <strong>Leadership</strong>, <strong>People</strong>, dan <strong>System</strong> (LPS). Ketiga variabel ini diwujudkan dalam delapan pilar utama budaya organisasi:</p>
     </div>
 
@@ -15,7 +15,7 @@
         <div class="col-md-4 fade-up">
             <div class="card shadow h-100 border-start border-4 border-primary">
                 <div class="card-body">
-                    <h5 class="card-title text-primary"><i class="fas fa-chess-king me-2"></i>Leadership</h5>
+                    <h5 class="card-title text-primary"><i class="fas fa-chess-king me-2"></i>1. Leadership</h5>
                     <p>Aspek kepemimpinan yang menunjang implementasi nilai inti BerAKHLAK:</p>
                     <ul>
                         <li><strong>Commitment</strong> yang ditunjukkan oleh seluruh pimpinan</li>
@@ -28,7 +28,7 @@
         <div class="col-md-4 fade-up">
             <div class="card shadow h-100 border-start border-4 border-success">
                 <div class="card-body">
-                    <h5 class="card-title text-success"><i class="fas fa-users me-2"></i>People</h5>
+                    <h5 class="card-title text-success"><i class="fas fa-users me-2"></i>2. People</h5>
                     <p>Aspek sumber daya manusia yang mencerminkan perilaku BerAKHLAK:</p>
                     <ul class="mb-0">
                         <li>Berorientasi Pelayanan</li>
@@ -46,7 +46,7 @@
         <div class="col-md-4 fade-up">
             <div class="card shadow h-100 border-start border-4 border-warning">
                 <div class="card-body">
-                    <h5 class="card-title text-warning"><i class="fas fa-cogs me-2"></i>System</h5>
+                    <h5 class="card-title text-warning"><i class="fas fa-cogs me-2"></i>3. System</h5>
                     <p>Aspek sistem kerja yang mendukung nilai budaya:</p>
                     <ul class="mb-0">
                         <li><strong>Standard & Measurement</strong> yang jelas dan terukur</li>
@@ -58,25 +58,11 @@
         </div>
     </div>
 
-    <div class="mt-5 fade-up">
+    <div class="mt-5 fade-up nilai">
         <p class="fs-5">Model Implementasi Budaya ini membantu BPS mengidentifikasi kekuatan dan kelemahan dalam penerapan budaya kerja BerAKHLAK, serta memetakan aspek mana—Leadership, People, atau System—yang perlu ditingkatkan.</p>
     </div>
 </div>
 @endsection
-
-@push('styles')
-<style>
-    .fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-in-out;
-    }
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
-@endpush
 
 @push('scripts')
 <script>

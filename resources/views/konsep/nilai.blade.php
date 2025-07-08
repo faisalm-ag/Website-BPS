@@ -7,8 +7,8 @@
         <p class="text-muted fs-5">Core Values ASN dan Employer Branding</p>
     </div>
 
-    <div class="fade-up mb-4">
-        <p class="fs-5">Mengacu kepada <strong>SE MenPAN-RB No. 20 Tahun 2021</strong> tentang Implementasi Core Values dan Employer Branding ASN tertanggal 26 Agustus 2021, BPS telah mengimplementasikan serta menyosialisasikan Core Values <strong>BerAKHLAK</strong> dan Employer Branding <strong>Bangga Melayani Bangsa</strong>.</p>
+    <div class="fade-up mb-4 nilai">
+        <p class="fs-5">Mengacu kepada Surat Edaran Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 20 Tahun 2021 tentang Implementasi Core Values dan Employer Branding Aparatur Sipil Negara tertanggal 26 Agustus 2021, BPS telah mengimplementasikan dan terus menyosialisasikan Core Values BerAKHLAK dan Employer Branding Bangga Melayani Bangsa</p>
         <p class="fs-5"><strong>Core Values ASN BerAKHLAK</strong> terdiri dari:</p>
     </div>
 
@@ -16,13 +16,13 @@
     <div class="row g-4 mb-5">
         @php
             $values = [
-                ['title' => 'Berorientasi Pelayanan', 'icon' => 'handshake', 'color' => 'primary'],
-                ['title' => 'Akuntabel', 'icon' => 'check-circle', 'color' => 'success'],
-                ['title' => 'Kompeten', 'icon' => 'lightbulb', 'color' => 'info'],
-                ['title' => 'Harmonis', 'icon' => 'heart', 'color' => 'danger'],
-                ['title' => 'Loyal', 'icon' => 'flag', 'color' => 'warning'],
-                ['title' => 'Adaptif', 'icon' => 'sync', 'color' => 'secondary'],
-                ['title' => 'Kolaboratif', 'icon' => 'people-arrows', 'color' => 'dark'],
+                ['title' => '1. Berorientasi Pelayanan', 'icon' => 'handshake', 'color' => 'primary'],
+                ['title' => '2. Akuntabel', 'icon' => 'check-circle', 'color' => 'success'],
+                ['title' => '3. Kompeten', 'icon' => 'lightbulb', 'color' => 'info'],
+                ['title' => '4. Harmonis', 'icon' => 'heart', 'color' => 'danger'],
+                ['title' => '5. Loyal', 'icon' => 'flag', 'color' => 'warning'],
+                ['title' => '6. Adaptif', 'icon' => 'sync', 'color' => 'secondary'],
+                ['title' => '7. Kolaboratif', 'icon' => 'people-arrows', 'color' => 'dark'],
             ];
         @endphp
 
@@ -35,13 +35,13 @@
                     </h5>
                     <p class="card-text">
                         {!! collect([
-                            'Berorientasi Pelayanan' => 'Komitmen memberikan pelayanan prima demi kepuasan masyarakat',
-                            'Akuntabel' => 'Bertanggung jawab atas kepercayaan yang diberikan',
-                            'Kompeten' => 'Terus belajar dan mengembangkan kapabilitas',
-                            'Harmonis' => 'Saling peduli dan menghargai perbedaan',
-                            'Loyal' => 'Berdedikasi dan mengutamakan kepentingan Bangsa dan Negara',
-                            'Adaptif' => 'Terus berinovasi dan antusias dalam menghadapi perubahan',
-                            'Kolaboratif' => 'Membangun kerja sama yang sinergis',
+                            '1. Berorientasi Pelayanan' => 'Komitmen memberikan pelayanan prima demi kepuasan masyarakat',
+                            '2. Akuntabel' => 'Bertanggung jawab atas kepercayaan yang diberikan',
+                            '3. Kompeten' => 'Terus belajar dan mengembangkan kapabilitas',
+                            '4. Harmonis' => 'Saling peduli dan menghargai perbedaan',
+                            '5. Loyal' => 'Berdedikasi dan mengutamakan kepentingan Bangsa dan Negara',
+                            '6. Adaptif' => 'Terus berinovasi dan antusias dalam menghadapi perubahan',
+                            '7. Kolaboratif' => 'Membangun kerja sama yang sinergis',
                         ])[$val['title']] !!}
                     </p>
                 </div>
@@ -51,8 +51,8 @@
     </div>
 
     <!-- Detail Panduan Perilaku -->
-    <div class="fade-up mb-5">
-        <p class="fs-5"><strong>Panduan Perilaku BerAKHLAK</strong> sesuai SE MenPAN-RB No. 20 Tahun 2021:</p>
+    <div class="fade-up mb-5 nilai">
+        <p class="fs-5">Penjabaran dari core values ASN BerAKHLAK juga tertuang pada Surat Edaran Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 20 Tahun 2021 tentang Implementasi Core Values dan Employer Branding Aparatur Sipil Negara berupa panduan perilaku BerAKHLAK sebagai berikut:</p>
 
         @php
             $details = [
@@ -104,42 +104,11 @@
         @endforeach
     </div>
 
-    <div class="fade-up mb-5">
-        <p class="fs-5"><strong>Nilai dasar BerAKHLAK</strong> menjadi dasar penguatan budaya kerja di BPS untuk mendukung pencapaian kinerja individu dan tujuan instansi.</p>
-        <p class="fs-5">Sesuai Road Map Nasional Penguatan Budaya Kerja ASN:</p>
-        <ul>
-            <li>2021: Pencanangan BerAKHLAK</li>
-            <li>2022: Sosialisasi dan Internalisasi</li>
-            <li>2023: Pelaksanaan SBO untuk mengukur implementasi</li>
-        </ul>
-        <p class="fs-5">BPS telah menjalankan tahapan tersebut secara konsisten.</p>
+    <div class="fade-up mb-5 nilai">
+        <p class="fs-5">Nilai-nilai dasar BerAKHLAK menjadi dasar penguatan budaya kerja di BPS untuk mendukung pencapaian kinerja individu dan tujuan organisasi/instansi sehingga perlu dilihat seberapa besar implementasi nilai dasar tersebut di BPS. Berdasarkan Road Map Nasional Penguatan Budaya Kerja ASN BerAKHLAK, setelah pencanangan tahun 2021, tahapan selanjutnya pada tahun 2022 adalah sosialisasi dan internalisasi budaya BerAKHLAK. BPS telah melaksanakan berbagai sosialisasi dan internalisasi tersebut, sehingga pada tahun 2023 dilaksanakan SBO untuk menilai seberapa besar implementasi BerAKHLAK di BPS.</p>
     </div>
 </div>
 @endsection
-
-@push('styles')
-<style>
-    .fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-in-out;
-    }
-
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .hover-grow {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .hover-grow:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-    }
-</style>
-@endpush
 
 @push('scripts')
 <script>

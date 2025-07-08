@@ -2,65 +2,6 @@
 
 @section('content')
 
-<!-- Info Banner -->
-<div class="info-banner bg-gradient-gray text-white shadow-sm">
-    <div class="container-fluid">
-        <div class="row align-items-center py-2">
-            <div class="col">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <span class="fw-medium">
-                        Pengumuman Pemenang Pegawai Teladan telah diumumkan!
-                        <strong>Klik untuk melihat detail →</strong>
-                    </span>
-                </div>
-            </div>
-            <div class="col-auto">
-                <button class="btn btn-link text-white p-0 border-0" id="bannerToggle">
-                    <i class="fas fa-chevron-down" id="bannerIcon"></i>
-                </button>
-                <button class="btn btn-link text-white p-0 border-0 ms-2" id="bannerClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Collapsible Winner Section -->
-<div class="collapse" id="winnerBanner">
-    <div class="bg-gradient-primary text-white py-4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <div class="d-flex align-items-center">
-                        <div class="trophy-icon me-3">
-                            <i class="fas fa-trophy fa-2x text-warning"></i>
-                        </div>
-                        <div>
-                            <h5 class="fw-bold mb-1">Selamat Kepada Pemenang!</h5>
-                            <h4 class="fw-bold mb-1">Bapak Muhamad Sobari, S.ST., M.STAT.</h4>
-                            <p class="mb-0 opacity-75">Pegawai Teladan Triwulan I Tahun 2025</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                    <div class="d-flex align-items-center justify-content-md-end">
-                        <div class="me-3">
-                            <small class="opacity-75">Diumumkan pada:</small>
-                            <div class="fw-bold">15 Januari 2025</div>
-                        </div>
-                        <button class="btn btn-light btn-sm rounded-pill px-3">
-                            <i class="fas fa-external-link-alt me-1"></i>
-                            Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Header -->
 <div class="header-bg d-flex align-items-center justify-content-center text-white text-center mb-5">
     <div class="overlay"></div>
@@ -142,91 +83,26 @@
 
 @endsection
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/home.css') }}">
-<style>
-/* Banner sticky di bawah navbar */
-.info-banner {
-    position: sticky;
-    top: 56px; /* Tinggi navbar */
-    z-index: 1020;
-    background-color: #0d6efd;
-}
-</style>
-@endpush
-
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
 <script>
-    // CountUp animation
     document.addEventListener("DOMContentLoaded", function () {
         const pegawai = new CountUp('pegawai-count', 50);
         const tw = new CountUp('tw-count', 8);
-        const trans = new CountUp('trans-count', 100, {suffix: '%'});
+        const trans = new CountUp('trans-count', 100, { suffix: '%' });
         pegawai.start();
         tw.start();
         trans.start();
-    });
 
-    // Scroll fade up animation
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Banner Toggle Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const bannerToggle = document.getElementById('bannerToggle');
-        const bannerIcon = document.getElementById('bannerIcon');
-        const bannerClose = document.getElementById('bannerClose');
-        const winnerBanner = document.getElementById('winnerBanner');
-        const infoBanner = document.querySelector('.info-banner');
-
-        // Toggle banner on click
-        bannerToggle.addEventListener('click', function() {
-            const isCollapsed = !winnerBanner.classList.contains('show');
-
-            if (isCollapsed) {
-                winnerBanner.classList.add('show');
-                bannerIcon.classList.add('rotated');
-                bannerIcon.classList.remove('fa-chevron-down');
-                bannerIcon.classList.add('fa-chevron-up');
-            } else {
-                winnerBanner.classList.remove('show');
-                bannerIcon.classList.remove('rotated');
-                bannerIcon.classList.remove('fa-chevron-up');
-                bannerIcon.classList.add('fa-chevron-down');
-            }
-        });
-
-        // Click anywhere on banner to toggle
-        infoBanner.addEventListener('click', function(e) {
-            if (e.target.closest('#bannerClose')) {
-                return;
-            }
-            bannerToggle.click();
-        });
-
-        // Close banner completely
-        bannerClose.addEventListener('click', function(e) {
-            e.stopPropagation();
-            infoBanner.style.display = 'none';
-            winnerBanner.classList.remove('show');
-        });
-
-        // Auto-hide after 5 sec (optional)
-        setTimeout(() => {
-            if (!winnerBanner.classList.contains('show')) {
-                infoBanner.style.opacity = '0.8';
-            }
-        }, 5000);
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     });
 </script>
 @endpush

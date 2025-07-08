@@ -9,7 +9,7 @@
         <p class="text-muted">Indikator Perilaku Pegawai BerAKHLAK</p>
     </div>
 
-    <div class="row g-4">
+    <div class="row g-4 nilai">
         <div class="col-12 fade-up">
             <p>
                 Indikator <strong>People Budaya Organisasi (PeBO)</strong> digunakan untuk menilai internalisasi nilai BerAKHLAK dalam perilaku setiap individu ASN di BPS. Penilaian ini mencerminkan kualitas sumber daya manusia sebagai pilar penting budaya kerja.
@@ -42,44 +42,6 @@
     </div>
 </div>
 @endsection
-
-@push('styles')
-<style>
-    .fade-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease-in-out;
-    }
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    .counter-list {
-        counter-reset: section;
-    }
-    .counter-list li {
-        position: relative;
-        padding-left: 2.5rem;
-        margin-bottom: 1rem;
-    }
-    .counter-list li::before {
-        counter-increment: section;
-        content: counter(section);
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 2rem;
-        height: 2rem;
-        background-color: #0d6efd;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-    }
-</style>
-@endpush
 
 @push('scripts')
 <script>

@@ -8,7 +8,7 @@
         <hr class="w-25 mx-auto border-2 border-primary">
     </div>
 
-    <div class="mb-4 fade-up">
+    <div class="mb-4 fade-up nilai">
         <p class="fs-5">
             <strong>Indikator LeadBO</strong> digunakan untuk mengukur sejauh mana pimpinan berperan aktif dalam menginternalisasi nilai-nilai BerAKHLAK ke dalam budaya kerja di lingkungan BPS. Berikut indikator-indikatornya:
         </p>
@@ -18,7 +18,7 @@
         <div class="col-md-6 fade-up">
             <div class="card shadow-sm border-start border-4 border-primary">
                 <div class="card-body">
-                    <p class="mb-0">Pegawai menerima masukan secara rutin dari pimpinan mengenai implementasi nilai BerAKHLAK dalam pelaksanaan tugas sehari-hari.</p>
+                    <p class="mb-0">1. Pegawai menerima masukan secara rutin dari pimpinan mengenai implementasi nilai BerAKHLAK dalam pelaksanaan tugas sehari-hari.</p>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="col-md-6 fade-up">
             <div class="card shadow-sm border-start border-4 border-success">
                 <div class="card-body">
-                    <p class="mb-0">Pimpinan memberikan contoh yang baik dalam implementasi nilai-nilai BerAKHLAK.</p>
+                    <p class="mb-0">2. Pimpinan memberikan contoh yang baik dalam implementasi nilai-nilai BerAKHLAK.</p>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="col-md-6 fade-up">
             <div class="card shadow-sm border-start border-4 border-warning">
                 <div class="card-body">
-                    <p class="mb-0">Pimpinan memberikan pujian ketika salah seorang bawahan memberikan pelayanan terbaik kepada stakeholder (internal dan eksternal) sesuai dengan nilai BerAKHLAK.</p>
+                    <p class="mb-0">3. Pimpinan memberikan pujian ketika salah seorang bawahan memberikan pelayanan terbaik kepada stakeholder (internal dan eksternal) sesuai dengan nilai BerAKHLAK.</p>
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@
         <div class="col-md-6 fade-up">
             <div class="card shadow-sm border-start border-4 border-info">
                 <div class="card-body">
-                    <p class="mb-1">Pimpinan melakukan program <strong>coaching</strong> yang efektif untuk membantu pegawai mengembangkan kompetensi mereka.</p>
-                    <small><em>Note:</em> Coaching adalah proses untuk membuka potensi seseorang dalam mengoptimalkan kinerja dan pengembangannya melalui tools, pengetahuan, dan kesempatan yang dibutuhkan.</small>
+                    <p class="mb-1">4. Pimpinan melakukan program coaching yang efektif untuk membantu pegawai mengembangkan kompetensi mereka.</p>
+                    <small><em>Note:</em> Coaching adalah teknik atau proses yang dilakukan untuk membuka potensi seseorang dalam rangka mengoptimalkan kinerja dan pengembangan dirinya dengan cara memberikan tools, pengetahuan, dan kesempatan yang dibutuhkan.</small>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="col-md-6 fade-up">
             <div class="card shadow-sm border-start border-4 border-danger">
                 <div class="card-body">
-                    <p class="mb-0">Pimpinan bukan hanya berbicara, tetapi mengambil tindakan nyata untuk meningkatkan nilai BerAKHLAK sebagai budaya organisasi.</p>
+                    <p class="mb-0">5. Pimpinan bukan hanya berbicara, tetapi mengambil tindakan nyata untuk meningkatkan nilai BerAKHLAK sebagai budaya organisasi.</p>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
         <div class="col-md-6 fade-up">
             <div class="card shadow-sm border-start border-4 border-secondary">
                 <div class="card-body">
-                    <p class="mb-0">Pimpinan menekankan secara berulang pentingnya implementasi nilai-nilai BerAKHLAK dalam pekerjaan sehari-hari.</p>
+                    <p class="mb-0">6. Pimpinan menekankan secara berulang pentingnya implementasi nilai-nilai BerAKHLAK dalam pekerjaan sehari-hari.</p>
                 </div>
             </div>
         </div>
@@ -67,8 +67,8 @@
         <div class="col-md-6 fade-up">
             <div class="card shadow-sm border-start border-4 border-dark">
                 <div class="card-body">
-                    <p class="mb-1">Pimpinan melaksanakan program <strong>mentoring</strong> yang efektif untuk membantu pegawai meningkatkan kompetensi.</p>
-                    <small><em>Note:</em> Mentoring adalah proses membimbing yang dilakukan oleh orang yang ahli untuk meningkatkan kemampuan pegawai di bidang tertentu.</small>
+                    <p class="mb-1">7. Pimpinan melaksanakan program mentoring yang efektif untuk membantu pegawai mengembangkan kompetensi.</p>
+                    <small><em>Note:</em>  Mentoring adalah proses membimbing/melatih yang dilakukan oleh orang yang ahli di bidang tertentu terhadap pegawai yang membutuhkan peningkatan kompetensi di bidang tersebut.</small>
                 </div>
             </div>
         </div>
@@ -76,37 +76,13 @@
         <div class="col-md-6 fade-up">
             <div class="card shadow-sm border-start border-4 border-primary">
                 <div class="card-body">
-                    <p class="mb-0">Pimpinan mendorong seluruh bawahannya untuk selalu memberikan layanan terbaik.</p>
+                    <p class="mb-0">8. Pimpinan mendorong seluruh bawahannya untuk selalu memberikan layanan terbaik.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
-
-@push('styles')
-<style>
-    .fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-in-out;
-    }
-
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-        transform: scale(1.02);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-</style>
-@endpush
 
 @push('scripts')
 <script>

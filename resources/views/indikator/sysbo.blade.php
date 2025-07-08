@@ -9,23 +9,23 @@
         <p class="text-muted">Indikator Sistem Pendukung Budaya BerAKHLAK</p>
     </div>
 
-    <div class="row g-4">
+    <div class="row g-4 nilai">
         <div class="col-12 fade-up">
             <p>Indikator <strong>System Budaya Organisasi (SysBO)</strong> mengukur sejauh mana sistem dan struktur organisasi BPS Kabupaten Tasikmalaya mendukung implementasi nilai-nilai BerAKHLAK dalam budaya kerja sehari-hari. Berikut indikator yang digunakan:</p>
 
             <ul class="mt-4 list-unstyled">
                 @php $sysbo = [
-                    'BPS Kabupaten Tasikmalaya memberikan <strong>sanksi terhadap pegawai</strong> yang melakukan tindakan yang tidak sesuai dengan nilai BerAKHLAK.',
-                    'BPS Kabupaten Tasikmalaya memiliki <strong>standar yang jelas</strong> dalam mengimplementasikan nilai-nilai BerAKHLAK.',
-                    'BPS memberikan <strong>penghargaan</strong> kepada pegawai yang menunjukkan implementasi nilai BerAKHLAK dengan sangat baik.',
-                    'Sudah tersedia <strong>media pengaduan</strong> seperti email, telepon, SMS, WhatsApp, dan lainnya untuk menampung keluhan stakeholder (eksternal dan internal).',
-                    'Tersedia <strong>sarana bagi pegawai</strong> untuk secara aktif menyuarakan pendapat dalam meningkatkan nilai BerAKHLAK menjadi budaya organisasi.',
-                    'Telah ada <strong>inisiatif atau program</strong> untuk mendorong penguatan nilai BerAKHLAK dalam organisasi.',
-                    'BPS telah <strong>mengimplementasikan program</strong> peningkatan BerAKHLAK dalam pekerjaan sehari-hari.',
-                    '<strong>Pegawai dengan pelayanan luar biasa</strong> mendapat prioritas untuk peningkatan kompetensi.',
-                    'Ada <strong>media komunikasi rutin</strong> untuk sosialisasi BerAKHLAK dan budaya pelayanan seperti komunitas internal, Varia Statistik, email, atau grup WhatsApp.',
-                    '<strong>Inisiatif peningkatan BerAKHLAK</strong> dilakukan dengan memperhatikan masukan dari stakeholder internal dan eksternal.',
-                    '<strong>Penghargaan budaya BerAKHLAK</strong> diberikan secara adil dan transparan, khususnya dalam peningkatan kualitas pelayanan.'
+                    'BPS Kabupaten Tasikmalaya memberikan sanksi terhadap pegawai yang melakukan tindakan yang tidak sesuai dengan nilai BerAKHLAK.',
+                    'BPS Kabupaten Tasikmalaya memiliki standar yang jelas dalam mengimplementasikan nilai-nilai BerAKHLAK.',
+                    'BPS memberikan penghargaan kepada pegawai yang menunjukkan implementasi nilai BerAKHLAK dengan sangat baik.',
+                    'Sudah tersedia media pengaduan seperti email, telepon, SMS, WhatsApp, dan lainnya untuk menampung keluhan stakeholder (eksternal dan internal).',
+                    'Tersedia sarana bagi pegawai untuk secara aktif menyuarakan pendapat dalam meningkatkan nilai BerAKHLAK menjadi budaya organisasi.',
+                    'Telah ada inisiatif atau program untuk mendorong penguatan nilai BerAKHLAK dalam organisasi.',
+                    'BPS telah mengimplementasikan program peningkatan BerAKHLAK dalam pekerjaan sehari-hari.',
+                    'Pegawai dengan pelayanan luar biasa mendapat prioritas untuk peningkatan kompetensi.',
+                    'Ada media komunikasi rutin untuk sosialisasi BerAKHLAK dan budaya pelayanan seperti komunitas internal, Varia Statistik, email, atau grup WhatsApp.',
+                    'Inisiatif peningkatan BerAKHLAK dilakukan dengan memperhatikan masukan dari stakeholder internal dan eksternal.',
+                    'Penghargaan budaya BerAKHLAK diberikan secara adil dan transparan, khususnya dalam peningkatan kualitas pelayanan.'
                 ]; @endphp
 
                 @foreach ($sysbo as $i => $item)
@@ -41,20 +41,6 @@
     </div>
 </div>
 @endsection
-
-@push('styles')
-<style>
-    .fade-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease-in-out;
-    }
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
-@endpush
 
 @push('scripts')
 <script>

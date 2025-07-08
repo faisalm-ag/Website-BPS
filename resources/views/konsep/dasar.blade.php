@@ -47,20 +47,6 @@
 </div>
 @endsection
 
-@push('styles')
-<style>
-    .fade-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease-in-out;
-    }
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
-@endpush
-
 @push('scripts')
 <script>
     // Scroll animation

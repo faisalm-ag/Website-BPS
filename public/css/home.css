@@ -5,7 +5,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
-    padding-top: 120px; /* Padding agar konten tidak tertimpa navbar + banner */
+    padding-top: 30px;
+    /* Padding agar konten tidak tertimpa navbar + banner */
     margin: 0;
 }
 
@@ -74,12 +75,19 @@ body {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-10px);
     }
+
     60% {
         transform: translateY(-5px);
     }
@@ -100,7 +108,10 @@ body {
 
 .overlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(70, 70, 70, 0.6);
 }
 
@@ -137,6 +148,80 @@ body {
 }
 
 /* =====================
+   Page Konsep Definisi
+===================== */
+.fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-in-out;
+    }
+
+.fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.hover-grow {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+.hover-grow:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+
+.nilai {
+    text-align: justify;
+}
+
+/* =====================
+   Page Indikator Penilaian
+===================== */
+.fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-in-out;
+    }
+
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .counter-list {
+        counter-reset: section;
+    }
+    .counter-list li {
+        position: relative;
+        padding-left: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .counter-list li::before {
+        counter-increment: section;
+        content: counter(section);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        background-color: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+/* =====================
    Responsive
 ===================== */
 
@@ -144,6 +229,7 @@ body {
     .info-banner {
         font-size: 12px;
     }
+
     .info-banner .py-2 {
         padding: 8px 0 !important;
     }
@@ -163,7 +249,8 @@ body {
         background-color: transparent;
     }
 
-    .card, .card-body {
+    .card,
+    .card-body {
         background-color: #1e1e1e;
         color: #ffffff;
         border-color: #333;
