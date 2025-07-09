@@ -104,10 +104,10 @@
                                 <input type="text" class="form-control" name="nama_penilai" id="nama_penilai" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="jabatan_penilai" class="form-label fw-semibold">
-                                    <i class="fas fa-briefcase me-1"></i>Jabatan
+                                <label for="jenis_kelamin" class="form-label fw-semibold">
+                                    <i class="fas fa-briefcase me-1"></i> Jenis Kelamin
                                 </label>
-                                <input type="text" class="form-control" name="jabatan_penilai" id="jabatan_penilai" required>
+                                <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
                             </div>
                         </div>
 

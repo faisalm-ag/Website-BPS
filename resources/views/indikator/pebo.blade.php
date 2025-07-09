@@ -15,29 +15,42 @@
                 Indikator <strong>People Budaya Organisasi (PeBO)</strong> digunakan untuk menilai internalisasi nilai BerAKHLAK dalam perilaku setiap individu ASN di BPS. Penilaian ini mencerminkan kualitas sumber daya manusia sebagai pilar penting budaya kerja.
             </p>
 
-            <ol class="list-unstyled counter-list mt-4">
-                <li>Pegawai memahami dan memenuhi kebutuhan masyarakat</li>
-                <li>Pegawai ramah, cekatan, solutif, dan dapat diandalkan</li>
-                <li>Pegawai melakukan perbaikan tiada henti</li>
-                <li>Pegawai melaksanakan tugas dengan jujur, bertanggung jawab, cermat, disiplin, dan berintegritas tinggi</li>
-                <li>Pegawai menggunakan kekayaan dan barang milik negara secara bertanggung jawab, efektif, dan efisien</li>
-                <li>Pegawai tidak menyalahgunakan kewenangan jabatan</li>
-                <li>Pegawai meningkatkan kompetensi diri untuk menjawab tantangan yang selalu berubah</li>
-                <li>Pegawai membantu orang lain belajar</li>
-                <li>Pegawai melaksanakan tugas dengan kualitas terbaik</li>
-                <li>Pegawai menghargai setiap orang apapun latar belakangnya</li>
-                <li>Pegawai suka menolong orang lain</li>
-                <li>Pegawai membangun lingkungan kerja yang kondusif</li>
-                <li>Pegawai memegang teguh ideologi Pancasila, UUD 1945, dan setia kepada NKRI serta pemerintahan yang sah</li>
-                <li>Pegawai menjaga nama baik sesama ASN, pimpinan, instansi, dan negara</li>
-                <li>Pegawai menjaga rahasia jabatan dan negara</li>
-                <li>Pegawai cepat menyesuaikan diri menghadapi perubahan</li>
-                <li>Pegawai terus berinovasi dan mengembangkan kreativitas</li>
-                <li>Pegawai bertindak proaktif</li>
-                <li>Pegawai memberi kesempatan kepada berbagai pihak untuk berkontribusi</li>
-                <li>Pegawai terbuka dalam bekerja sama untuk menghasilkan nilai tambah</li>
-                <li>Pegawai menggerakkan pemanfaatan berbagai sumber daya untuk tujuan bersama</li>
-            </ol>
+            @php
+                $pebo = [
+                    'Pegawai memahami dan memenuhi kebutuhan masyarakat',
+                    'Pegawai ramah, cekatan, solutif, dan dapat diandalkan',
+                    'Pegawai melakukan perbaikan tiada henti',
+                    'Pegawai melaksanakan tugas dengan jujur, bertanggung jawab, cermat, disiplin, dan berintegritas tinggi',
+                    'Pegawai menggunakan kekayaan dan barang milik negara secara bertanggung jawab, efektif, dan efisien',
+                    'Pegawai tidak menyalahgunakan kewenangan jabatan',
+                    'Pegawai meningkatkan kompetensi diri untuk menjawab tantangan yang selalu berubah',
+                    'Pegawai membantu orang lain belajar',
+                    'Pegawai melaksanakan tugas dengan kualitas terbaik',
+                    'Pegawai menghargai setiap orang apapun latar belakangnya',
+                    'Pegawai suka menolong orang lain',
+                    'Pegawai membangun lingkungan kerja yang kondusif',
+                    'Pegawai memegang teguh ideologi Pancasila, UUD 1945, dan setia kepada NKRI serta pemerintahan yang sah',
+                    'Pegawai menjaga nama baik sesama ASN, pimpinan, instansi, dan negara',
+                    'Pegawai menjaga rahasia jabatan dan negara',
+                    'Pegawai cepat menyesuaikan diri menghadapi perubahan',
+                    'Pegawai terus berinovasi dan mengembangkan kreativitas',
+                    'Pegawai bertindak proaktif',
+                    'Pegawai memberi kesempatan kepada berbagai pihak untuk berkontribusi',
+                    'Pegawai terbuka dalam bekerja sama untuk menghasilkan nilai tambah',
+                    'Pegawai menggerakkan pemanfaatan berbagai sumber daya untuk tujuan bersama',
+                ];
+            @endphp
+
+            <ul class="mt-4 list-unstyled">
+                @foreach ($pebo as $i => $item)
+                <li class="mb-3 d-flex align-items-start">
+                    <div class="me-3">
+                        <span class="badge bg-primary rounded-circle px-3 py-2 fs-6">{{ $i + 1 }}</span>
+                    </div>
+                    <div>{!! $item !!}</div>
+                </li>
+                @endforeach
+            </ul>
         </div>
     </div>
 </div>

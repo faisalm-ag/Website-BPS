@@ -1,24 +1,39 @@
 @extends('layouts.app')
 
+@section('title', 'Manual Book')
+
 @section('content')
-<div class="container">
-    <div class="text-center mb-4">
-        <h2 class="fw-bold">Manual Book</h2>
+<div class="container py-5">
+    <div class="text-center mb-5 fade-up">
+        <h2 class="fw-bold text-primary"><i class="fas fa-book-open me-2"></i>Manual Book</h2>
         <p class="text-muted">Sistem Informasi Penilaian Kinerja - BPS Kabupaten Tasikmalaya</p>
     </div>
 
-    <div class="ratio ratio-16x9" style="min-height: 600px;">
-        <iframe 
-            src="{{ asset('manual/Sistem Informasi Penilaian Kinerja.pdf') }}" 
-            width="100%" 
-            height="100%" 
-            frameborder="0">
-        </iframe>
-    </div>
-
-    <div class="alert alert-success text-center mt-5">
-        <strong>Selamat Kepada Bapak Muhamad Sobari, S.ST., M.STAT.</strong><br>
-        Atas Terpilihnya Menjadi Pegawai Teladan BPS Kab. Tasikmalaya TW - I Tahun 2025
+    <div class="card shadow-sm fade-up border-0">
+        <div class="card-body p-0">
+            <div class="ratio ratio-16x9" style="min-height: 600px;">
+                <iframe 
+                    src="{{ asset('manual/Sistem Informasi Penilaian Kinerja.pdf') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0">
+                </iframe>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+@endpush
