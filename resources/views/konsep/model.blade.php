@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-4">
+<div class="container py-4 justify">
     <div class="text-center mb-5 fade-up">
         <h2 class="fw-bold text-primary">Model Implementasi Budaya</h2>
         <p class="text-muted fs-5">Kerangka LPS (Leadership - People - System)</p>

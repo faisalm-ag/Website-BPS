@@ -3,7 +3,7 @@
 @section('title', 'System Budaya Organisasi')
 
 @section('content')
-<div class="container py-5">
+<div class="container py-5 justify">
     <div class="text-center mb-5">
         <h2 class="fw-bold text-primary"><i class="fas fa-cogs me-2"></i>System Budaya Organisasi (SysBO)</h2>
         <p class="text-muted">Indikator Sistem Pendukung Budaya BerAKHLAK</p>

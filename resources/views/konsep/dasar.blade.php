@@ -3,7 +3,7 @@
 @section('title', 'Dasar Hukum')
 
 @section('content')
-<div class="container py-5">
+<div class="container py-5 justify">
     <div class="text-center mb-5">
         <h2 class="fw-bold text-primary"><i class="fas fa-balance-scale me-2"></i>Dasar Hukum</h2>
         <p class="text-muted">Dasar Hukum Umum untuk pelaksanaan Survei Budaya Organisasi BPS Kab. Tasikmalaya adalah:</p>

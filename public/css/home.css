@@ -5,7 +5,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
-    padding-top: 120px; /* Padding agar konten tidak tertimpa navbar + banner */
+    padding-top: 40px; /* Padding agar konten tidak tertimpa navbar + banner */
     margin: 0;
 }
 
@@ -59,6 +59,10 @@ body {
     transform: scale(1.1);
 }
 
+.justify{
+    text-align: justify;
+}
+
 /* =====================
    Winner Banner
 ===================== */
@@ -90,7 +94,7 @@ body {
 ===================== */
 
 .header-bg {
-    background: url('/foto/homebps.png') no-repeat center center;
+    background: url('/foto/homebps.jpg') no-repeat center center;
     background-size: cover;
     height: 400px;
     position: relative;

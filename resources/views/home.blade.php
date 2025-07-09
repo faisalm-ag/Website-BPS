@@ -17,7 +17,34 @@
         @foreach ([1, 2, 3, 4] as $i)
         <div class="col-md-6 col-lg-3">
             <div class="card h-100 shadow text-center fade-up hover-grow">
-                <div class="card-header bg-{{ $i == 1 ? 'success' : ($i == 2 ? 'info' : ($i == 3 ? 'warning' : 'danger')) }} text-white">
+                <div class="card-header bg-{{ $i == 1 ? 'success' : ($i == 2 ? 'info' :   ($i == 3 ? 'warning' : 'danger')) }} text-white">
+                    <h5 class="fw-bold mb-0">Triwulan {{ $i }} - 2024</h5>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-user-circle fa-4x text-muted mb-3"></i>
+                    @if ($i == 1)
+                        <h6 class="fw-bold text-success">Muhamad Sobari, S.ST., M.Stat.</h6>
+                        <p class="text-muted small">Pemenang Terbaru</p>
+                        <span class="badge bg-success mt-auto">Terpilih</span>
+                    @else
+                        <h6 class="text-muted">Belum Ditentukan</h6>
+                        <p class="text-muted small">Menunggu Penilaian</p>
+                        <span class="badge bg-secondary mt-auto">Coming Soon</span>
+                    @endif
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+
+<!-- Daftar Pegawai Tiap Triwulan -->
+<div class="container mb-5">
+    <div class="row g-4">
+        @foreach ([1, 2, 3, 4] as $i)
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow text-center fade-up hover-grow">
+                <div class="card-header bg-{{ $i == 1 ? 'success' : ($i == 2 ? 'info' :   ($i == 3 ? 'warning' : 'danger')) }} text-white">
                     <h5 class="fw-bold mb-0">Triwulan {{ $i }} - 2025</h5>
                 </div>
                 <div class="card-body d-flex flex-column">
