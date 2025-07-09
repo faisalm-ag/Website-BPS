@@ -5,8 +5,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
-    padding-top: 30px;
-    /* Padding agar konten tidak tertimpa navbar + banner */
+    padding-top: 120px; /* Padding agar konten tidak tertimpa navbar + banner */
     margin: 0;
 }
 
@@ -75,19 +74,12 @@ body {
 }
 
 @keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
+    0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
     }
-
     40% {
         transform: translateY(-10px);
     }
-
     60% {
         transform: translateY(-5px);
     }
@@ -98,7 +90,7 @@ body {
 ===================== */
 
 .header-bg {
-    background: url('/foto/homebps.jpg') no-repeat center center;
+    background: url('/foto/homebps.png') no-repeat center center;
     background-size: cover;
     height: 400px;
     position: relative;
@@ -108,10 +100,7 @@ body {
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(70, 70, 70, 0.6);
 }
 
@@ -148,412 +137,6 @@ body {
 }
 
 /* =====================
-   Page Konsep Definisi
-===================== */
-.fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-in-out;
-    }
-
-.fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-.hover-grow {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-.hover-grow:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-    }
-
-.nilai {
-    text-align: justify;
-}
-
-/* =====================
-   Page Indikator Penilaian
-===================== */
-.fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-in-out;
-    }
-
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-        transform: scale(1.02);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-    .counter-list {
-        counter-reset: section;
-    }
-    .counter-list li {
-        position: relative;
-        padding-left: 2.5rem;
-        margin-bottom: 1rem;
-    }
-    .counter-list li::before {
-        counter-increment: section;
-        content: counter(section);
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 2rem;
-        height: 2rem;
-        background-color: #0d6efd;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-    }
-
-/* =====================
-   Page Form Penilaian pbo
-===================== */
-  body { 
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-        min-height: 100vh;
-        padding: 20px 0;
-    }
-
-    .main-container {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        overflow: hidden;
-        margin: 20px auto;
-        max-width: 1200px;
-    }
-
-    .header-section {
-        background: linear-gradient(135deg, #667eea 0%, #2a27c5 100%);
-        color: white;
-        padding: 40px 30px;
-        text-align: center;
-    }
-
-    .header-section h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .header-section p {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        margin-bottom: 0;
-    }
-
-    .content-section {
-        padding: 40px 30px;
-    }
-
-    .form-floating {
-        margin-bottom: 25px;
-    }
-
-    .form-floating > .form-control,
-    .form-floating > .form-select {
-        border: 2px solid #e9ecef;
-        border-radius: 12px;
-        padding: 20px 15px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-
-    .form-floating > .form-select:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-    }
-
-    .form-floating > label {
-        font-weight: 500;
-        color: #495057;
-    }
-
-    .alert-custom {
-        background: linear-gradient(135deg, #667eea15, #764ba215);
-        border: 1px solid #667eea30;
-        border-radius: 15px;
-        padding: 25px;
-        margin-bottom: 30px;
-    }
-
-    .form-section {
-        background: #f8f9fa;
-        border-radius: 15px;
-        padding: 30px;
-        margin-bottom: 30px;
-    }
-
-    .table-container {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-
-    .table {
-        margin-bottom: 0;
-        font-size: 0.95rem;
-    }
-
-    .table thead th {
-        background: linear-gradient(135deg, #667eea, #2d4ada);
-        color: white;
-        font-weight: 600;
-        text-align: center;
-        vertical-align: middle;
-        border: none;
-        padding: 15px 8px;
-        font-size: 0.9rem;
-    }
-
-    .table tbody tr:hover {
-        background-color: rgba(102, 126, 234, 0.05);
-    }
-
-    .table td {
-        vertical-align: middle;
-        padding: 0.75rem;
-        border: 1px solid #dee2e6;
-    }
-
-    .table td input[type="radio"] {
-        transform: scale(1.2);
-        cursor: pointer;
-    }
-
-    .table thead tr th:nth-child(6),
-    .table tbody tr td:nth-child(6) {
-        border-right: 3px solid #0d6efd;
-    }
-
-    .category-header {
-        background: #f8f9fa;
-        font-weight: bold;
-        border-top: 2px solid #0d6efd;
-        color: #495057;
-        padding: 15px !important;
-    }
-
-    .radio-input {
-        width: 18px;
-        height: 18px;
-        accent-color: #667eea;
-        cursor: pointer;
-    }
-
-    .btn-submit {
-        background: linear-gradient(135deg, #667eea, #3c44de);
-        border: none;
-        border-radius: 12px;
-        padding: 15px 40px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: white;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-    }
-
-    .btn-submit:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        background: linear-gradient(135deg, #5a67d8, #6b46c1);
-    }
-
-    .congratulations-card {
-        background: linear-gradient(135deg, #48bb78, #38a169);
-        color: white;
-        border-radius: 15px;
-        padding: 30px;
-        text-align: center;
-        box-shadow: 0 10px 20px rgba(72, 187, 120, 0.3);
-        margin-top: 30px;
-    }
-
-    .congratulations-card h4 {
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-
-    .scale-legend {
-        background: #f8f9fa;
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-left: 4px solid #667eea;
-    }
-
-    .scale-legend h6 {
-        color: #667eea;
-        font-weight: 600;
-        margin-bottom: 15px;
-    }
-
-    .legend-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-    }
-
-    .legend-number {
-        background: #667eea;
-        color: white;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        margin-right: 12px;
-        font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-        .header-section h1 {
-            font-size: 2rem;
-        }
-
-        .content-section {
-            padding: 20px 15px;
-        }
-
-        .table-container {
-            font-size: 0.8rem;
-        }
-
-        .table thead th {
-            padding: 10px 5px;
-            font-size: 0.8rem;
-        }
-
-        .table td {
-            padding: 8px 5px;
-        }
-    }
-
-/* =====================
-   Page Form Penilaian PT
-===================== */
-body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        min-height: 100vh;
-    }
-
-    .header-section {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .header-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.1);
-    }
-
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    }
-
-    .bg-gradient-success {
-        background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%) !important;
-    }
-
-    .card {
-        border-radius: 15px;
-        transition: all 0.3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-2px);
-    }
-
-    .table th {
-        background-color: #f8f9fa;
-        font-weight: 600;
-        border-color: #dee2e6;
-    }
-
-    .form-check-input:checked {
-        background-color: #28a745;
-        border-color: #28a745;
-    }
-
-    .assessment-row:hover {
-        background-color: #f8f9fa;
-    }
-
-    .progress {
-        border-radius: 10px;
-    }
-
-    .progress-bar {
-        border-radius: 10px;
-        transition: width 0.3s ease;
-    }
-
-    .btn {
-        border-radius: 8px;
-        font-weight: 500;
-    }
-
-    .shadow-lg {
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-    }
-
-    .form-select, .form-control {
-        border-radius: 8px;
-        border: 2px solid #e9ecef;
-        transition: all 0.3s ease;
-    }
-
-    .form-select:focus, .form-control:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-    }
-
-    .badge {
-        font-size: 0.8em;
-    }
-
-    @media (max-width: 768px) {
-        .table-responsive {
-            font-size: 0.875rem;
-        }
-        
-        .display-4 {
-            font-size: 2rem;
-        }
-        
-        .display-6 {
-            font-size: 1.5rem;
-        }
-    }
-
-/* =====================
    Responsive
 ===================== */
 
@@ -561,7 +144,6 @@ body {
     .info-banner {
         font-size: 12px;
     }
-
     .info-banner .py-2 {
         padding: 8px 0 !important;
     }
@@ -581,8 +163,7 @@ body {
         background-color: transparent;
     }
 
-    .card,
-    .card-body {
+    .card, .card-body {
         background-color: #1e1e1e;
         color: #ffffff;
         border-color: #333;
