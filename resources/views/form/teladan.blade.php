@@ -28,22 +28,6 @@
         </div>
     </div>
 
-    {{-- Winner Announcement --}}
-    <div class="row mb-5">
-        <div class="col-12">
-            <div class="card border-0 shadow-lg bg-gradient-success">
-                <div class="card-body text-center text-white py-4">
-                    <div class="mb-3">
-                        <i class="fas fa-trophy fa-2x text-warning"></i>
-                    </div>
-                    <h4 class="fw-bold mb-2">🎉 Selamat Kepada 🎉</h4>
-                    <h3 class="fw-bold text-warning mb-2">Bapak Muhamad Sobari, S.ST., M.STAT.</h3>
-                    <p class="mb-0 fs-5">Atas Terpilihnya Menjadi Pegawai Teladan BPS Kab. Tasikmalaya TW - I Tahun 2025</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     {{-- Description Section --}}
     <div class="row mb-4">
         <div class="col-12">
@@ -315,110 +299,6 @@
         </div>
     </div>
 </div>
-
-@push('styles')
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        min-height: 100vh;
-    }
-
-    .header-section {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .header-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.1);
-    }
-
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    }
-
-    .bg-gradient-success {
-        background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%) !important;
-    }
-
-    .card {
-        border-radius: 15px;
-        transition: all 0.3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-2px);
-    }
-
-    .table th {
-        background-color: #f8f9fa;
-        font-weight: 600;
-        border-color: #dee2e6;
-    }
-
-    .form-check-input:checked {
-        background-color: #28a745;
-        border-color: #28a745;
-    }
-
-    .assessment-row:hover {
-        background-color: #f8f9fa;
-    }
-
-    .progress {
-        border-radius: 10px;
-    }
-
-    .progress-bar {
-        border-radius: 10px;
-        transition: width 0.3s ease;
-    }
-
-    .btn {
-        border-radius: 8px;
-        font-weight: 500;
-    }
-
-    .shadow-lg {
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-    }
-
-    .form-select, .form-control {
-        border-radius: 8px;
-        border: 2px solid #e9ecef;
-        transition: all 0.3s ease;
-    }
-
-    .form-select:focus, .form-control:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-    }
-
-    .badge {
-        font-size: 0.8em;
-    }
-
-    @media (max-width: 768px) {
-        .table-responsive {
-            font-size: 0.875rem;
-        }
-        
-        .display-4 {
-            font-size: 2rem;
-        }
-        
-        .display-6 {
-            font-size: 1.5rem;
-        }
-    }
-</style>
-@endpush
 
 @push('scripts')
 <script>

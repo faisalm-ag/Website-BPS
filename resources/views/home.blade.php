@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <!-- Header -->
 <div class="header-bg d-flex align-items-center justify-content-center text-white text-center mb-5">
     <div class="overlay"></div>
@@ -83,26 +82,91 @@
 
 @endsection
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<style>
+/* Banner sticky di bawah navbar */
+.info-banner {
+    position: sticky;
+    top: 56px; /* Tinggi navbar */
+    z-index: 1020;
+    background-color: #0d6efd;
+}
+</style>
+@endpush
+
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
 <script>
+    // CountUp animation
     document.addEventListener("DOMContentLoaded", function () {
         const pegawai = new CountUp('pegawai-count', 50);
         const tw = new CountUp('tw-count', 8);
-        const trans = new CountUp('trans-count', 100, { suffix: '%' });
+        const trans = new CountUp('trans-count', 100, {suffix: '%'});
         pegawai.start();
         tw.start();
         trans.start();
+    });
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+    // Scroll fade up animation
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
 
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Banner Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const bannerToggle = document.getElementById('bannerToggle');
+        const bannerIcon = document.getElementById('bannerIcon');
+        const bannerClose = document.getElementById('bannerClose');
+        const winnerBanner = document.getElementById('winnerBanner');
+        const infoBanner = document.querySelector('.info-banner');
+
+        // Toggle banner on click
+        bannerToggle.addEventListener('click', function() {
+            const isCollapsed = !winnerBanner.classList.contains('show');
+
+            if (isCollapsed) {
+                winnerBanner.classList.add('show');
+                bannerIcon.classList.add('rotated');
+                bannerIcon.classList.remove('fa-chevron-down');
+                bannerIcon.classList.add('fa-chevron-up');
+            } else {
+                winnerBanner.classList.remove('show');
+                bannerIcon.classList.remove('rotated');
+                bannerIcon.classList.remove('fa-chevron-up');
+                bannerIcon.classList.add('fa-chevron-down');
+            }
+        });
+
+        // Click anywhere on banner to toggle
+        infoBanner.addEventListener('click', function(e) {
+            if (e.target.closest('#bannerClose')) {
+                return;
+            }
+            bannerToggle.click();
+        });
+
+        // Close banner completely
+        bannerClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            infoBanner.style.display = 'none';
+            winnerBanner.classList.remove('show');
+        });
+
+        // Auto-hide after 5 sec (optional)
+        setTimeout(() => {
+            if (!winnerBanner.classList.contains('show')) {
+                infoBanner.style.opacity = '0.8';
+            }
+        }, 5000);
     });
 </script>
 @endpush

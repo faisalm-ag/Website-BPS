@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 // Home
 Route::get('/', fn() => view('home'))->name('home');
 
+// Login
+Route::view('/login/login', 'login.login')->name('login.login');
+
 // Konsep Definisi
 Route::view('/konsep/dasar', 'konsep.dasar')->name('konsep.dasar');
 Route::view('/konsep/nilai', 'konsep.nilai')->name('konsep.nilai');

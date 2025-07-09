@@ -4,233 +4,6 @@
 {{-- Google Font --}}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-{{-- Bootstrap CSS --}}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        padding: 20px 0;
-    }
-    
-    .main-container {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        overflow: hidden;
-        margin: 20px auto;
-        max-width: 1200px;
-    }
-    
-    .header-section {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 40px 30px;
-        text-align: center;
-    }
-    
-    .header-section h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .header-section p {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        margin-bottom: 0;
-    }
-    
-    .content-section {
-        padding: 40px 30px;
-    }
-    
-    .form-floating {
-        margin-bottom: 25px;
-    }
-    
-    .form-floating > .form-control {
-        border: 2px solid #e9ecef;
-        border-radius: 12px;
-        padding: 20px 15px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-    
-    .form-floating > .form-select {
-        border: 2px solid #e9ecef;
-        border-radius: 12px;
-        padding: 20px 15px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-    
-    .form-floating > .form-select:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-    }
-    
-    .form-floating > label {
-        font-weight: 500;
-        color: #495057;
-    }
-    
-    .alert-custom {
-        background: linear-gradient(135deg, #667eea15, #764ba215);
-        border: 1px solid #667eea30;
-        border-radius: 15px;
-        padding: 25px;
-        margin-bottom: 30px;
-    }
-    
-    .form-section {
-        background: #f8f9fa;
-        border-radius: 15px;
-        padding: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .table-container {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-    
-    .table {
-        margin-bottom: 0;
-        font-size: 0.95rem;
-    }
-    
-    .table thead th {
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        color: white;
-        font-weight: 600;
-        text-align: center;
-        vertical-align: middle;
-        border: none;
-        padding: 15px 8px;
-        font-size: 0.9rem;
-    }
-    
-    .table tbody tr:hover {
-        background-color: rgba(102, 126, 234, 0.05);
-    }
-    
-    .table td {
-        vertical-align: middle;
-        padding: 12px 8px;
-        border-color: #e9ecef;
-    }
-    
-    .category-header {
-        background: linear-gradient(135deg, #667eea20, #764ba220);
-        font-weight: 600;
-        color: #495057;
-        padding: 15px !important;
-    }
-    
-    .radio-input {
-        width: 18px;
-        height: 18px;
-        accent-color: #667eea;
-        cursor: pointer;
-    }
-    
-    .btn-submit {
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        border: none;
-        border-radius: 12px;
-        padding: 15px 40px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: white;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-    }
-    
-    .btn-submit:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        background: linear-gradient(135deg, #5a67d8, #6b46c1);
-    }
-    
-    .congratulations-card {
-        background: linear-gradient(135deg, #48bb78, #38a169);
-        color: white;
-        border-radius: 15px;
-        padding: 30px;
-        text-align: center;
-        box-shadow: 0 10px 20px rgba(72, 187, 120, 0.3);
-        margin-top: 30px;
-    }
-    
-    .congratulations-card h4 {
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-    
-    .scale-legend {
-        background: #f8f9fa;
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-left: 4px solid #667eea;
-    }
-    
-    .scale-legend h6 {
-        color: #667eea;
-        font-weight: 600;
-        margin-bottom: 15px;
-    }
-    
-    .legend-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-    }
-    
-    .legend-number {
-        background: #667eea;
-        color: white;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        margin-right: 12px;
-        font-size: 0.9rem;
-    }
-    
-    @media (max-width: 768px) {
-        .header-section h1 {
-            font-size: 2rem;
-        }
-        
-        .content-section {
-            padding: 20px 15px;
-        }
-        
-        .table-container {
-            font-size: 0.8rem;
-        }
-        
-        .table thead th {
-            padding: 10px 5px;
-            font-size: 0.8rem;
-        }
-        
-        .table td {
-            padding: 8px 5px;
-        }
-    }
-</style>
-
 <div class="main-container">
     {{-- Header --}}
     <div class="header-section">
@@ -245,25 +18,36 @@
             @csrf
             
             {{-- Input Data Diri --}}
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
-                        <label for="nama">Nama Lengkap</label>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
-                            <option value="">Pilih Jenis Kelamin</option>
-                            <option value="Laki-laki">Laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
-                        <label for="jenis_kelamin">Jenis Kelamin</label>
-                    </div>
-                </div>
-            </div>
-
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <label for="kandidat" class="form-label fw-semibold fs-5">
+                                    <i class="fas fa-user-check me-2 text-primary"></i>Pilih Nama Anda
+                                </label>
+                                <select class="form-select form-select-lg" name="kandidat" id="kandidat" required>
+                                    <option value="" disabled selected>-- Nama Lengkap --</option>
+                                    <option value="Angga Parlindungan">Angga Parlindungan</option>
+                                    <option value="Gofiky Parlindungan">Gofiky Parlindungan</option>
+                                    <option value="Asep">Asep</option>
+                                    <option value="Prabu Wijaya">Prabu Wijaya</option>
+                                    <option value="Solihin">Solihin</option>
+                                    <option value="Dobre ST.H">Dobre ST.H</option>
+                                    <option value="Muhamad Sobari, S.ST., M.STAT.">Muhamad Sobari, S.ST., M.STAT.</option>
+                                    <option value="Iis Irmawati, A. Md.">Iis Irmawati, A. Md.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <label for="jenis_kelamin" class="form-label fw-semibold fs-5">
+                                    <i></i>Jenis Kelamin
+                                </label>
+                                <select class="form-select form-select-lg" name="jenis_kelamin" id="jenis_kelamin" required>
+                                    <option value="" disabled selected>-- Pilih Jenis kelamin anda --</option>
+                                    <option value="Laki Laki">Laki Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                        </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-floating">
@@ -273,23 +57,26 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="number" class="form-control" id="masa_kerja" name="masa_kerja" placeholder="Masukkan masa kerja dalam tahun" min="0" max="50" required>
+                        <input type="number" class="form-control" id="masa_kerja" name="masa_kerja" placeholder="Masukkan masa kerja dalam tahun" min="0" max="110" required>
                         <label for="masa_kerja">Masa Kerja (Tahun)</label>
                     </div>
                 </div>
             </div>
-
-            <div class="form-floating">
-                <select class="form-select" id="pendidikan_terakhir" name="pendidikan_terakhir" required>
-                    <option value="">Pilih Pendidikan Terakhir</option>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <label for="pendidikan_terakhir" class="form-label fw-semibold fs-5">
+                        <i></i>Pendidikan Terakhir
+                            </label>
+                        <select class="form-select form-select-lg" name="pendidikan_terakhir" id="pendidikan_terakhir" required>
+                    <option value="" disabled selected>-- Pilih Pendidikan Terakhir anda --</option>
                     <option value="SMA/SMK">SMA/SMK</option>
                     <option value="D3">D3</option>
                     <option value="D4/S1">D4/S1</option>
                     <option value="S2">S2</option>
                     <option value="S3">S3</option>
                 </select>
-                <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
             </div>
+        </div>
 
             {{-- Deskripsi --}}
             <div class="alert-custom">
@@ -458,17 +245,7 @@
                 </button>
             </div>
         </form>
-
-        {{-- Ucapan Selamat --}}
-        <div class="congratulations-card">
-            <h4>🎉 Selamat!</h4>
-            <p class="mb-0">
-                <strong>Bapak Muhamad Sobari, S.ST., M.STAT.</strong><br>
-                Atas Terpilihnya Menjadi Pegawai Teladan BPS Kab. Tasikmalaya TW - I Tahun 2025
-            </p>
         </div>
-    </div>
-</div>
 
 {{-- FontAwesome untuk icon --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

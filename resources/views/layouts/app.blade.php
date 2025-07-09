@@ -10,7 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -34,12 +36,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Beranda</a></li>
-
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Konsep Definisi</a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="{{ route('konsep.dasar') }}">Dasar Hukum</a></li>
-                            <li><a class="dropdown-item" href="{{ route('konsep.nilai') }}">Nilai-Nilai Inti BPS</a></li>
+                            <li><a class="dropdown-item" href="{{ route('konsep.nilai') }}">Nilai-Nilai Inti BPS</a>
+                            </li>
                             <li><a class="dropdown-item" href="{{ route('konsep.model') }}">Model Implementasi</a></li>
                         </ul>
                     </li>
@@ -47,10 +50,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Indikator Penilaian</a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="{{ route('indikator.priker') }}">Perilaku Kerja Pegawai</a></li>
-                            <li><a class="dropdown-item" href="{{ route('indikator.leadbo') }}">Leadership Budaya Organisasi</a></li>
-                            <li><a class="dropdown-item" href="{{ route('indikator.pebo') }}">People Budaya Organisasi</a></li>
-                            <li><a class="dropdown-item" href="{{ route('indikator.sysbo') }}">System Budaya Organisasi</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indikator.priker') }}">Perilaku Kerja
+                                    Pegawai</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indikator.leadbo') }}">Leadership Budaya
+                                    Organisasi</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indikator.pebo') }}">People Budaya
+                                    Organisasi</a></li>
+                            <li><a class="dropdown-item" href="{{ route('indikator.sysbo') }}">System Budaya
+                                    Organisasi</a></li>
                         </ul>
                     </li>
 
@@ -78,6 +85,7 @@
                             <li><a class="dropdown-item" href="{{ route('galeri.manual') }}">Manual Book</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login.login') }}">Angga Parlindungan</a></li>
                 </ul>
             </div>
         </div>
@@ -158,7 +166,7 @@
 
     <!-- Script Toggle Banner -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const bannerToggle = document.getElementById('bannerToggle');
             const bannerIcon = document.getElementById('bannerIcon');
             const bannerClose = document.getElementById('bannerClose');
@@ -166,7 +174,7 @@
             const infoBanner = document.querySelector('.info-banner');
 
             if (bannerToggle && winnerBanner && bannerIcon && bannerClose && infoBanner) {
-                bannerToggle.addEventListener('click', function() {
+                bannerToggle.addEventListener('click', function () {
                     const isCollapsed = !winnerBanner.classList.contains('show');
 
                     if (isCollapsed) {
@@ -182,12 +190,12 @@
                     }
                 });
 
-                infoBanner.addEventListener('click', function(e) {
+                infoBanner.addEventListener('click', function (e) {
                     if (e.target.closest('#bannerClose')) return;
                     bannerToggle.click();
                 });
 
-                bannerClose.addEventListener('click', function(e) {
+                bannerClose.addEventListener('click', function (e) {
                     e.stopPropagation();
                     infoBanner.style.display = 'none';
                     winnerBanner.classList.remove('show');
