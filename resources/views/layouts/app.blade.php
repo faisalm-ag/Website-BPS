@@ -152,9 +152,33 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer-custom text-center text-white py-4 bg-bps-blue mt-auto">
-        <div class="container">
-            <p class="mb-0">&copy; {{ date('Y') }} Badan Pusat Statistik Kabupaten Tasikmalaya</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Badan Pusat Statistik Kab. Tasikmalaya</h3>
+                <a href="https://g.co/kgs/r1q7nS7">Alamat: M43R+V63, Jl. Garut - Tasikmalaya, Cintaraja, Kec. Singaparna, Kabupaten Tasikmalaya, Jawa Barat 46417, Indonesia</a>
+            </div>
+            <div class="footer-section">
+                <h3>Pusat Bantuan</h3>
+                <a>Kontak Kami "(0265) 549281"</a>
+                <a>FAQ "(0265) 549253"</a>
+            </div>
+            <div class="footer-section">
+                <h3>Tentang Kami</h3>
+                <a href="https://ppid.bps.go.id/app/konten/3206/Profil-BPS.html?_gl=1*1yh0adi*_ga*MjA5MTAzMjMzOC4xNzUxNDQxODAz*_ga_XXTTVXWHDB*czE3NTIxMTg0MjgkbzQkZzEkdDE3NTIxMTkwMTIkajQ0JGwwJGgw">Profil BPS</a>
+                <a href="https://ppid.bps.go.id/?mfd=3206&_gl=1*1yh0adi*_ga*MjA5MTAzMjMzOC4xNzUxNDQxODAz*_ga_XXTTVXWHDB*czE3NTIxMTg0MjgkbzQkZzEkdDE3NTIxMTkwMTIkajQ0JGwwJGgw">PPID</a>
+                <a href="https://ppid.bps.go.id/app/konten/0000/Layanan-BPS.html?_gl=1*kty56z*_ga*MjA5MTAzMjMzOC4xNzUxNDQxODAz*_ga_XXTTVXWHDB*czE3NTIxMTg0MjgkbzQkZzEkdDE3NTIxMTkwMTIkajQ0JGwwJGgw#pills-3">Kebijakan Dimensi</a>
+            </div>
+            <div class="footer-section">
+                <h3>Ikuti Kami</h3>
+                <a href="https://www.facebook.com/people/BPS-Kabupaten-Tasikmalaya/100088421893990/?mibextid=ZbWKwL"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://www.instagram.com/bps.kab.tasikmalaya/"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://x.com/bpstasik/"><i class="fab fa-x"></i> X</a>
+                <a href="https://www.youtube.com/@bpskabtasikmalaya3206"><i class="fab fa-youtube"></i> Youtube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy;2025 Badan Pusat Statistik Kabupaten Tasikmalaya</p>
         </div>
     </footer>
 
@@ -163,6 +187,8 @@
 
     <!-- Font Awesome (ikon) -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Script Toggle Banner -->
     <script>
