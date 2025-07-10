@@ -85,7 +85,7 @@
                             <li><a class="dropdown-item" href="{{ route('galeri.manual') }}">Manual Book</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('login.login') }}">Angga Parlindungan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login.login') }}">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -187,7 +187,6 @@
 
     <!-- Font Awesome (ikon) -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Script Toggle Banner -->

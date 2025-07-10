@@ -24,7 +24,12 @@
                         {{-- Password --}}
                         <div class="mb-4">
                             <label for="password" class="form-label fw-semibold">Kata Sandi</label>
-                            <input type="password" class="form-control form-control-lg rounded-3" id="password" placeholder="Masukkan password" required>
+                            <div class="input-group">
+                                <input type="password" class="form-control form-control-lg rounded-start-3" id="password" placeholder="Masukkan password" required>
+                                <button class="btn btn-outline-secondary rounded-end-3" type="button" id="togglePassword">
+                                    <i class="fas fa-eye" id="toggleIcon"></i>
+                                </button>
+                            </div>
                         </div>
 
                         {{-- Tombol Login --}}
@@ -43,6 +48,7 @@
 
 @push('scripts')
 <script>
+    // Animasi scroll
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -52,5 +58,19 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Toggle password visibility
+    const toggleBtn = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    toggleBtn.addEventListener('click', function () {
+        const type = passwordInput.type === 'password' ? 'text' : 'password';
+        passwordInput.type = type;
+
+        // Ganti ikon
+        toggleIcon.classList.toggle('fa-eye');
+        toggleIcon.classList.toggle('fa-eye-slash');
+    });
 </script>
 @endpush
