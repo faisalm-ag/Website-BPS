@@ -11,9 +11,19 @@
     </div>
 </div>
 
+<!-- Filter Tahun Triwulan -->
+<div class="container mb-4 text-end">
+    <label for="filterTahun" class="form-label fw-semibold me-2">Filter Tahun:</label>
+    <select id="filterTahun" class="form-select d-inline-block w-auto">
+        <option value="all">Semua</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+    </select>
+</div>
+
 <!-- Daftar Pegawai Tiap Triwulan -->
 <div class="container mb-5">
-    <div class="row g-4">
+    <div class="row g-4 tahun-section" data-tahun="2024">
         @foreach ([1, 2, 3, 4] as $i)
         <div class="col-md-6 col-lg-3">
             <div class="card h-100 shadow text-center fade-up hover-grow">
@@ -38,9 +48,8 @@
     </div>
 </div>
 
-<!-- Daftar Pegawai Tiap Triwulan -->
 <div class="container mb-5">
-    <div class="row g-4">
+    <div class="row g-4 tahun-section" data-tahun="2025">
         @foreach ([1, 2, 3, 4] as $i)
         <div class="col-md-6 col-lg-3">
             <div class="card h-100 shadow text-center fade-up hover-grow">
@@ -115,7 +124,7 @@
 /* Banner sticky di bawah navbar */
 .info-banner {
     position: sticky;
-    top: 56px; /* Tinggi navbar */
+    top: 56px;
     z-index: 1020;
     background-color: #0d6efd;
 }
@@ -148,7 +157,7 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Banner Toggle Functionality
+    // Banner toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
         const bannerToggle = document.getElementById('bannerToggle');
         const bannerIcon = document.getElementById('bannerIcon');
@@ -156,8 +165,7 @@
         const winnerBanner = document.getElementById('winnerBanner');
         const infoBanner = document.querySelector('.info-banner');
 
-        // Toggle banner on click
-        bannerToggle.addEventListener('click', function() {
+        bannerToggle?.addEventListener('click', function() {
             const isCollapsed = !winnerBanner.classList.contains('show');
 
             if (isCollapsed) {
@@ -173,27 +181,31 @@
             }
         });
 
-        // Click anywhere on banner to toggle
-        infoBanner.addEventListener('click', function(e) {
-            if (e.target.closest('#bannerClose')) {
-                return;
-            }
+        infoBanner?.addEventListener('click', function(e) {
+            if (e.target.closest('#bannerClose')) return;
             bannerToggle.click();
         });
 
-        // Close banner completely
-        bannerClose.addEventListener('click', function(e) {
+        bannerClose?.addEventListener('click', function(e) {
             e.stopPropagation();
             infoBanner.style.display = 'none';
             winnerBanner.classList.remove('show');
         });
 
-        // Auto-hide after 5 sec (optional)
         setTimeout(() => {
             if (!winnerBanner.classList.contains('show')) {
                 infoBanner.style.opacity = '0.8';
             }
         }, 5000);
+    });
+
+    // Tahun Filter Logic
+    document.getElementById('filterTahun').addEventListener('change', function() {
+        const selected = this.value;
+        document.querySelectorAll('.tahun-section').forEach(section => {
+            const tahun = section.getAttribute('data-tahun');
+            section.style.display = (selected === 'all' || selected === tahun) ? 'flex' : 'none';
+        });
     });
 </script>
 @endpush

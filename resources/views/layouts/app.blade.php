@@ -155,7 +155,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Badan Pusat Statistik Kab. Tasikmalaya</h3>
+                <h3>BPS Kab. Tasikmalaya</h3>
                 <a href="https://g.co/kgs/r1q7nS7">Alamat: M43R+V63, Jl. Garut - Tasikmalaya, Cintaraja, Kec. Singaparna, Kabupaten Tasikmalaya, Jawa Barat 46417, Indonesia</a>
             </div>
             <div class="footer-section">
