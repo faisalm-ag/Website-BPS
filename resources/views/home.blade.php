@@ -22,25 +22,94 @@
 </div>
 
 <!-- Daftar Pegawai Tiap Triwulan -->
+@php
+    $pegawai2024 = [
+        1 => [
+            'nama' => 'Iis Irmawati, A.Md.',
+            'status' => 'Terpilih',
+            'keterangan' => 'Pemenang Triwulan I 2024',
+            'badge' => 'success',
+            'foto' => 'tw_Iis.jpeg'
+        ],
+        2 => [
+            'nama' => 'Ika Nuryani, SST, M.Stat.',
+            'status' => 'Terpilih',
+            'keterangan' => 'Pemenang Triwulan II 2024',
+            'badge' => 'info',
+            'foto' => 'tw_ika.jpg'
+        ],
+        3 => [
+            'nama' => 'Dudi Suryadi, S.E, M.P., M.Sc.',
+            'status' => 'Terpilih',
+            'keterangan' => 'Pemenang Triwulan III 2024',
+            'badge' => 'warning',
+            'foto' => 'tw_dudi.jpg'
+        ],
+        4 => [
+            'nama' => 'Priangga Andrew Wirawan, S.ST.',
+            'status' => 'Terpilih',
+            'keterangan' => 'Pemenang Triwulan VI 2024',
+            'badge' => 'danger',
+            'foto' => 'tw_wira.jpg'
+        ]
+    ];
+
+    $pegawai2025 = [
+        1 => [
+            'nama' => 'Muhamad Sobari, S.ST., M.Stat.',
+            'status' => 'Terpilih',
+            'keterangan' => 'Pemenang Triwulan I 2025',
+            'badge' => 'success',
+            'foto' => 'tw_sobari.jpg'
+        ],
+        2 => [
+            'nama' => 'Belum Ditentukan',
+            'status' => 'Coming Soon',
+            'keterangan' => 'Menunggu Penilaian',
+            'badge' => 'secondary',
+            'foto' => 'default.jpg'
+        ],
+        3 => [
+            'nama' => 'Belum Ditentukan',
+            'status' => 'Coming Soon',
+            'keterangan' => 'Menunggu Penilaian',
+            'badge' => 'secondary',
+            'foto' => 'default.jpg'
+        ],
+        4 => [
+            'nama' => 'Belum Ditentukan',
+            'status' => 'Coming Soon',
+            'keterangan' => 'Menunggu Penilaian',
+            'badge' => 'secondary',
+            'foto' => 'default.jpg'
+        ]
+    ];
+@endphp
+
+<!-- Daftar Pegawai Triwulan 2024 -->
 <div class="container mb-5">
     <div class="row g-4 tahun-section" data-tahun="2024">
-        @foreach ([1, 2, 3, 4] as $i)
+        @foreach ($pegawai2024 as $tw => $data)
         <div class="col-md-6 col-lg-3">
-            <div class="card h-100 shadow text-center fade-up hover-grow">
-                <div class="card-header bg-{{ $i == 1 ? 'success' : ($i == 2 ? 'info' :   ($i == 3 ? 'warning' : 'danger')) }} text-white">
-                    <h5 class="fw-bold mb-0">Triwulan {{ $i }} - 2024</h5>
-                </div>
-                <div class="card-body d-flex flex-column">
-                    <i class="fas fa-user-circle fa-4x text-muted mb-3"></i>
-                    @if ($i == 1)
-                        <h6 class="fw-bold text-success">Muhamad Sobari, S.ST., M.Stat.</h6>
-                        <p class="text-muted small">Pemenang Terbaru</p>
-                        <span class="badge bg-success mt-auto">Terpilih</span>
-                    @else
-                        <h6 class="text-muted">Belum Ditentukan</h6>
-                        <p class="text-muted small">Menunggu Penilaian</p>
-                        <span class="badge bg-secondary mt-auto">Coming Soon</span>
-                    @endif
+            <div class="card h-100 shadow-sm rounded-4 text-center fade-up hover-grow border-0">
+                <div class="card-body d-flex flex-column align-items-center p-4">
+
+                    {{-- Foto --}}
+                    <div class="mb-3 w-100">
+                        <img src="{{ asset('foto/' . $data['foto']) }}" 
+                             alt="Foto {{ $data['nama'] }}" 
+                             class="img-fluid rounded shadow-sm" 
+                             style="width: 100%; height: auto;">
+                    </div>
+
+                    {{-- Nama --}}
+                    <h6 class="fw-bold text-{{ $data['badge'] }} mt-2">{{ $data['nama'] }}</h6>
+
+                    {{-- Keterangan --}}
+                    <p class="text-muted small">{{ $data['keterangan'] }}</p>
+
+                    {{-- Status --}}
+                    <span class="badge bg-{{ $data['badge'] }} px-3 py-2 mt-auto">{{ $data['status'] }}</span>
                 </div>
             </div>
         </div>
@@ -50,23 +119,27 @@
 
 <div class="container mb-5">
     <div class="row g-4 tahun-section" data-tahun="2025">
-        @foreach ([1, 2, 3, 4] as $i)
+        @foreach ($pegawai2025 as $tw => $data)
         <div class="col-md-6 col-lg-3">
-            <div class="card h-100 shadow text-center fade-up hover-grow">
-                <div class="card-header bg-{{ $i == 1 ? 'success' : ($i == 2 ? 'info' :   ($i == 3 ? 'warning' : 'danger')) }} text-white">
-                    <h5 class="fw-bold mb-0">Triwulan {{ $i }} - 2025</h5>
-                </div>
-                <div class="card-body d-flex flex-column">
-                    <i class="fas fa-user-circle fa-4x text-muted mb-3"></i>
-                    @if ($i == 1)
-                        <h6 class="fw-bold text-success">Muhamad Sobari, S.ST., M.Stat.</h6>
-                        <p class="text-muted small">Pemenang Terbaru</p>
-                        <span class="badge bg-success mt-auto">Terpilih</span>
-                    @else
-                        <h6 class="text-muted">Belum Ditentukan</h6>
-                        <p class="text-muted small">Menunggu Penilaian</p>
-                        <span class="badge bg-secondary mt-auto">Coming Soon</span>
-                    @endif
+            <div class="card h-100 shadow-sm rounded-4 text-center fade-up hover-grow border-0">
+                <div class="card-body d-flex flex-column align-items-center p-4">
+
+                    {{-- Foto --}}
+                    <div class="mb-3 w-100">
+                        <img src="{{ asset('foto/' . $data['foto']) }}" 
+                             alt="Foto {{ $data['nama'] }}" 
+                             class="img-fluid rounded shadow-sm" 
+                             style="width: 100%; height: auto;">
+                    </div>
+
+                    {{-- Nama --}}
+                    <h6 class="fw-bold text-{{ $data['badge'] }} mt-2">{{ $data['nama'] }}</h6>
+
+                    {{-- Keterangan --}}
+                    <p class="text-muted small">{{ $data['keterangan'] }}</p>
+
+                    {{-- Status --}}
+                    <span class="badge bg-{{ $data['badge'] }} px-3 py-2 mt-auto">{{ $data['status'] }}</span>
                 </div>
             </div>
         </div>
@@ -82,13 +155,13 @@
             <div class="row">
                 <div class="col-md-4 mb-3 fade-up">
                     <i class="fas fa-users fa-2x text-primary mb-2"></i>
-                    <h4 class="fw-bold text-primary" id="pegawai-count">0</h4>
+                    <h4 class="fw-bold text-primary" id="pegawai-count">46</h4>
                     <p class="text-muted">Total Pegawai</p>
                 </div>
                 <div class="col-md-4 mb-3 fade-up">
                     <i class="fas fa-award fa-2x text-success mb-2"></i>
-                    <h4 class="fw-bold text-success" id="tw-count">0</h4>
-                    <p class="text-muted">Triwulan Penilaian</p>
+                    <h4 class="fw-bold text-success" id="tw-count">4</h4>
+                    <p class="text-muted">Triwulan Penilaian Pertahun</p>
                 </div>
                 <div class="col-md-4 mb-3 fade-up">
                     <i class="fas fa-chart-line fa-2x text-warning mb-2"></i>
