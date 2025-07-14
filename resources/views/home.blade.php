@@ -56,32 +56,32 @@
 
     $pegawai2025 = [
         1 => [
-            'nama' => 'Muhamad Sobari, S.ST., M.Stat.',
-            'status' => 'Terpilih',
-            'keterangan' => 'Pemenang Triwulan I 2025',
-            'badge' => 'success',
-            'foto' => 'tw_sobari.jpg'
+            'nama' => 'Belum Ditemukan',
+            'status' => 'Coming Soon',
+            'keterangan' => 'Menunggu Penilaian',
+            'badge' => 'secondary',
+            'foto' => 'tandatanya.jpg'
         ],
         2 => [
             'nama' => 'Belum Ditentukan',
             'status' => 'Coming Soon',
             'keterangan' => 'Menunggu Penilaian',
             'badge' => 'secondary',
-            'foto' => 'default.jpg'
+            'foto' => 'tandatanya.jpg'
         ],
         3 => [
             'nama' => 'Belum Ditentukan',
             'status' => 'Coming Soon',
             'keterangan' => 'Menunggu Penilaian',
             'badge' => 'secondary',
-            'foto' => 'default.jpg'
+            'foto' => 'tandatanya.jpg'
         ],
         4 => [
             'nama' => 'Belum Ditentukan',
             'status' => 'Coming Soon',
             'keterangan' => 'Menunggu Penilaian',
             'badge' => 'secondary',
-            'foto' => 'default.jpg'
+            'foto' => 'tandatanya.jpg'
         ]
     ];
 @endphp
@@ -229,48 +229,6 @@
     });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Banner toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const bannerToggle = document.getElementById('bannerToggle');
-        const bannerIcon = document.getElementById('bannerIcon');
-        const bannerClose = document.getElementById('bannerClose');
-        const winnerBanner = document.getElementById('winnerBanner');
-        const infoBanner = document.querySelector('.info-banner');
-
-        bannerToggle?.addEventListener('click', function() {
-            const isCollapsed = !winnerBanner.classList.contains('show');
-
-            if (isCollapsed) {
-                winnerBanner.classList.add('show');
-                bannerIcon.classList.add('rotated');
-                bannerIcon.classList.remove('fa-chevron-down');
-                bannerIcon.classList.add('fa-chevron-up');
-            } else {
-                winnerBanner.classList.remove('show');
-                bannerIcon.classList.remove('rotated');
-                bannerIcon.classList.remove('fa-chevron-up');
-                bannerIcon.classList.add('fa-chevron-down');
-            }
-        });
-
-        infoBanner?.addEventListener('click', function(e) {
-            if (e.target.closest('#bannerClose')) return;
-            bannerToggle.click();
-        });
-
-        bannerClose?.addEventListener('click', function(e) {
-            e.stopPropagation();
-            infoBanner.style.display = 'none';
-            winnerBanner.classList.remove('show');
-        });
-
-        setTimeout(() => {
-            if (!winnerBanner.classList.contains('show')) {
-                infoBanner.style.opacity = '0.8';
-            }
-        }, 5000);
-    });
 
     // Tahun Filter Logic
     document.getElementById('filterTahun').addEventListener('change', function() {
