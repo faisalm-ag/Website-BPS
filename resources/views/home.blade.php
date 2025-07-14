@@ -96,9 +96,9 @@
 
                     {{-- Foto --}}
                     <div class="mb-3 w-100">
-                        <img src="{{ asset('foto/' . $data['foto']) }}" 
-                             alt="Foto {{ $data['nama'] }}" 
-                             class="img-fluid rounded shadow-sm" 
+                        <img src="{{ asset('foto/' . $data['foto']) }}"
+                             alt="Foto {{ $data['nama'] }}"
+                             class="img-fluid rounded shadow-sm"
                              style="width: 100%; height: auto;">
                     </div>
 
@@ -126,9 +126,9 @@
 
                     {{-- Foto --}}
                     <div class="mb-3 w-100">
-                        <img src="{{ asset('foto/' . $data['foto']) }}" 
-                             alt="Foto {{ $data['nama'] }}" 
-                             class="img-fluid rounded shadow-sm" 
+                        <img src="{{ asset('foto/' . $data['foto']) }}"
+                             alt="Foto {{ $data['nama'] }}"
+                             class="img-fluid rounded shadow-sm"
                              style="width: 100%; height: auto;">
                     </div>
 
