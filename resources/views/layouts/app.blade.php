@@ -160,8 +160,8 @@
             </div>
             <div class="footer-section">
                 <h3>Pusat Bantuan</h3>
-                <a>Kontak Kami "(0265) 549281"</a>
-                <a>FAQ "(0265) 549253"</a>
+                <a href="callto:+62265549281">Kontak Kami "(0265) 549281"</a>
+                <a href="callto:+62265549253">FAX "(0265) 549253"</a>
             </div>
             <div class="footer-section">
                 <h3>Tentang Kami</h3>
