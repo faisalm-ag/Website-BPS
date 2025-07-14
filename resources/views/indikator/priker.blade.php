@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-4 justify">
     <div class="mb-5 text-center">
-        <h2 class="fw-bold text-primary">Perilaku Kerja Pegawai (PriKer)</h2>
+        <h2 class="fw-bold text-primary"><i class="fas fa-user-check me-2"></i>Perilaku Kerja Pegawai (PriKer)</h2>
         <p class="text-muted fs-5">Indikator Penilaian Budaya BerAKHLAK</p>
         <hr class="w-25 mx-auto border-2 border-primary">
     </div>
