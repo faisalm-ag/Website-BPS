@@ -85,7 +85,11 @@
                             <li><a class="dropdown-item" href="{{ route('galeri.manual') }}">Manual Book</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('login.login') }}">Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login.login') }}" title="Login">
+                            <i class="fas fa-user-circle"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
