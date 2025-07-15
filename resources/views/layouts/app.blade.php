@@ -116,7 +116,8 @@
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col footer-section">
                 <h3>BPS Kab. Tasikmalaya</h3>
-                <a href="#">Jl. Garut - Tasikmalaya, Cintaraja, Singaparna</a>
+                <a href="https://g.co/kgs/r1q7nS7">Jl. Garut - Tasikmalaya, Cintaraja, Singaparna</a>
+                <a href="https://tasikmalayakab.bps.go.id/id">Website BPS Kabupaten Tasikmalaya</a>
             </div>
             <div class="col footer-section">
                 <h3>Pusat Bantuan</h3>
@@ -125,16 +126,16 @@
             </div>
             <div class="col footer-section">
                 <h3>Tentang Kami</h3>
-                <a href="#">Profil BPS</a>
-                <a href="#">PPID</a>
-                <a href="#">Kebijakan Dimensi</a>
+                <a href="https://ppid.bps.go.id/app/konten/3206/Profil-BPS.html?_gl=1*1yh0adi*_ga*MjA5MTAzMjMzOC4xNzUxNDQxODAz*_ga_XXTTVXWHDB*czE3NTIxMTg0MjgkbzQkZzEkdDE3NTIxMTkwMTIkajQ0JGwwJGgw">Profil BPS</a>
+                <a href="https://ppid.bps.go.id/?mfd=3206&_gl=1*1yh0adi*_ga*MjA5MTAzMjMzOC4xNzUxNDQxODAz*_ga_XXTTVXWHDB*czE3NTIxMTg0MjgkbzQkZzEkdDE3NTIxMTkwMTIkajQ0JGwwJGgw">PPID</a>
+                <a href="https://ppid.bps.go.id/app/konten/0000/Layanan-BPS.html?_gl=1*kty56z*_ga*MjA5MTAzMjMzOC4xNzUxNDQxODAz*_ga_XXTTVXWHDB*czE3NTIxMTg0MjgkbzQkZzEkdDE3NTIxMTkwMTIkajQ0JGwwJGgw#pills-3">Kebijakan Dimensi</a>
             </div>
             <div class="col footer-section">
                 <h3>Ikuti Kami</h3>
-                <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="#"><i class="fab fa-x"></i> X</a>
-                <a href="#"><i class="fab fa-youtube"></i> Youtube</a>
+                <a href="https://www.facebook.com/people/BPS-Kabupaten-Tasikmalaya/100088421893990/?mibextid=ZbWKwL"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://www.instagram.com/bps.kab.tasikmalaya/"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://x.com/bpstasik/"><i class="fab fa-x"></i> X</a>
+                <a href="https://www.youtube.com/@bpskabtasikmalaya3206"><i class="fab fa-youtube"></i> Youtube</a>
             </div>
         </div>
     </div>

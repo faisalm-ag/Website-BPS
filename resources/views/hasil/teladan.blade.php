@@ -17,7 +17,7 @@
                     <h5 class="mb-0">Triwulan I - 2025</h5>
                 </div>
                 <div class="card-body text-center">
-                    <img src="{{ asset('foto/pegawai/sobari.jpg') }}" alt="Muhamad Sobari" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
+                    <img src="{{ asset('foto/tandatanya.jpg') }}" alt="Muhamad Sobari" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
                     <h5 class="fw-bold text-bps">Muhamad Sobari, S.ST., M.Stat.</h5>
                     <p class="text-muted">Statistisi Ahli Muda</p>
                     <span class="badge bg-success">Nilai: 95/100</span>
@@ -32,10 +32,10 @@
                     <h5 class="mb-0">Triwulan I - 2024</h5>
                 </div>
                 <div class="card-body text-center">
-                    <img src="{{ asset('foto/pegawai/iis.jpg') }}" alt="Iis Irmawati" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
+                    <img src="{{ asset('foto/tandatanya.jpg') }}" alt="Iis Irmawati" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
                     <h5 class="fw-bold text-secondary">Iis Irmawati, A.Md.</h5>
                     <p class="text-muted">Pranata Komputer</p>
-                    <span class="badge bg-secondary">Nilai: 91/100</span>
+                    <span class="badge bg-success">Nilai: 91/100</span>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                     <h5 class="mb-0">Triwulan III - 2025</h5>
                 </div>
                 <div class="card-body text-center">
-                    <img src="{{ asset('foto/pegawai/iis.jpg') }}" alt="Iis Irmawati" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
+                    <img src="{{ asset('foto/tandatanya.jpg') }}" alt="Iis Irmawati" class="rounded-circle mb-3" width="100" height="100" style="object-fit: cover;">
                     <h5 class="fw-bold text-secondary">Aldy Abdu Aziz Muzadilah Phd</h5>
                     <p class="text-muted">Tecnologi Sains</p>
                     <span class="badge bg-secondary">Nilai: 100/100</span>
@@ -61,12 +61,15 @@
 
 @push('styles')
 <style>
+    .body{
+        padding-top: 55px;
+    }
     .text-bps {
-        color: #007dc5;
+        color: #2c3e50;
     }
 
     .bg-bps-blue {
-        background-color: #007dc5 !important;
+        background-color: #2c3e50 !important;
     }
 
     .transition {
