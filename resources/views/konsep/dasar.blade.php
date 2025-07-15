@@ -5,11 +5,12 @@
 @section('content')
 <div class="container py-5 justify">
     <div class="text-center mb-5">
-        <h2 class="fw-bold text-primary"><i class="fas fa-balance-scale me-2"></i>Dasar Hukum</h2>
+        <h2 class="fw-bold text-primary">
+            <i class="fas fa-balance-scale me-2"></i>Dasar Hukum
+        </h2>
         <p class="text-muted">Dasar Hukum Umum untuk pelaksanaan Survei Budaya Organisasi BPS Kab. Tasikmalaya adalah:</p>
     </div>
 
-    {{-- List of Legal Items --}}
     <div class="row g-4" id="legalList">
         @php
             $items = [
@@ -30,15 +31,29 @@
         @endphp
 
         @foreach ($items as $index => $item)
+        @php
+            $maxPreviewLength = 175;
+            $isLong = strlen($item) > $maxPreviewLength;
+            $previewText = $isLong ? substr($item, 0, $maxPreviewLength) . '...' : $item;
+        @endphp
         <div class="col-md-6 fade-up">
-            <div class="card h-100 shadow-sm border-0 rounded-4">
-                <div class="card-body d-flex">
-                    <div class="me-3 d-flex align-items-center">
-                        <span class="badge bg-primary rounded-circle p-3 fs-6">{{ $index + 1 }}</span>
+            <div class="card h-100 shadow-sm border-0 rounded-4 d-flex flex-column">
+                <div class="card-body d-flex flex-column">
+                    <div class="d-flex mb-2">
+                        <div class="me-3 d-flex align-items-start">
+                            <span class="badge bg-primary rounded-circle text-white p-3 fs-6">
+                                {{ $index + 1 }}
+                            </span>
+                        </div>
+                        <div class="flex-grow-1">
+                            <p class="mb-0 text-dark preview-text" data-full="{{ $item }}">
+                                {{ $previewText }}
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <p class="mb-0">{{ $item }}</p>
-                    </div>
+                    @if($isLong)
+                    <button class="btn btn-sm btn-outline-secondary mt-auto align-self-start toggle-btn">Selengkapnya</button>
+                    @endif
                 </div>
             </div>
         </div>
@@ -49,6 +64,22 @@
 
 @push('scripts')
 <script>
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const para = this.previousElementSibling.querySelector('.preview-text');
+            const fullText = para.dataset.full;
+            const isExpanded = this.innerText === 'Tutup';
+
+            if (isExpanded) {
+                para.innerText = fullText.slice(0, 200) + '...';
+                this.innerText = 'Selengkapnya';
+            } else {
+                para.innerText = fullText;
+                this.innerText = 'Tutup';
+            }
+        });
+    });
+
     // Scroll animation
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -59,14 +90,5 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Search filter
-    document.getElementById('searchInput').addEventListener('input', function () {
-        const term = this.value.toLowerCase();
-        document.querySelectorAll('#legalList .card').forEach(card => {
-            const text = card.textContent.toLowerCase();
-            card.parentElement.style.display = text.includes(term) ? 'block' : 'none';
-        });
-    });
 </script>
 @endpush
