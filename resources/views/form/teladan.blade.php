@@ -8,25 +8,19 @@
 
 <div class="container-fluid px-3">
     
-    {{-- Header dengan Gradient Background --}}
-    <div class="row mb-5">
-        <div class="col-12">
-            <div class="header-section text-white text-center py-5 rounded-4 shadow-lg position-relative overflow-hidden">
-                <div class="header-overlay"></div>
-                <div class="header-content position-relative">
-                    <div class="mb-4">
-                        <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
-                    </div>
-                    <h1 class="fw-bold display-4 mb-3">Penilaian Pegawai Teladan</h1>
-                    <p class="lead fs-3 mb-2">Sistem Evaluasi Kinerja & Budaya Organisasi</p>
-                    <p class="fs-4">BPS Kabupaten Tasikmalaya</p>
-                    <div class="mt-4">
-                        <span class="badge bg-warning text-dark px-4 py-2 fs-6">Triwulan II - 2025</span>
-                    </div>
-                </div>
-            </div>
+  {{-- Header Teladan --}}
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <div class="mb-3">
+            <i class="fas fa-trophy fa-2x text-warning"></i>
         </div>
+        <h2 class="fw-bold text-dark mb-2">Penilaian Pegawai Teladan</h2>
+        <p class="text-muted fs-5 mb-1">Sistem Evaluasi Kinerja & Budaya Organisasi</p>
+        <p class="text-muted fs-5 mb-3">BPS Kabupaten Tasikmalaya</p>
+        <span class="badge bg-warning text-dark px-3 py-2 fs-6 rounded-pill">Triwulan II - 2025</span>
     </div>
+</div>
+
 
     {{-- Description Section --}}
     <div class="row mb-4">
@@ -95,23 +89,64 @@
                     <form action="#" method="POST" id="penilaianForm">
                         @csrf
 
-                        {{-- Informasi Penilai --}}
+                         {{-- Input Data Diri --}}
                         <div class="row mb-4">
-                            <div class="col-md-6 mb-3">
-                                <label for="nama_penilai" class="form-label fw-semibold">
-                                    <i class="fas fa-user me-1"></i>Nama Penilai
-                                </label>
-                                <input type="text" class="form-control" name="nama_penilai" id="nama_penilai" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="jenis_kelamin" class="form-label fw-semibold">
-                                    <i class="fas fa-briefcase me-1"></i> Jenis Kelamin
-                                </label>
-                                <input type="text" class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
+                            <div class="col-12">
+                                <label for="kandidat" class="form-label fw-semibold fs-5">Pilih Nama Anda</label>
+                                <select class="form-select form-select-lg" name="kandidat" id="kandidat" required>
+                                    <option value="" disabled selected>-- Nama Lengkap --</option>
+                                    <option value="Angga Parlindungan">Angga Parlindungan</option>
+                                    <option value="Gofiky Parlindungan">Gofiky Parlindungan</option>
+                                    <option value="Asep">Asep</option>
+                                    <option value="Prabu Wijaya">Prabu Wijaya</option>
+                                    <option value="Solihin">Solihin</option>
+                                    <option value="Dobre ST.H">Dobre ST.H</option>
+                                    <option value="Muhamad Sobari, S.ST., M.STAT.">Muhamad Sobari, S.ST., M.STAT.</option>
+                                    <option value="Iis Irmawati, A. Md.">Iis Irmawati, A. Md.</option>
+                                </select>
                             </div>
                         </div>
-
-                        <hr class="my-4">
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <label for="jenis_kelamin" class="form-label fw-semibold fs-5">
+                                    <i></i>Jenis Kelamin
+                                </label>
+                                <select class="form-select form-select-lg" name="jenis_kelamin" id="jenis_kelamin" required>
+                                    <option value="" disabled selected>-- Pilih Jenis kelamin anda --</option>
+                                    <option value="Laki Laki">Laki Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="umur" name="umur" placeholder="Masukkan umur Anda" min="17" max="65" required>
+                        <label for="umur">Umur</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="masa_kerja" name="masa_kerja" placeholder="Masukkan masa kerja dalam tahun" min="0" max="110" required>
+                        <label for="masa_kerja">Masa Kerja (Tahun)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <label for="pendidikan_terakhir" class="form-label fw-semibold fs-5">
+                        <i></i>Pendidikan Terakhir
+                            </label>
+                        <select class="form-select form-select-lg" name="pendidikan_terakhir" id="pendidikan_terakhir" required>
+                    <option value="" disabled selected>-- Pilih Pendidikan Terakhir anda --</option>
+                    <option value="SMA/SMK">SMA/SMK</option>
+                    <option value="D3">D3</option>
+                    <option value="D4/S1">D4/S1</option>
+                    <option value="S2">S2</option>
+                    <option value="S3">S3</option>
+                </select>
+            </div>
+        </div>
 
                         {{-- Pilih Kandidat --}}
                         <div class="row mb-4">
