@@ -38,10 +38,10 @@
                 </div>
                 <!-- Judul + deskripsi -->
                 <div>
-                    <h6 class="fw-semibold mb-1 text-dark">
+                    <h6 class="fw-semibold mb-1 text-body">
                         <i class="fas fa-{{ $val['icon'] }} me-2 text-secondary"></i>{{ $val['title'] }}
                     </h6>
-                    <p class="mb-0 text-dark">{{ $val['description'] }}</p>
+                    <p class="mb-0 text-body">{{ $val['description'] }}</p>
                 </div>
             </div>
         </div>
@@ -106,12 +106,12 @@
                         </span>
                     </div>
                     <div>
-                        <h6 class="fw-semibold text-dark mb-2">
+                        <h6 class="fw-semibold text-body mb-2">
                             <i class="fas fa-{{ $detail['icon'] }} me-2 text-secondary"></i>{{ $detail['title'] }}
                         </h6>
                         <ul class="mb-0 ps-3">
                             @foreach($detail['items'] as $item)
-                            <li class="text-dark">{{ $item }}</li>
+                            <li class="text-body">{{ $item }}</li>
                             @endforeach
                         </ul>
                     </div>
