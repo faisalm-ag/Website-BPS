@@ -2,12 +2,12 @@
 
 @section('content')
 <!-- Header -->
-<div class="header-bg d-flex align-items-center justify-content-center text-white text-center mb-5">
+<div class="header-bg d-flex align-items-center justify-content-center text-center mb-5">
     <div class="overlay"></div>
     <div class="position-relative z-1">
-        <h1 class="fw-bold display-4">Selamat Datang</h1>
-        <p class="lead fs-3">Sistem Penilaian Budaya Organisasi & Pegawai Teladan</p>
-        <p class="fs-4">BPS Kabupaten Tasikmalaya</p>
+        <h1 class="fw-bold display-4 text-white">Selamat Datang</h1>
+        <p class="lead fs-3 text-white">Sistem Penilaian Budaya Organisasi & Pegawai Teladan</p>
+        <p class="fs-4 text-white">BPS Kabupaten Tasikmalaya</p>
     </div>
 </div>
 
@@ -48,7 +48,7 @@
         4 => [
             'nama' => 'Priangga Andrew Wirawan, S.ST.',
             'status' => 'Terpilih',
-            'keterangan' => 'Pemenang Triwulan VI 2024',
+            'keterangan' => 'Pemenang Triwulan IV 2024',
             'badge' => 'danger',
             'foto' => 'tw_wira.jpg'
         ]
@@ -56,11 +56,11 @@
 
     $pegawai2025 = [
         1 => [
-            'nama' => 'Belum Ditemukan',
-            'status' => 'Coming Soon',
-            'keterangan' => 'Menunggu Penilaian',
-            'badge' => 'secondary',
-            'foto' => 'tandatanya.jpg'
+            'nama' => 'Muhamad Sobari, S.ST., M.Stat.',
+            'status' => 'Terpilih',
+            'keterangan' => 'Pemenang Triwulan I 2025',
+            'badge' => 'primary',
+            'foto' => 'tw_sobari.jpg'
         ],
         2 => [
             'nama' => 'Belum Ditentukan',
@@ -88,60 +88,73 @@
 
 <!-- Daftar Pegawai Triwulan 2024 -->
 <div class="container mb-5">
+    <h3 class="text-center mb-4 fw-bold">Pegawai Teladan Tahun 2024</h3>
     <div class="row g-4 tahun-section" data-tahun="2024">
         @foreach ($pegawai2024 as $tw => $data)
         <div class="col-md-6 col-lg-3">
-            <div class="card h-100 shadow-sm rounded-4 text-center fade-up hover-grow border-0">
-                <div class="card-body d-flex flex-column align-items-center p-4">
+            <a href="{{ route('hasil.teladan') }}" class="text-decoration-none">
+                <div class="card h-100 shadow-sm rounded-4 text-center fade-up hover-grow border-0">
+                    <div class="card-body d-flex flex-column align-items-center p-4">
+                        {{-- Foto --}}
+                        <div class="mb-3 w-100">
+                            <img src="{{ asset('foto/' . $data['foto']) }}"
+                                 alt="Foto {{ $data['nama'] }}"
+                                 class="img-fluid rounded shadow-sm"
+                                 style="width: 100%; height: auto;">
+                        </div>
 
-                    {{-- Foto --}}
-                    <div class="mb-3 w-100">
-                        <img src="{{ asset('foto/' . $data['foto']) }}"
-                             alt="Foto {{ $data['nama'] }}"
-                             class="img-fluid rounded shadow-sm"
-                             style="width: 100%; height: auto;">
+                        {{-- Nama --}}
+                        <h6 class="fw-bold text-{{ $data['badge'] }} mt-2">{{ $data['nama'] }}</h6>
+
+                        {{-- Keterangan --}}
+                        <p class="text-muted small">{{ $data['keterangan'] }}</p>
+
+                        {{-- Status --}}
+                        <span class="badge bg-{{ $data['badge'] }} px-3 py-2 mt-auto">{{ $data['status'] }}</span>
                     </div>
-
-                    {{-- Nama --}}
-                    <h6 class="fw-bold text-{{ $data['badge'] }} mt-2">{{ $data['nama'] }}</h6>
-
-                    {{-- Keterangan --}}
-                    <p class="text-muted small">{{ $data['keterangan'] }}</p>
-
-                    {{-- Status --}}
-                    <span class="badge bg-{{ $data['badge'] }} px-3 py-2 mt-auto">{{ $data['status'] }}</span>
                 </div>
-            </div>
+            </a>
         </div>
         @endforeach
     </div>
 </div>
 
+<!-- Daftar Pegawai Triwulan 2025 -->
 <div class="container mb-5">
+    <h3 class="text-center mb-4 fw-bold">Pegawai Teladan Tahun 2025</h3>
     <div class="row g-4 tahun-section" data-tahun="2025">
         @foreach ($pegawai2025 as $tw => $data)
         <div class="col-md-6 col-lg-3">
-            <div class="card h-100 shadow-sm rounded-4 text-center fade-up hover-grow border-0">
-                <div class="card-body d-flex flex-column align-items-center p-4">
+            @if($data['status'] === 'Terpilih')
+                <a href="{{ route('hasil.teladan') }}" class="text-decoration-none">
+            @else
+                <div class="position-relative">
+            @endif
+                <div class="card h-100 shadow-sm rounded-4 text-center fade-up hover-grow border-0 {{ $data['status'] !== 'Terpilih' ? 'opacity-75' : '' }}">
+                    <div class="card-body d-flex flex-column align-items-center p-4">
+                        {{-- Foto --}}
+                        <div class="mb-3 w-100">
+                            <img src="{{ asset('foto/' . $data['foto']) }}"
+                                 alt="Foto {{ $data['nama'] }}"
+                                 class="img-fluid rounded shadow-sm"
+                                 style="width: 100%; height: auto;">
+                        </div>
 
-                    {{-- Foto --}}
-                    <div class="mb-3 w-100">
-                        <img src="{{ asset('foto/' . $data['foto']) }}"
-                             alt="Foto {{ $data['nama'] }}"
-                             class="img-fluid rounded shadow-sm"
-                             style="width: 100%; height: auto;">
+                        {{-- Nama --}}
+                        <h6 class="fw-bold text-{{ $data['badge'] }} mt-2">{{ $data['nama'] }}</h6>
+
+                        {{-- Keterangan --}}
+                        <p class="text-muted small">{{ $data['keterangan'] }}</p>
+
+                        {{-- Status --}}
+                        <span class="badge bg-{{ $data['badge'] }} px-3 py-2 mt-auto">{{ $data['status'] }}</span>
                     </div>
-
-                    {{-- Nama --}}
-                    <h6 class="fw-bold text-{{ $data['badge'] }} mt-2">{{ $data['nama'] }}</h6>
-
-                    {{-- Keterangan --}}
-                    <p class="text-muted small">{{ $data['keterangan'] }}</p>
-
-                    {{-- Status --}}
-                    <span class="badge bg-{{ $data['badge'] }} px-3 py-2 mt-auto">{{ $data['status'] }}</span>
                 </div>
-            </div>
+            @if($data['status'] === 'Terpilih')
+                </a>
+            @else
+                </div>
+            @endif
         </div>
         @endforeach
     </div>
@@ -160,12 +173,12 @@
                 </div>
                 <div class="col-md-4 mb-3 fade-up">
                     <i class="fas fa-award fa-2x text-success mb-2"></i>
-                    <h4 class="fw-bold text-success" id="tw-count">4</h4>
-                    <p class="text-muted">Triwulan Penilaian Pertahun</p>
+                    <h4 class="fw-bold text-success" id="tw-count">5</h4>
+                    <p class="text-muted">Triwulan Penilaian</p>
                 </div>
                 <div class="col-md-4 mb-3 fade-up">
                     <i class="fas fa-chart-line fa-2x text-warning mb-2"></i>
-                    <h4 class="fw-bold text-warning" id="trans-count">0%</h4>
+                    <h4 class="fw-bold text-warning" id="trans-count">100%</h4>
                     <p class="text-muted">Transparansi</p>
                 </div>
             </div>
@@ -194,6 +207,32 @@
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 <style>
+/* Additional styles for clickable cards */
+.card a,
+a .card {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card a:hover,
+a:hover .card {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Ensure proper text colors in cards */
+.card h6,
+.card p {
+    color: inherit;
+}
+
+/* Header text colors - force white */
+.header-bg h1,
+.header-bg p {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
 /* Banner sticky di bawah navbar */
 .info-banner {
     position: sticky;
@@ -209,8 +248,8 @@
 <script>
     // CountUp animation
     document.addEventListener("DOMContentLoaded", function () {
-        const pegawai = new CountUp('pegawai-count', 50);
-        const tw = new CountUp('tw-count', 8);
+        const pegawai = new CountUp('pegawai-count', 46);
+        const tw = new CountUp('tw-count', 5);
         const trans = new CountUp('trans-count', 100, {suffix: '%'});
         pegawai.start();
         tw.start();

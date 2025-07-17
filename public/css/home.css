@@ -7,6 +7,8 @@ body {
     background-color: #f8f9fa;
     margin: 0;
     padding-top: 55px;
+    color: #212529;
+    transition: all 0.3s ease;
 }
 
 /* Spacer bawah navbar + info banner */
@@ -175,6 +177,12 @@ body {
     overflow: hidden;
 }
 
+.header-bg h1,
+.header-bg p {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
 .overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -209,53 +217,119 @@ body {
    Page Form
 ===================== */
 
-   .header-section {
-        background: linear-gradient(135deg, #667eea 0%, #1519e8 100%);
-        position: relative;
-        overflow: hidden;
-    }
+.header-section {
+    background: linear-gradient(135deg, #667eea 0%, #1519e8 100%);
+    position: relative;
+    overflow: hidden;
+}
 
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #667eea 0%, #2108df 100%) !important;
-    }
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #2108df 100%) !important;
+}
 
+.assessment-row:hover {
+    background-color: #f8f9fa;
+}
 
-    .assessment-row:hover {
-        background-color: #f8f9fa;
-    }
+.progress {
+    border-radius: 10px;
+}
 
-    .progress {
-        border-radius: 10px;
-    }
+.progress-bar {
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
 
-    .progress-bar {
-        border-radius: 10px;
-        transition: width 0.3s ease;
-    }
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
 
-    .btn {
-        border-radius: 8px;
-        font-weight: 500;
-    }
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
 
-    .shadow-lg {
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-    }
+.form-select, .form-control {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
 
-    .form-select, .form-control {
-        border-radius: 8px;
-        border: 2px solid #e9ecef;
-        transition: all 0.3s ease;
-    }
+.form-select:focus, .form-control:focus {
+    border-color: #6673ea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
 
-    .form-select:focus, .form-control:focus {
-        border-color: #6673ea;
-        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-    }
+.badge {
+    font-size: 0.8em;
+}
 
-    .badge {
-        font-size: 0.8em;
-    }
+/* =====================
+   Text Colors - Universal
+===================== */
+
+/* Light mode base text colors */
+body,
+.text-dark,
+h1, h2, h3, h4, h5, h6,
+p, span, div, td, th,
+.card-title,
+.card-text,
+.fw-bold,
+.fw-semibold,
+li,
+small,
+.small {
+    color: #212529 !important;
+    transition: color 0.3s ease;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Text that should always stay white regardless of theme */
+.text-white,
+.navbar-dark .navbar-nav .nav-link,
+.footer *,
+.info-banner *,
+#winnerBanner *,
+.header-bg h1,
+.header-bg p,
+.card-header.bg-primary *,
+.card-header.bg-success *,
+.card-header.bg-warning *,
+.card-header.bg-info *,
+.card-header.bg-danger *,
+.card-header.bg-secondary *,
+.bg-primary *,
+.bg-success *,
+.bg-warning *,
+.bg-info *,
+.bg-danger *,
+.bg-secondary * {
+    color: white !important;
+}
+
+/* Text that should keep their brand colors */
+.text-primary {
+    color: #0d6efd !important;
+}
+.text-success {
+    color: #198754 !important;
+}
+.text-warning {
+    color: #ffc107 !important;
+}
+.text-info {
+    color: #0dcaf0 !important;
+}
+.text-danger {
+    color: #dc3545 !important;
+}
+.text-secondary {
+    color: #6c757d !important;
+}
 
 /* =====================
    Responsive
@@ -276,66 +350,330 @@ body {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #121212;
-        color: #f1f1f1;
+        background-color: #121212 !important;
+        color: #f1f1f1 !important;
     }
 
+    /* Universal text colors for dark mode - SUPER COMPREHENSIVE */
+    body,
+    body *,
+    .text-dark,
+    h1, h2, h3, h4, h5, h6,
+    p, span, div, td, th,
+    .card-title,
+    .card-text,
+    .fw-bold,
+    .fw-semibold,
+    li,
+    small,
+    .small,
+    .lead,
+    .fs-1, .fs-2, .fs-3, .fs-4, .fs-5, .fs-6,
+    .display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+    label,
+    .form-label,
+    .btn-outline-secondary,
+    .nav-link,
+    .dropdown-toggle,
+    .container *,
+    .row *,
+    .col *,
+    .col-md-6 *,
+    .col-lg-4 *,
+    .footer-section,
+    .footer-section *,
+    .badge-number,
+    .legend-number,
+    .preview-text,
+    .toggle-btn,
+    .legend-item span,
+    .card div,
+    .card span,
+    .card p {
+        color: #f1f1f1 !important;
+    }
+
+    .text-muted {
+        color: #aaa !important;
+    }
+
+    /* Cards and containers */
+    .card, 
+    .card-body,
+    .card-header,
+    .table,
+    .table th,
+    .table td,
+    .alert {
+        background-color: #1e1e1e !important;
+        color: #f1f1f1 !important;
+        border-color: #333 !important;
+    }
+
+    /* Special card headers that should remain with their colors */
+    .card-header.bg-light,
+    .bg-light {
+        background-color: #2a2a2a !important;
+        color: #f1f1f1 !important;
+    }
+
+    /* Navigation and layout */
     .bg-bps-blue,
-    .navbar,
-    .footer {
+    .navbar {
         background-color: #1a1a1a !important;
-        color: #f1f1f1;
+        color: #f1f1f1 !important;
     }
 
     .info-banner {
-        background: linear-gradient(135deg, #222831, #1a1a1a);
-        color: #f1f1f1;
+        background: linear-gradient(135deg, #222831, #1a1a1a) !important;
+        color: #f1f1f1 !important;
     }
 
     .info-banner:hover {
-        background: linear-gradient(135deg, #333841, #2a2a2a);
+        background: linear-gradient(135deg, #333841, #2a2a2a) !important;
     }
 
     #winnerBanner {
-        background: linear-gradient(135deg, #343a40, #212529, #1a1a1a);
-        color: #f8f9fa;
+        background: linear-gradient(135deg, #343a40, #212529, #1a1a1a) !important;
+        color: #f8f9fa !important;
+    }
+
+    /* Footer - keep original colors since it's already dark */
+    .footer {
+        background: #1a1a1a !important;
     }
 
     .footer-section a {
-        color: #aaaaaa;
+        color: #aaaaaa !important;
     }
 
     .footer-section a:hover {
-        color: #ffffff;
+        color: #ffffff !important;
     }
 
     .footer-bottom {
-        border-top: 1px solid #333;
-        color: #777;
+        border-top: 1px solid #333 !important;
+        color: #777 !important;
     }
 
-    .card, .card-body {
-        background-color: #1e1e1e;
-        color: #ffffff;
-        border-color: #333;
-    }
-
-    .dropdown-menu-dark {
-        background-color: #2c2c2c;
-        color: #ffffff;
+    /* Dropdowns */
+    .dropdown-menu {
+        background-color: #2c2c2c !important;
+        color: #ffffff !important;
+        border-color: #444 !important;
     }
 
     .dropdown-item {
-        color: #ffffff;
+        color: #ffffff !important;
     }
 
     .dropdown-item:hover {
-        background-color: #444;
+        background-color: #444 !important;
+        color: #ffffff !important;
     }
 
-    input, textarea, select {
-        background-color: #2c2c2c;
-        color: #ffffff;
-        border-color: #444;
+    /* Form elements */
+    input, 
+    textarea, 
+    select,
+    .form-control,
+    .form-select {
+        background-color: #2c2c2c !important;
+        color: #ffffff !important;
+        border-color: #444 !important;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        background-color: #2c2c2c !important;
+        color: #ffffff !important;
+        border-color: #6673ea !important;
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+    }
+
+    /* Assessment rows */
+    .assessment-row:hover {
+        background-color: #2a2a2a !important;
+    }
+
+    /* Tables */
+    .table-primary {
+        background-color: #1a365d !important;
+        color: #f1f1f1 !important;
+    }
+
+    .table-secondary {
+        background-color: #2d3748 !important;
+        color: #f1f1f1 !important;
+    }
+
+    /* Border adjustments */
+    .border,
+    .border-start,
+    .border-top,
+    .border-end,
+    .border-bottom,
+    .border-2,
+    .border-3,
+    .border-4 {
+        border-color: #444 !important;
+    }
+
+    /* Border specific colors in dark mode */
+    .border-primary {
+        border-color: #0d6efd !important;
+    }
+    .border-secondary {
+        border-color: #6c757d !important;
+    }
+
+    /* Shadow adjustments */
+    .shadow,
+    .shadow-sm,
+    .shadow-lg {
+        box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.05) !important;
+    }
+
+    /* Buttons */
+    .btn-outline-secondary {
+        border-color: #6c757d !important;
+        color: #f1f1f1 !important;
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #6c757d !important;
+        color: white !important;
+    }
+
+    /* EXCEPTION: Elements that should keep their original colors */
+    .text-white,
+    .text-white *,
+    .navbar-dark .navbar-nav .nav-link,
+    .navbar-dark .navbar-nav .nav-link *,
+    .footer,
+    .footer *,
+    .info-banner,
+    .info-banner *,
+    #winnerBanner,
+    #winnerBanner *,
+    .header-bg h1,
+    .header-bg p,
+    .card-header.bg-primary,
+    .card-header.bg-primary *,
+    .card-header.bg-success,
+    .card-header.bg-success *,
+    .card-header.bg-warning,
+    .card-header.bg-warning *,
+    .card-header.bg-info,
+    .card-header.bg-info *,
+    .card-header.bg-danger,
+    .card-header.bg-danger *,
+    .card-header.bg-secondary,
+    .card-header.bg-secondary *,
+    .bg-primary,
+    .bg-primary *,
+    .bg-success,
+    .bg-success *,
+    .bg-warning,
+    .bg-warning *,
+    .bg-info,
+    .bg-info *,
+    .bg-danger,
+    .bg-danger *,
+    .bg-secondary,
+    .bg-secondary *,
+    .text-primary,
+    .text-success,
+    .text-warning,
+    .text-info,
+    .text-danger,
+    .text-secondary,
+    .badge {
+        /* Keep their original colors - override the universal rule */
+        color: inherit !important;
+    }
+
+    /* Brand color text elements */
+    .text-primary {
+        color: #0d6efd !important;
+    }
+    .text-success {
+        color: #198754 !important;
+    }
+    .text-warning {
+        color: #ffc107 !important;
+    }
+    .text-info {
+        color: #0dcaf0 !important;
+    }
+    .text-danger {
+        color: #dc3545 !important;
+    }
+    .text-secondary {
+        color: #6c757d !important;
+    }
+
+    /* Force white text on colored backgrounds */
+    .bg-primary,
+    .bg-primary *,
+    .bg-success,
+    .bg-success *,
+    .bg-info,
+    .bg-info *,
+    .bg-danger,
+    .bg-danger *,
+    .bg-secondary,
+    .bg-secondary *,
+    .card-header.bg-primary,
+    .card-header.bg-primary *,
+    .card-header.bg-success,
+    .card-header.bg-success *,
+    .card-header.bg-info,
+    .card-header.bg-info *,
+    .card-header.bg-danger,
+    .card-header.bg-danger *,
+    .card-header.bg-secondary,
+    .card-header.bg-secondary * {
+        color: white !important;
+    }
+
+    /* Yellow/warning backgrounds need dark text */
+    .bg-warning,
+    .bg-warning *,
+    .card-header.bg-warning,
+    .card-header.bg-warning * {
+        color: #000 !important;
+    }
+
+    /* Progress bars */
+    .progress {
+        background-color: #2a2a2a !important;
+    }
+
+    /* Alerts */
+    .alert-light {
+        background-color: #2a2a2a !important;
+        color: #f1f1f1 !important;
+        border-color: #444 !important;
+    }
+
+    /* List groups */
+    .list-group-item {
+        background-color: #1e1e1e !important;
+        color: #f1f1f1 !important;
+        border-color: #333 !important;
+    }
+
+    /* Buttons that should have dark mode styling */
+    .btn-light {
+        background-color: #2a2a2a !important;
+        border-color: #444 !important;
+        color: #f1f1f1 !important;
+    }
+
+    .btn-light:hover {
+        background-color: #3a3a3a !important;
+        border-color: #555 !important;
+        color: #f1f1f1 !important;
     }
 }

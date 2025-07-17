@@ -46,7 +46,7 @@
                             </span>
                         </div>
                         <div class="flex-grow-1">
-                            <p class="mb-0 text-dark preview-text" data-full="{{ $item }}">
+                            <p class="mb-0 text-body preview-text" data-full="{{ $item }}">
                                 {{ $previewText }}
                             </p>
                         </div>

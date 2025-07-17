@@ -72,8 +72,8 @@
                         <h6 class="fw-semibold text-{{ $item['color'] }} mb-2">
                             <i class="fas fa-{{ $item['icon'] }} me-2 text-secondary"></i>{{ $item['title'] }}
                         </h6>
-                        <p class="text-dark mb-2">{{ $item['desc'] }}</p>
-                        <ul class="text-dark ps-3 mb-0">
+                        <p class="text-body mb-2">{{ $item['desc'] }}</p>
+                        <ul class="text-body ps-3 mb-0">
                             @foreach($item['list'] as $point)
                             <li>{{ $point }}</li>
                             @endforeach
