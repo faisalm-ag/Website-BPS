@@ -4,120 +4,91 @@
 {{-- Google Font --}}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<div class="main-container">
-    {{-- Header --}}
-    <div class="header-section">
-        <h1>Penilaian Budaya Organisasi</h1>
-        <p>BPS Kabupaten Tasikmalaya</p>
-    </div>
+<div class="container py-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-body">
+            {{-- Header --}}
+            <div class="text-center mb-4">
+                <h1 class="fw-bold text-primary" style="font-family: 'Poppins', sans-serif;">Penilaian Budaya Organisasi</h1>
+                <p class="text-muted" style="font-family: 'Poppins', sans-serif;">BPS Kabupaten Tasikmalaya</p>
+            </div>
 
-    {{-- Content --}}
-    <div class="content-section">
-        {{-- Form --}}
-        <form action="#" method="POST" id="surveyForm">
-            @csrf
-            
-            {{-- Input Data Diri --}}
-                        <div class="row mb-4">
-                            <div class="col-12">
-                                <label for="kandidat" class="form-label fw-semibold fs-5">
-                                    <i class="fas fa-user-check me-2 text-primary"></i>Pilih Nama Anda
-                                </label>
-                                <select class="form-select form-select-lg" name="kandidat" id="kandidat" required>
-                                    <option value="" disabled selected>-- Nama Lengkap --</option>
-                                    <option value="Angga Parlindungan">Angga Parlindungan</option>
-                                    <option value="Gofiky Parlindungan">Gofiky Parlindungan</option>
-                                    <option value="Asep">Asep</option>
-                                    <option value="Prabu Wijaya">Prabu Wijaya</option>
-                                    <option value="Solihin">Solihin</option>
-                                    <option value="Dobre ST.H">Dobre ST.H</option>
-                                    <option value="Muhamad Sobari, S.ST., M.STAT.">Muhamad Sobari, S.ST., M.STAT.</option>
-                                    <option value="Iis Irmawati, A. Md.">Iis Irmawati, A. Md.</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-12">
-                                <label for="jenis_kelamin" class="form-label fw-semibold fs-5">
-                                    <i></i>Jenis Kelamin
-                                </label>
-                                <select class="form-select form-select-lg" name="jenis_kelamin" id="jenis_kelamin" required>
-                                    <option value="" disabled selected>-- Pilih Jenis kelamin anda --</option>
-                                    <option value="Laki Laki">Laki Laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>
-                            </div>
-                        </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <input type="number" class="form-control" id="umur" name="umur" placeholder="Masukkan umur Anda" min="17" max="65" required>
-                        <label for="umur">Umur</label>
+            {{-- Form --}}
+            <form action="#" method="POST" id="surveyForm">
+                @csrf
+
+                {{-- Input Data Diri --}}
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">👤 Pilih Nama Anda</label>
+                        <select class="form-select form-select-lg" name="kandidat" required>
+                            <option value="" disabled selected>-- Nama Lengkap --</option>
+                            <option value="Angga Parlindungan">Angga Parlindungan</option>
+                            <option value="Gofiky Parlindungan">Gofiky Parlindungan</option>
+                            <option value="Asep">Asep</option>
+                            <option value="Prabu Wijaya">Prabu Wijaya</option>
+                            <option value="Solihin">Solihin</option>
+                            <option value="Dobre ST.H">Dobre ST.H</option>
+                            <option value="Muhamad Sobari, S.ST., M.STAT.">Muhamad Sobari, S.ST., M.STAT.</option>
+                            <option value="Iis Irmawati, A. Md.">Iis Irmawati, A. Md.</option>
+                        </select>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <input type="number" class="form-control" id="masa_kerja" name="masa_kerja" placeholder="Masukkan masa kerja dalam tahun" min="0" max="110" required>
-                        <label for="masa_kerja">Masa Kerja (Tahun)</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col-12">
-                    <label for="pendidikan_terakhir" class="form-label fw-semibold fs-5">
-                        <i></i>Pendidikan Terakhir
-                            </label>
-                        <select class="form-select form-select-lg" name="pendidikan_terakhir" id="pendidikan_terakhir" required>
-                    <option value="" disabled selected>-- Pilih Pendidikan Terakhir anda --</option>
-                    <option value="SMA/SMK">SMA/SMK</option>
-                    <option value="D3">D3</option>
-                    <option value="D4/S1">D4/S1</option>
-                    <option value="S2">S2</option>
-                    <option value="S3">S3</option>
-                </select>
-            </div>
-        </div>
 
-            {{-- Deskripsi --}}
-            <div class="alert-custom">
-                <h5 class="text-primary mb-3">📋 Tentang Survei Ini</h5>
-                <p class="mb-3">
-                    Survei ini bertujuan untuk melihat gambaran Budaya Organisasi di lingkungan BPS Kabupaten Tasikmalaya.
-                    Survei ini mengukur implementasi nilai dasar ASN BerAKHLAK melalui penilaian terhadap perilaku kerja
-                    pegawai menggunakan indikator berikut dengan dua aspek penilaian: <strong>Nilai Harapan</strong> dan
-                    <strong>Nilai Kinerja</strong>.
-                </p>
-                <p class="mb-0">
-                    Setiap indikator dinilai menggunakan skala Likert 1 – 4.
-                </p>
-            </div>
-
-            {{-- Keterangan Skala --}}
-            <div class="scale-legend">
-                <h6>🎯 Keterangan Skala Penilaian</h6>
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-md-6">
-                        <div class="legend-item">
-                            <div class="legend-number">1</div>
-                            <span>Sangat Tidak Setuju / Sangat Rendah</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-number">2</div>
-                            <span>Tidak Setuju / Rendah</span>
-                        </div>
+                        <label class="form-label fw-semibold"> Jenis Kelamin</label>
+                        <select class="form-select form-select-lg" name="jenis_kelamin" required>
+                            <option value="" disabled selected>-- Pilih Jenis kelamin anda --</option>
+                            <option value="Laki Laki">Laki Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
                     </div>
-                    <div class="col-md-6">
-                        <div class="legend-item">
-                            <div class="legend-number">3</div>
-                            <span>Setuju / Tinggi</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-number">4</div>
-                            <span>Sangat Setuju / Sangat Tinggi</span>
-                        </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-semibold"> Umur</label>
+                        <input type="number" name="umur" class="form-control" min="17" max="65" placeholder="Contoh: 30" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-semibold">📆 Masa Kerja (Tahun)</label>
+                        <input type="number" name="masa_kerja" class="form-control" min="0" max="40" placeholder="Contoh: 5" required>
                     </div>
                 </div>
-            </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">🎓 Pendidikan Terakhir</label>
+                        <select class="form-select form-select-lg" name="pendidikan_terakhir" required>
+                            <option value="" disabled selected>-- Pilih Pendidikan Terakhir anda --</option>
+                            <option value="SMA/SMK">SMA/SMK</option>
+                            <option value="D3">D3</option>
+                            <option value="D4/S1">D4/S1</option>
+                            <option value="S2">S2</option>
+                            <option value="S3">S3</option>
+                        </select>
+                    </div>
+                </div>
+
+                {{-- Deskripsi --}}
+                <div class="alert alert-info border-start border-4 border-primary shadow-sm">
+                    <h5 class="fw-bold"><i class="fas fa-info-circle me-2 text-primary"></i>Tentang Survei Ini</h5>
+                    <p class="mb-1">
+                        Survei ini bertujuan untuk melihat gambaran Budaya Organisasi di lingkungan BPS Kabupaten Tasikmalaya.
+                        Survei ini mengukur implementasi nilai dasar ASN BerAKHLAK melalui penilaian terhadap perilaku kerja pegawai
+                        menggunakan indikator berikut dengan dua aspek penilaian: <strong>Nilai Harapan</strong> dan <strong>Nilai Kinerja</strong>.
+                    </p>
+                    <p class="mb-0">Setiap indikator dinilai menggunakan skala Likert 1 – 4.</p>
+                </div>
+
+                {{-- Skala --}}
+                <div class="bg-light p-3 rounded mb-4 border">
+                    <h6 class="fw-bold mb-3"><i class="fas fa-scale-balanced me-2 text-secondary"></i>Keterangan Skala Penilaian</h6>
+                    <div class="row text-center">
+                        <div class="col-md-3"><span class="badge bg-danger rounded-pill px-3 py-2">1</span><br><small>Sangat Tidak Setuju / Sangat Rendah</small></div>
+                        <div class="col-md-3"><span class="badge bg-warning rounded-pill px-3 py-2">2</span><br><small>Tidak Setuju / Rendah</small></div>
+                        <div class="col-md-3"><span class="badge bg-info rounded-pill px-3 py-2">3</span><br><small>Setuju / Tinggi</small></div>
+                        <div class="col-md-3"><span class="badge bg-success rounded-pill px-3 py-2">4</span><br><small>Sangat Setuju / Sangat Tinggi</small></div>
+                    </div>
+                </div>
 
             {{-- Table --}}
             <div class="table-container">
@@ -251,6 +222,22 @@
  @push('styles')
 <style>
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.card {
+    border-radius: 1rem;
+}
+label.form-label {
+    font-weight: 500;
+}
+.form-select, .form-control {
+    border-radius: 0.5rem;
+}
+.alert-info {
+    font-size: 0.95rem;
+}
+    
 .header-section-budaya{
     padding-top : 30px;
 }

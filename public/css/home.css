@@ -16,6 +16,11 @@ body {
     padding-top: 140px;
 }
 
+/* Semua konten justify */
+.justify{
+    text-align: justify;
+}
+
 /* =====================
    Navbar & Footer
 ===================== */
@@ -218,13 +223,13 @@ body {
 ===================== */
 
 .header-section {
-    background: linear-gradient(135deg, #667eea 0%, #1519e8 100%);
+    background: #667eea;
     position: relative;
     overflow: hidden;
 }
 
 .bg-gradient-primary {
-    background: linear-gradient(135deg, #667eea 0%, #2108df 100%) !important;
+    background:  #667eea;
 }
 
 .assessment-row:hover {
