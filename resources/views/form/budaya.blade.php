@@ -127,8 +127,8 @@
                             <tr>
                                 <th rowspan="2" style="width: 50px;">No</th>
                                 <th rowspan="2" class="text-start" style="min-width: 300px;">Indikator</th>
-                                <th colspan="4">Nilai Harapan</th>
-                                <th colspan="4">Nilai Kinerja</th>
+                                <th colspan="4" class="bg-harapan">Nilai Harapan</th>
+                                <th colspan="4" class="bg-kinerja border-start">Nilai Kinerja</th>
                             </tr>
                             <tr>
                                 <th style="width: 50px;">1</th>
@@ -224,9 +224,9 @@
 
                                         {{-- Kinerja --}}
                                         @for ($k = 1; $k <= 4; $k++)
-                                        <td>
-                                            <input type="radio" name="kinerja[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $k }}" class="radio-input" required>
-                                        </td>
+                                            <td @if ($k == 1) class="border-start" @endif>
+                                                <input type="radio" name="kinerja[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $k }}" class="radio-input" required>
+                                            </td>
                                         @endfor
                                     </tr>
                                     @php $categoryNumber++; @endphp
@@ -238,14 +238,70 @@
             </div>
 
             {{-- Tombol Kirim --}}
-            <div class="text-center mt-4">
-                <button type="submit" class="btn btn-submit">
-                    <i class="fas fa-paper-plane me-2"></i>
-                    Kirim Penilaian
-                </button>
-            </div>
+            <div class="text-center mt-4 mb-5"> {{-- mb-5 ditambah agar footer tidak nempel --}}
+            <button type="submit" class="btn btn-primary px-4 py-2">
+                <i class="fas fa-paper-plane me-2"></i> Kirim Penilaian
+            </button>
+        </div>
+    </form>
+</div>
         </form>
         </div>
+
+ @push('styles')
+<style>
+
+.header-section-budaya{
+    padding-top : 30px;
+}
+.table-container table {
+    border: 1px solid #dee2e6;
+    border-collapse: collapse; /* tambah ini */
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    vertical-align: middle;
+}
+
+.table tbody td {
+    vertical-align: middle;
+}
+
+.table input[type="radio"] {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.category-header {
+    background-color: #f1f1f1;
+    font-weight: 600;
+}
+
+.table th:nth-child(6),
+.table td:nth-child(6) {
+    border-right: none;
+}
+
+.table th.border-start,
+.table td.border-start {
+    border-left: 3px solid #000 !important;
+}
+
+.table tbody tr:hover {
+    background-color: #fdfdfd;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.radio-input {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+</style>
+@endpush
 
 {{-- FontAwesome untuk icon --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
