@@ -90,138 +90,136 @@
                     </div>
                 </div>
 
-            {{-- Table --}}
-            <div class="table-container">
-                <div class="table-responsive">
-                    <table class="table table-bordered align-middle text-center">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" style="width: 50px;">No</th>
-                                <th rowspan="2" class="text-start" style="min-width: 300px;">Indikator</th>
-                                <th colspan="4" class="bg-harapan">Nilai Harapan</th>
-                                <th colspan="4" class="bg-kinerja border-start">Nilai Kinerja</th>
-                            </tr>
-                            <tr>
-                                <th style="width: 50px;">1</th>
-                                <th style="width: 50px;">2</th>
-                                <th style="width: 50px;">3</th>
-                                <th style="width: 50px;">4</th>
-                                <th style="width: 50px;">1</th>
-                                <th style="width: 50px;">2</th>
-                                <th style="width: 50px;">3</th>
-                                <th style="width: 50px;">4</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @php
-                                $indikator = [
-                                    'Perilaku Kerja Pegawai (PriKer)' => [
-                                        'Berorientasi pelayanan, yaitu memahami dan memenuhi kebutuhan masyarakat, ramah, cekatan, solutif, dapat diandalkan, dan melakukan perbaikan tiada henti.',
-                                        'Akuntabel, yaitu melaksanakan tugas dengan jujur, bertanggung jawab, cermat, disiplin berintegritas tinggi, menggunakan kekayaan dan barang milik negara secara bertanggung jawab, efektif, efisien, dan tidak menyalahgunakan kewenangan jabatan.',
-                                        'Kompeten, yaitu meningkatkan kompetensi diri untuk menjawab tantangan yang selalu berubah, membantu orang lain belajar, dan melaksanakan tugas dengan kualitas terbaik.',
-                                        'Harmonis, yaitu menghargai setiap orang apapun latar belakangnya, suka menolong orang lain, dan membangun lingkungan kerja yang kondusif.',
-                                        'Loyal, yaitu memegang teguh ideologi Pancasila, UUD 1945, setia kepada NKRI serta pemerintahan yang sah, menjaga nama baik sesama ASN, pimpinan, instansi, dan negara, serta menjaga rahasia jabatan dan negara.',
-                                        'Adaptif, yaitu cepat menyesuaikan diri menghadapi perubahan, terus berinovasi dan mengembangkan kreativitas, dan bertindak proaktif.',
-                                        'Kolaboratif, yaitu memberi kesempatan kepada berbagai pihak untuk berkontribusi, terbuka dalam bekerja sama untuk menghasilkan nilai tambah, dan menggerakkan pemanfaatan berbagai sumber daya untuk tujuan bersama.',
-                                    ],
-                                    'Leadership Budaya Organisasi (LeadBO)' => [
-                                        'Pegawai menerima masukan secara rutin dari pimpinan mengenai implementasi nilai BerAKHLAK dalam pelaksanaan tugas sehari-hari.',
-                                        'Pimpinan memberikan contoh yang baik dalam implementasi nilai-nilai BerAKHLAK.',
-                                        'Pimpinan memberikan pujian ketika salah seorang bawahan memberikan pelayanan terbaik kepada stakeholder (internal dan eksternal) sesuai dengan nilai BerAKHLAK.',
-                                        'Pimpinan melakukan program coaching yang efektif untuk membantu pegawai mengembangkan kompetensi mereka.',
-                                        'Pimpinan bukan hanya berbicara, tetapi mengambil tindakan yang nyata untuk meningkatkan nilai BerAKHLAK sebagai budaya organisasi.',
-                                        'Pimpinan menekankan secara berulang-ulang tentang pentingnya BerAKHLAK diimplementasikan dalam pekerjaan sehari-hari.',
-                                        'Pimpinan melaksanakan program mentoring yang efektif untuk membantu pegawai mengembangkan kompetensi.',
-                                        'Pimpinan mendorong semua anak buahnya untuk selalu memberikan layanan yang terbaik.',
-                                    ],
-                                    'People Budaya Organisasi' => [
-                                        'Pegawai memahami dan memenuhi kebutuhan masyarakat.',
-                                        'Pegawai ramah, cekatan, solutif dan dapat diandalkan.',
-                                        'Pegawai melakukan perbaikan tiada henti.',
-                                        'Pegawai melaksanakan tugas dengan jujur, bertanggungjawab, cermat, disiplin dan berintegritas tinggi.',
-                                        'Pegawai menggunakan kekayaan dan barang milik negara secara bertanggung jawab, efektif, dan efisien.',
-                                        'Pegawai tidak menyalahgunakan kewenangan jabatan.',
-                                        'Pegawai meningkatkan kompetensi diri untuk menjawab tantangan yang selalu berubah.',
-                                        'Pegawai membantu orang lain belajar.',
-                                        'Pegawai melaksanakan tugas dengan kualitas terbaik.',
-                                        'Pegawai menghargai setiap orang apapun latar belakangnya.',
-                                        'Pegawai suka menolong orang lain.',
-                                        'Pegawai membangun lingkungan kerja yang kondusif.',
-                                        'Pegawai memegang teguh ideologi Pancasila, UUD 1945, setia kepada NKRI serta pemerintahan yang sah.',
-                                        'Pegawai menjaga nama baik sesama ASN, pimpinan, instansi, dan negara.',
-                                        'Pegawai menjaga rahasia jabatan dan negara.',
-                                        'Pegawai cepat menyesuaikan diri menghadapi perubahan.',
-                                        'Pegawai terus berinovasi dan mengembangkan kreativitas.',
-                                        'Pegawai bertindak proaktif.',
-                                        'Pegawai memberi kesempatan kepada berbagai pihak untuk berkontribusi.',
-                                        'Pegawai terbuka dalam bekerja sama untuk menghasilkan nilai tambah.',
-                                        'Pegawai menggerakkan pemanfaatan berbagai sumber daya untuk tujuan bersama.',
-                                    ],
-                                    'System Budaya Organisasi' => [
-                                        'BPS Kabupaten Tasikmalaya memberikan sanksi terhadap pegawai yang melakukan tindakan yang tidak sesuai dengan BerAKHLAK.',
-                                        'BPS Kabupaten Tasikmalaya memiliki standar yang jelas dalam mengimplementasikan BerAKHLAK.',
-                                        'BPS Kabupaten Tasikmalaya memberikan penghargaan kepada pegawai yang menunjukkan nilai BerAKHLAK yang sangat baik.',
-                                        'BPS Kabupaten Tasikmalaya telah memiliki media untuk menampung keluhan dari stakeholder (eksternal dan internal).',
-                                        'BPS Kabupaten Tasikmalaya telah memiliki sarana bagi pegawainya untuk dapat secara aktif menyuarakan pendapat mereka dalam upaya untuk meningkatkan nilai BerAKHLAK.',
-                                        'BPS Kabupaten Tasikmalaya memiliki sejumlah inisiatif atau program untuk meningkatkan BerAKHLAK menjadi budaya organisasi.',
-                                        'BPS Kabupaten Tasikmalaya telah mengimplementasikan inisiatif atau program untuk meningkatkan BerAKHLAK dalam pekerjaan sehari-hari.',
-                                        'Pegawai yang menunjukkan kualitas pelayanan yang luar biasa diberi prioritas kesempatan untuk meningkatkan kompetensinya.',
-                                        'Terdapat jalur komunikasi untuk mensosialisasikan BerAKHLAK dan budaya pelayanan kepada semua pegawai BPS secara rutin.',
-                                        'Inisiatif atau program peningkatan nilai BerAKHLAK dilakukan dengan mendengarkan saran dari stakeholder (internal dan eksternal).',
-                                        'Penghargaan yang berkaitan dengan implementasi nilai BerAKHLAK dalam meningkatkan kualitas pelayanan diberikan secara adil dan transparan.',
-                                    ],
-                                ];
-                                $totalNumber = 0;
-                            @endphp
-
-                            @foreach ($indikator as $kategori => $pertanyaans)
+                {{-- Table --}}
+                <div class="table-container">
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle text-center">
+                            <thead>
                                 <tr>
-                                    <td colspan="10" class="category-header text-start">
-                                        <strong>{{ $kategori }}</strong>
-                                    </td>
+                                    <th rowspan="2" style="width: 50px;">No</th>
+                                    <th rowspan="2" class="text-start" style="min-width: 300px;">Indikator</th>
+                                    <th colspan="4">Nilai Harapan</th>
+                                    <th colspan="4" class="border-start">Nilai Kinerja</th>
                                 </tr>
-                                @php $categoryNumber = 1; @endphp
-                                @foreach ($pertanyaans as $index => $pertanyaan)
+                                <tr>
+                                    <th style="width: 50px;">1</th>
+                                    <th style="width: 50px;">2</th>
+                                    <th style="width: 50px;">3</th>
+                                    <th style="width: 50px;">4</th>
+                                    <th style="width: 50px;">1</th>
+                                    <th style="width: 50px;">2</th>
+                                    <th style="width: 50px;">3</th>
+                                    <th style="width: 50px;">4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                    $indikator = [
+                                        'Perilaku Kerja Pegawai (PriKer)' => [
+                                            'Berorientasi pelayanan, yaitu memahami dan memenuhi kebutuhan masyarakat, ramah, cekatan, solutif, dapat diandalkan, dan melakukan perbaikan tiada henti.',
+                                            'Akuntabel, yaitu melaksanakan tugas dengan jujur, bertanggung jawab, cermat, disiplin berintegritas tinggi, menggunakan kekayaan dan barang milik negara secara bertanggung jawab, efektif, efisien, dan tidak menyalahgunakan kewenangan jabatan.',
+                                            'Kompeten, yaitu meningkatkan kompetensi diri untuk menjawab tantangan yang selalu berubah, membantu orang lain belajar, dan melaksanakan tugas dengan kualitas terbaik.',
+                                            'Harmonis, yaitu menghargai setiap orang apapun latar belakangnya, suka menolong orang lain, dan membangun lingkungan kerja yang kondusif.',
+                                            'Loyal, yaitu memegang teguh ideologi Pancasila, UUD 1945, setia kepada NKRI serta pemerintahan yang sah, menjaga nama baik sesama ASN, pimpinan, instansi, dan negara, serta menjaga rahasia jabatan dan negara.',
+                                            'Adaptif, yaitu cepat menyesuaikan diri menghadapi perubahan, terus berinovasi dan mengembangkan kreativitas, dan bertindak proaktif.',
+                                            'Kolaboratif, yaitu memberi kesempatan kepada berbagai pihak untuk berkontribusi, terbuka dalam bekerja sama untuk menghasilkan nilai tambah, dan menggerakkan pemanfaatan berbagai sumber daya untuk tujuan bersama.',
+                                        ],
+                                        'Leadership Budaya Organisasi (LeadBO)' => [
+                                            'Pegawai menerima masukan secara rutin dari pimpinan mengenai implementasi nilai BerAKHLAK dalam pelaksanaan tugas sehari-hari.',
+                                            'Pimpinan memberikan contoh yang baik dalam implementasi nilai-nilai BerAKHLAK.',
+                                            'Pimpinan memberikan pujian ketika salah seorang bawahan memberikan pelayanan terbaik kepada stakeholder (internal dan eksternal) sesuai dengan nilai BerAKHLAK.',
+                                            'Pimpinan melakukan program coaching yang efektif untuk membantu pegawai mengembangkan kompetensi mereka.',
+                                            'Pimpinan bukan hanya berbicara, tetapi mengambil tindakan yang nyata untuk meningkatkan nilai BerAKHLAK sebagai budaya organisasi.',
+                                            'Pimpinan menekankan secara berulang-ulang tentang pentingnya BerAKHLAK diimplementasikan dalam pekerjaan sehari-hari.',
+                                            'Pimpinan melaksanakan program mentoring yang efektif untuk membantu pegawai mengembangkan kompetensi.',
+                                            'Pimpinan mendorong semua anak buahnya untuk selalu memberikan layanan yang terbaik.',
+                                        ],
+                                        'People Budaya Organisasi' => [
+                                            'Pegawai memahami dan memenuhi kebutuhan masyarakat.',
+                                            'Pegawai ramah, cekatan, solutif dan dapat diandalkan.',
+                                            'Pegawai melakukan perbaikan tiada henti.',
+                                            'Pegawai melaksanakan tugas dengan jujur, bertanggungjawab, cermat, disiplin dan berintegritas tinggi.',
+                                            'Pegawai menggunakan kekayaan dan barang milik negara secara bertanggung jawab, efektif, dan efisien.',
+                                            'Pegawai tidak menyalahgunakan kewenangan jabatan.',
+                                            'Pegawai meningkatkan kompetensi diri untuk menjawab tantangan yang selalu berubah.',
+                                            'Pegawai membantu orang lain belajar.',
+                                            'Pegawai melaksanakan tugas dengan kualitas terbaik.',
+                                            'Pegawai menghargai setiap orang apapun latar belakangnya.',
+                                            'Pegawai suka menolong orang lain.',
+                                            'Pegawai membangun lingkungan kerja yang kondusif.',
+                                            'Pegawai memegang teguh ideologi Pancasila, UUD 1945, setia kepada NKRI serta pemerintahan yang sah.',
+                                            'Pegawai menjaga nama baik sesama ASN, pimpinan, instansi, dan negara.',
+                                            'Pegawai menjaga rahasia jabatan dan negara.',
+                                            'Pegawai cepat menyesuaikan diri menghadapi perubahan.',
+                                            'Pegawai terus berinovasi dan mengembangkan kreativitas.',
+                                            'Pegawai bertindak proaktif.',
+                                            'Pegawai memberi kesempatan kepada berbagai pihak untuk berkontribusi.',
+                                            'Pegawai terbuka dalam bekerja sama untuk menghasilkan nilai tambah.',
+                                            'Pegawai menggerakkan pemanfaatan berbagai sumber daya untuk tujuan bersama.',
+                                        ],
+                                        'System Budaya Organisasi' => [
+                                            'BPS Kabupaten Tasikmalaya memberikan sanksi terhadap pegawai yang melakukan tindakan yang tidak sesuai dengan BerAKHLAK.',
+                                            'BPS Kabupaten Tasikmalaya memiliki standar yang jelas dalam mengimplementasikan BerAKHLAK.',
+                                            'BPS Kabupaten Tasikmalaya memberikan penghargaan kepada pegawai yang menunjukkan nilai BerAKHLAK yang sangat baik.',
+                                            'BPS Kabupaten Tasikmalaya telah memiliki media untuk menampung keluhan dari stakeholder (eksternal dan internal).',
+                                            'BPS Kabupaten Tasikmalaya telah memiliki sarana bagi pegawainya untuk dapat secara aktif menyuarakan pendapat mereka dalam upaya untuk meningkatkan nilai BerAKHLAK.',
+                                            'BPS Kabupaten Tasikmalaya memiliki sejumlah inisiatif atau program untuk meningkatkan BerAKHLAK menjadi budaya organisasi.',
+                                            'BPS Kabupaten Tasikmalaya telah mengimplementasikan inisiatif atau program untuk meningkatkan BerAKHLAK dalam pekerjaan sehari-hari.',
+                                            'Pegawai yang menunjukkan kualitas pelayanan yang luar biasa diberi prioritas kesempatan untuk meningkatkan kompetensinya.',
+                                            'Terdapat jalur komunikasi untuk mensosialisasikan BerAKHLAK dan budaya pelayanan kepada semua pegawai BPS secara rutin.',
+                                            'Inisiatif atau program peningkatan nilai BerAKHLAK dilakukan dengan mendengarkan saran dari stakeholder (internal dan eksternal).',
+                                            'Penghargaan yang berkaitan dengan implementasi nilai BerAKHLAK dalam meningkatkan kualitas pelayanan diberikan secara adil dan transparan.',
+                                        ],
+                                    ];
+                                @endphp
+
+                                @foreach ($indikator as $kategori => $pertanyaans)
                                     <tr>
-                                        <td class="fw-semibold">{{ $categoryNumber }}</td>
-                                        <td class="text-start">{{ $pertanyaan }}</td>
-
-                                        {{-- Harapan --}}
-                                        @for ($h = 1; $h <= 4; $h++)
-                                        <td>
-                                            <input type="radio" name="harapan[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $h }}" class="radio-input" required>
+                                        <td colspan="10" class="category-header text-start">
+                                            <strong>{{ $kategori }}</strong>
                                         </td>
-                                        @endfor
-
-                                        {{-- Kinerja --}}
-                                        @for ($k = 1; $k <= 4; $k++)
-                                            <td @if ($k == 1) class="border-start" @endif>
-                                                <input type="radio" name="kinerja[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $k }}" class="radio-input" required>
-                                            </td>
-                                        @endfor
                                     </tr>
-                                    @php $categoryNumber++; @endphp
+                                    @php $categoryNumber = 1; @endphp
+                                    @foreach ($pertanyaans as $index => $pertanyaan)
+                                        <tr>
+                                            <td class="fw-semibold">{{ $categoryNumber }}</td>
+                                            <td class="text-start">{{ $pertanyaan }}</td>
+
+                                            {{-- Harapan --}}
+                                            @for ($h = 1; $h <= 4; $h++)
+                                            <td>
+                                                <input type="radio" name="harapan[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $h }}" class="radio-input" required>
+                                            </td>
+                                            @endfor
+
+                                            {{-- Kinerja --}}
+                                            @for ($k = 1; $k <= 4; $k++)
+                                                <td @if ($k == 1) class="border-start" @endif>
+                                                    <input type="radio" name="kinerja[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $k }}" class="radio-input" required>
+                                                </td>
+                                            @endfor
+                                        </tr>
+                                        @php $categoryNumber++; @endphp
+                                    @endforeach
                                 @endforeach
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
 
-            {{-- Tombol Kirim --}}
-            <div class="text-center mt-4 mb-5"> {{-- mb-5 ditambah agar footer tidak nempel --}}
-            <button type="submit" class="btn btn-primary px-4 py-2">
-                <i class="fas fa-paper-plane me-2"></i> Kirim Penilaian
-            </button>
+                {{-- Tombol Kirim --}}
+                <div class="text-center mt-4 mb-5">
+                    <button type="submit" class="btn btn-primary px-4 py-2">
+                        <i class="fas fa-paper-plane me-2"></i> Kirim Penilaian
+                    </button>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
-        </form>
-        </div>
 
- @push('styles')
+@push('styles')
 <style>
-
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -237,52 +235,34 @@ label.form-label {
 .alert-info {
     font-size: 0.95rem;
 }
-    
-.header-section-budaya{
-    padding-top : 30px;
-}
 .table-container table {
-    border: 1px solid #dee2e6;
-    border-collapse: collapse; /* tambah ini */
+    border-collapse: collapse;
 }
-
 .table thead th {
     background-color: #f8f9fa;
     vertical-align: middle;
 }
-
 .table tbody td {
     vertical-align: middle;
 }
-
 .table input[type="radio"] {
     transform: scale(1.1);
     cursor: pointer;
 }
-
 .category-header {
     background-color: #f1f1f1;
     font-weight: 600;
 }
-
-.table th:nth-child(6),
-.table td:nth-child(6) {
-    border-right: none;
-}
-
 .table th.border-start,
 .table td.border-start {
     border-left: 3px solid #000 !important;
 }
-
 .table tbody tr:hover {
     background-color: #fdfdfd;
 }
-
 .table th, .table td {
     vertical-align: middle;
 }
-
 .radio-input {
     transform: scale(1.1);
     cursor: pointer;
@@ -298,25 +278,26 @@ label.form-label {
 document.getElementById('surveyForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Validasi data diri
-    const nama = document.getElementById('nama').value.trim();
-    const jenisKelamin = document.getElementById('jenis_kelamin').value;
-    const umur = document.getElementById('umur').value;
-    const masaKerja = document.getElementById('masa_kerja').value;
-    const pendidikanTerakhir = document.getElementById('pendidikan_terakhir').value;
+    // Validasi data diri (SUDAH DIPERBAIKI)
+    const nama = document.querySelector('select[name="kandidat"]').value;
+    const jenisKelamin = document.querySelector('select[name="jenis_kelamin"]').value;
+    const umur = document.querySelector('input[name="umur"]').value;
+    const masaKerja = document.querySelector('input[name="masa_kerja"]').value;
+    const pendidikanTerakhir = document.querySelector('select[name="pendidikan_terakhir"]').value;
     
     if (!nama || !jenisKelamin || !umur || !masaKerja || !pendidikanTerakhir) {
         alert('Mohon lengkapi semua data diri terlebih dahulu.');
         return;
     }
     
-    // Validasi radio buttons
+    // Validasi radio buttons (SUDAH DIPERBAIKI)
     const radioGroups = document.querySelectorAll('input[type="radio"]');
     const groupNames = [...new Set(Array.from(radioGroups).map(r => r.name))];
     
     let allFilled = true;
     for (let groupName of groupNames) {
-        const groupRadios = document.querySelectorAll(`input[name="${groupName}"]`);
+        // Menggunakan backtick (`) untuk template literal
+        const groupRadios = document.querySelectorAll(input[name="${groupName}"]);
         const isChecked = Array.from(groupRadios).some(radio => radio.checked);
         if (!isChecked) {
             allFilled = false;
