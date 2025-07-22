@@ -262,7 +262,7 @@
                                 <i class="fas fa-award me-2"></i>
                                 Triwulan {{ $triwulanRomawi[$triwulan] }} - 2024
                             </h5>
-                            <span class="badge bg-white text-dark">
+                            <span class="badge bg-white text-dark" style="color: #000 !important;">
                                 {{ $data['periode'] }}
                             </span>
                         </div>
