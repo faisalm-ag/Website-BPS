@@ -3,7 +3,7 @@
 @section('title', 'Leadership Budaya Organisasi')
 
 @section('content')
-<div class="container py-4 justify">
+<div class="container py-5 justify">
     <div class="text-center mb-5">
         <h2 class="fw-bold text-primary"><i class="fas fa-user-tie me-2"></i>Leadership Budaya Organisasi (LeadBO)</h2>
         <p class="text-muted fs-5">Indikator Kepemimpinan dalam Implementasi BerAKHLAK</p>

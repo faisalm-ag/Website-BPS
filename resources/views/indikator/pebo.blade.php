@@ -3,7 +3,7 @@
 @section('title', 'People Budaya Organisasi')
 
 @section('content')
-<div class="container py-4 justify">
+<div class="container py-5 justify">
     <div class="mb-5 text-center">
         <h2 class="fw-bold text-primary"><i class="fas fa-users me-2"></i>People Budaya Organisasi (PeBO)</h2>
         <p class="text-muted fs-5">Indikator Perilaku ASN BPS BerAKHLAK</p>

@@ -11,11 +11,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Spacer bawah navbar + info banner */
-.main-content {
-    padding-top: 140px;
-}
-
 /* Semua konten justify */
 .justify{
     text-align: justify;
@@ -682,3 +677,49 @@ small,
         color: #f1f1f1 !important;
     }
 }
+
+/* ==== Patch untuk Teladan & Login Font Warna yang Ga Konsisten ==== */
+
+/* Secara eksplisit atur warna untuk teks dalam card dan table di Teladan */
+.teladan-section *,
+.login-section *,
+.card *,
+.card-body *,
+.table td,
+.table th,
+.text-section *,
+.text-container * {
+    color: inherit !important;
+}
+
+/* Atur teks di header tabel Triwulan yang mungkin tetap gelap */
+.table th {
+    color: inherit !important;
+}
+
+/* Override jika elemen pakai text-dark di dark mode */
+@media (prefers-color-scheme: dark) {
+    .text-dark,
+    .card .text-dark,
+    .table .text-dark,
+    .text-section .text-dark,
+    .text-container .text-dark
+     {
+        color: #f1f1f1 !important;
+    }
+
+    /* Ini buat teks khusus kayak “Triwulan III 2024” kalau dia pakai class sendiri */
+    .teladan-section .highlighted,
+    .login-section .highlighted,
+    .judul-triwulan,
+    .judul-triwulan * {
+        color: #f1f1f1 !important;
+    }
+}
+
+/* Login White Section - Override Text Color */
+.white-section .signin-title,
+.white-section .signin-subtitle {
+    color: black !important;
+}
+

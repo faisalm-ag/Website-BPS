@@ -5,7 +5,7 @@
     <!-- Header Section -->
     <div class="text-center mb-5 fade-up">
         <div class="mb-3">
-            <i class="fas fa-trophy fa-3x text-warning"></i>
+            <i class="fas fa-trophy fa-3x text-primary"></i>
         </div>
         <h1 class="fw-bold display-4 text-primary">Pegawai Teladan</h1>
         <p class="lead">BPS Kabupaten Tasikmalaya</p>
@@ -94,7 +94,7 @@
                                 <p class="mb-0 text-white">Periode Januari - Maret 2025</p>
                             </div>
                             <div class="col-md-4 text-end">
-                                <span class="badge bg-warning text-dark px-4 py-2 fs-5">
+                                <span class="badge bg-secondary text-dark px-4 py-2 fs-5">
                                     <i class="fas fa-trophy me-1"></i>Juara
                                 </span>
                             </div>
@@ -152,7 +152,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="p-3 bg-success rounded">
+                                        <div class="p-3 bg-secondary rounded">
                                             <h4 class="fw-bold mb-1 text-white">95.0</h4>
                                             <small class="text-white">Nilai Akhir</small>
                                         </div>
@@ -183,7 +183,7 @@
     <div class="data-tahun" data-tahun="2024">
         <div class="row mb-4 fade-up">
             <div class="col-12">
-                <h2 class="fw-bold text-secondary border-bottom border-3 border-secondary pb-2">
+                <h2 class="fw-bold text-primary border-bottom border-3 border-secondary pb-2">
                     <i class="fas fa-calendar me-2"></i>Tahun 2024
                 </h2>
             </div>
@@ -203,7 +203,7 @@
                     'presensi' => '4.00 (40.00)',
                     'berakhlak' => '3.56 (26.69)',
                     'periode' => 'Januari - Maret 2024',
-                    'color' => 'success'
+                    'color' => 'secondary'
                 ],
                 2 => [
                     'nama' => 'Ika Nuryani, SST, M.Stat.',
@@ -217,7 +217,7 @@
                     'presensi' => '4.00 (40.00)',
                     'berakhlak' => '3.87 (29.00)',
                     'periode' => 'April - Juni 2024',
-                    'color' => 'info'
+                    'color' => 'secondary'
                 ],
                 3 => [
                     'nama' => 'Dudi Suryadi, S.E, M.P., M.Sc.',
@@ -231,7 +231,7 @@
                     'presensi' => '4.00 (40.00)',
                     'berakhlak' => '3.63 (27.22)',
                     'periode' => 'Juli - September 2024',
-                    'color' => 'warning'
+                    'color' => 'secondary'
                 ],
                 4 => [
                     'nama' => 'Priangga Andrew Wirawan, S.ST.',
@@ -245,7 +245,7 @@
                     'presensi' => '4.00 (40.00)',
                     'berakhlak' => '3.66 (27.43)',
                     'periode' => 'Oktober - Desember 2024',
-                    'color' => 'danger'
+                    'color' => 'secondary'
                 ]
             ];
 
@@ -304,8 +304,8 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <div class="p-3 bg-{{ $data['color'] }} rounded">
-                                    <h5 class="fw-bold mb-0 text-white">Total Nilai: {{ $data['nilai_akhir'] }}/100</h5>
+                                <div class="p-3 rounded bg-{{ $data['color'] }} text-white-force">
+                                    <h5 class="fw-bold mb-0">Total Nilai: {{ $data['nilai_akhir'] }}/100</h5>
                                 </div>
                             </div>
                         </div>

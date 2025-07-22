@@ -3,6 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <div class="login-container">
     <div class="login-card">
         <div class="row g-0">
@@ -16,14 +17,14 @@
                                 <img src="{{ asset('foto/Logo_BPS.png') }}" alt="Logo BPS" class="logo-img">
                             </div>
                             <div class="logo-text">
-                                <span>BADAN PUSAT STATISTIK</span>
+                                <span class="text-white">BADAN PUSAT STATISTIK</span>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Title -->
-                    <h1 class="main-title">SINGLE SIGN-ON BPS</h1>
-                    <p class="subtitle">Enter your ID and<br>Password to continue</p>
+                    <h1 class="main-title text-white">SINGLE SIGN-ON BPS</h1>
+                    <p class="subtitle text-white">Enter your ID and<br>Password to continue</p>
                 </div>
             </div>
 
@@ -43,11 +44,14 @@
                                    id="username" placeholder="Username" required>
                         </div>
 
-                        <!-- Password -->
-                        <div class="input-group-custom">
-                            <input type="password" class="form-control-custom" 
-                                   id="password" placeholder="Password" required>
+                        <div class="input-group-custom" style="position: relative;">
+                            <input type="password" class="form-control-custom" id="password" placeholder="Password" required>
+
+                            <i class="fa-solid fa-eye" id="togglePassword"
+                            style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
+                                    cursor: pointer; color: #000;"></i>
                         </div>
+                        
 
                         <!-- Login Button -->
                         <button type="button" class="btn-login">
@@ -59,6 +63,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    });
+</script>
+
 
 <!-- Custom CSS -->
 <style>
@@ -172,7 +192,6 @@
     }
 
     .signin-title {
-        color: #2c3e50;
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 5px;
@@ -180,10 +199,18 @@
     }
 
     .signin-subtitle {
-        color: #666;
         font-size: 14px;
         font-weight: 400;
         margin: 0;
+    }
+
+    .white-section * {
+    color: white !important;
+    }
+
+    .signin-title,
+    .signin-subtitle {
+        color: white !important;
     }
 
     /* Form Inputs */
@@ -334,6 +361,24 @@
             transform: translateX(0);
         }
     }
+
+    /* FIX: Biar input text dan password warnanya putih */
+    .white-section input.form-control-custom {
+        color: white !important;
+        background-color: rgba(255, 255, 255, 0.1); /* transparan sedikit biar kelihatan */
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* FIX: Placeholder putih */
+    .white-section input::placeholder {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    /* FIX: Icon toggle password warna hitam */
+    #togglePassword {
+        color: #000 !important;
+    }
+
 </style>
 @endsection
 

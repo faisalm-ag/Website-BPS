@@ -52,7 +52,7 @@
     </div>
 
     <div class="chart-card">
-        <div class="chart-title">Diagram Cartesius: PriKer, Leadership, People, System</div>
+        <div class="chart-title text-primary">Diagram Cartesius: PriKer, Leadership, People, System</div>
         <div style="height: 500px;">
             <canvas id="combinedChart"></canvas>
         </div>

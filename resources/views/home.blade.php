@@ -28,28 +28,28 @@
             'nama' => 'Iis Irmawati, A.Md.',
             'status' => 'Terpilih',
             'keterangan' => 'Pemenang Triwulan I 2024',
-            'badge' => 'success',
+            'badge' => 'secondary',
             'foto' => 'tw_Iis.jpeg'
         ],
         2 => [
             'nama' => 'Ika Nuryani, SST, M.Stat.',
             'status' => 'Terpilih',
             'keterangan' => 'Pemenang Triwulan II 2024',
-            'badge' => 'info',
+            'badge' => 'secondary',
             'foto' => 'tw_ika.jpg'
         ],
         3 => [
             'nama' => 'Dudi Suryadi, S.E, M.P., M.Sc.',
             'status' => 'Terpilih',
             'keterangan' => 'Pemenang Triwulan III 2024',
-            'badge' => 'warning',
+            'badge' => 'secondary',
             'foto' => 'tw_dudi.jpg'
         ],
         4 => [
             'nama' => 'Priangga Andrew Wirawan, S.ST.',
             'status' => 'Terpilih',
             'keterangan' => 'Pemenang Triwulan IV 2024',
-            'badge' => 'danger',
+            'badge' => 'secondary',
             'foto' => 'tw_wira.jpg'
         ]
     ];
@@ -59,7 +59,7 @@
             'nama' => 'Muhamad Sobari, S.ST., M.Stat.',
             'status' => 'Terpilih',
             'keterangan' => 'Pemenang Triwulan I 2025',
-            'badge' => 'primary',
+            'badge' => 'secondary',
             'foto' => 'tw_sobari.png'
         ],
         2 => [
