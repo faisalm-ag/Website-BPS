@@ -103,7 +103,7 @@
                     <div class="card-body p-5">
                         <div class="row align-items-center">
                             <div class="col-md-4 mb-4 mb-md-0">
-                                <img src="{{ asset('foto/tw_sobari.jpg') }}" 
+                                <img src="{{ asset('foto/tw_sobari.png') }}" 
                                      alt="Muhamad Sobari" 
                                      class="img-fluid rounded shadow-lg"
                                      style="width: 100%; height: auto;">

@@ -60,7 +60,7 @@
             'status' => 'Terpilih',
             'keterangan' => 'Pemenang Triwulan I 2025',
             'badge' => 'primary',
-            'foto' => 'tw_sobari.jpg'
+            'foto' => 'tw_sobari.png'
         ],
         2 => [
             'nama' => 'Belum Ditentukan',
