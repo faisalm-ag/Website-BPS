@@ -218,13 +218,13 @@ body {
 ===================== */
 
 .header-section {
-    background: #667eea;
+    background: #3b82f6;
     position: relative;
     overflow: hidden;
 }
 
 .bg-gradient-primary {
-    background:  #667eea;
+    background:  #3b82f6;
 }
 
 .assessment-row:hover {
@@ -262,6 +262,13 @@ body {
 
 .badge {
     font-size: 0.8em;
+}
+
+#submitBtn {
+    color: white !important;
+}
+.card-header h4 {
+    color: white !important;
 }
 
 /* =====================

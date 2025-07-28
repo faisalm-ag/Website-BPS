@@ -9,7 +9,7 @@
         <div class="card-body">
             {{-- Header --}}
             <div class="text-center mb-4">
-                <h1 class="text-white fw-bold">Penilaian Budaya Organisasi</h1>
+                <h1 class="text-primary fw-bold" id="form-title">Penilaian Budaya Organisasi</h1>
                 <p class="text-muted" style="font-family: 'Poppins', sans-serif;">BPS Kabupaten Tasikmalaya</p>
             </div>
 
@@ -96,13 +96,13 @@
                         <table class="table table-bordered align-middle text-center outer-border-bold">
                             <thead>
                                 <tr>
-                                    <th rowspan="2" style="width: 50px;" class="fw-bold border-bold">No</th>
+                                    <th rowspan="2" style="width: 50px;" class="fw-bold">No</th>
                                     <th rowspan="2" class="text-start border-bold" style="min-width: 300px;">Indikator</th>
                                     <th colspan="4" class="border-bold">Nilai Harapan</th>
                                     <th colspan="4" class="border-bold">Nilai Kinerja</th>
                                 </tr>
                                 <tr>
-                                    <th class="border-left-bold">1</th>
+                                    <th>1</th>
                                     <th>2</th>
                                     <th>3</th>
                                     <th>4</th>
@@ -220,73 +220,99 @@
 
 @push('styles')
 <style>
-body {
-    font-family: 'Poppins', sans-serif;
-}
-.card {
-    border-radius: 1rem;
-}
-label.form-label {
-    font-weight: 500;
-}
-.form-select, .form-control {
-    border-radius: 0.5rem;
-}
-.alert-info {
-    font-size: 0.95rem;
-}
-.table-container table {
-    border-collapse: collapse;
-}
-.table thead th {
-    background-color: #f8f9fa;
-    vertical-align: middle;
-}
-.table tbody td {
-    vertical-align: middle;
-}
-.table input[type="radio"] {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-.category-header {
-    background-color: #f1f1f1;
-    font-weight: 600;
-}
+    /* Style umum */
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    .card {
+        border-radius: 1rem;
+    }
+    .form-select, .form-control {
+        border-radius: 0.5rem;
+    }
 
-/* Border tebal hanya di bagian luar */
-.outer-border-bold {
-    border: 2px solid #000 !important;
-}
-.outer-border-bold th.border-bold {
-    border: 2px solid #000 !important;
-}
-.outer-border-bold td.border-bold {
-    border: 2px solid #000 !important;
-}
-/* Border kiri tebal untuk pemisah kolom */
-.border-left-bold {
-    border-left: 2px solid #000 !important;
-}
-/* Border normal untuk konten dalam */
-.outer-border-bold td:not(.border-bold):not(.border-left-bold),
-.outer-border-bold th:not(.border-bold):not(.border-left-bold) {
-    border: 1px solid #dee2e6 !important;
-}
+    /* STYLING TABEL BARU */
 
-.table tbody tr:hover {
-    background-color: #fdfdfd;
-}
-.table th, .table td {
-    vertical-align: middle;
-}
-.radio-input {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-.btn-primary.text-white {
-    color: white !important;
-}
+    /* Warna dasar untuk header dan hover */
+    :root {
+        --tbl-header-bg: #f8f9fa;
+        --tbl-hover-bg: #f5f9ff;
+        --tbl-dark-border: #343a40;
+        --tbl-light-border: #dee2e6;
+    }
+
+    /* Mengatur border utama tabel */
+    .table-bordered {
+        border: 2px solid var(--tbl-dark-border) !important;
+    }
+
+    /* Semua sel di dalam tabel */
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid var(--tbl-light-border); /* Garis internal tipis sebagai default */
+        vertical-align: middle;
+    }
+
+    /* Header Tabel */
+    .table-bordered thead th {
+        background-color: var(--tbl-header-bg);
+        border-bottom: 2px solid var(--tbl-dark-border); /* Garis bawah header tebal */
+    }
+
+    /* Menggunakan class yang sudah ada di HTML Anda */
+    .table-bordered .border-bold {
+        border-width: 2px !important;
+        border-color: var(--tbl-dark-border) !important;
+    }
+    .table-bordered .border-left-bold {
+        border-left: 2px solid var(--tbl-dark-border) !important;
+    }
+    
+    /* Header Kategori (PriKer, dll.) */
+    .category-header {
+        background-color: #e9ecef;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    /* Efek hover */
+    .table-bordered tbody tr:not(:has(.category-header)):hover {
+        background-color: var(--tbl-hover-bg);
+    }
+
+    /* Radio button */
+    .radio-input {
+        transform: scale(1.4);
+        cursor: pointer;
+        accent-color: #0d6efd;
+    }
+
+    /* GANTI KODE SEBELUMNYA DENGAN INI */
+
+    /* Menambahkan garis vertikal tipis setelah kolom "No" */
+    .table-bordered th:first-child,
+    .table-bordered td:first-child {
+        border-right: 1px solid var(--tbl-light-border) !important;
+    }
+
+    /* Memastikan kolom "Indikator" tetap punya border tebal di kirinya */
+
+    .table-bordered td:nth-child(2) {
+        border-left: 2px solid var(--tbl-dark-border) !important;
+    }
+
+        /* TAMBAHAN: Menghapus border ganda */
+    .table-bordered th:nth-child(6),
+    .table-bordered td:nth-child(6) {
+        border-right: none !important;
+    }
+    .btn-primary.text-white {
+        color: white !important;
+    }
+
+    #form-title {
+        color: #0d6efd !important; /* Ganti kode warna #0d6efd dengan warna biru yang Anda inginkan */
+    }
 </style>
 @endpush
 

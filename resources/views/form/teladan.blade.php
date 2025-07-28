@@ -14,10 +14,9 @@
         <div class="mb-3">
             <i class="fas fa-trophy fa-2x text-warning"></i>
         </div>
-        <h2 class="fw-bold text-dark mb-2">Penilaian Pegawai Teladan</h2>
+        <h2 class="fw-bold text-primary mb-2">Penilaian Pegawai Teladan</h2>
         <p class="text-muted fs-5 mb-1">Sistem Evaluasi Kinerja & Budaya Organisasi</p>
         <p class="text-muted fs-5 mb-3">BPS Kabupaten Tasikmalaya</p>
-        <span class="badge bg-warning text-dark px-3 py-2 fs-6 rounded-pill">Triwulan II - 2025</span>
     </div>
 </div>
 
@@ -307,7 +306,7 @@
                                 <i class="fas fa-undo me-1"></i>Reset Form
                             </button>
                             <div>
-                                <button type="submit" class="btn btn-success btn-lg shadow" id="submitBtn" disabled>
+                                <button type="submit" class="btn btn-primary btn-lg shadow" id="submitBtn" disabled>
                                     <i class="fas fa-paper-plane me-2"></i>Kirim Penilaian
                                 </button>
                             </div>
