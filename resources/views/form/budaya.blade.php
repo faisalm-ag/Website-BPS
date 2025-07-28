@@ -9,7 +9,7 @@
         <div class="card-body">
             {{-- Header --}}
             <div class="text-center mb-4">
-                <h1 class="fw-bold text-primary" style="font-family: 'Poppins', sans-serif;">Penilaian Budaya Organisasi</h1>
+                <h1 class="text-white fw-bold">Penilaian Budaya Organisasi</h1>
                 <p class="text-muted" style="font-family: 'Poppins', sans-serif;">BPS Kabupaten Tasikmalaya</p>
             </div>
 
@@ -72,7 +72,7 @@
                 <div class="alert alert-info border-start border-4 border-primary shadow-sm">
                     <h5 class="fw-bold"><i class="fas fa-info-circle me-2 text-primary"></i>Tentang Survei Ini</h5>
                     <p class="mb-1">
-                        Survei ini bertujuan untuk melihat gambaran Budaya Organisasi di lingkungan BPS Kabupaten Tasikmalaya.
+                        Survei ini bertujuan untuk melihat gambaran <span style="color: #2b6cb0; font-weight: 600;">Budaya Organisasi</span> di lingkungan BPS Kabupaten Tasikmalaya.
                         Survei ini mengukur implementasi nilai dasar ASN BerAKHLAK melalui penilaian terhadap perilaku kerja pegawai
                         menggunakan indikator berikut dengan dua aspek penilaian: <strong>Nilai Harapan</strong> dan <strong>Nilai Kinerja</strong>.
                     </p>
@@ -83,33 +83,33 @@
                 <div class="bg-light p-3 rounded mb-4 border">
                     <h6 class="fw-bold mb-3"><i class="fas fa-scale-balanced me-2 text-secondary"></i>Keterangan Skala Penilaian</h6>
                     <div class="row text-center">
-                        <div class="col-md-3"><span class="badge bg-danger rounded-pill px-3 py-2">1</span><br><small>Sangat Tidak Setuju / Sangat Rendah</small></div>
-                        <div class="col-md-3"><span class="badge bg-warning rounded-pill px-3 py-2">2</span><br><small>Tidak Setuju / Rendah</small></div>
-                        <div class="col-md-3"><span class="badge bg-info rounded-pill px-3 py-2">3</span><br><small>Setuju / Tinggi</small></div>
-                        <div class="col-md-3"><span class="badge bg-success rounded-pill px-3 py-2">4</span><br><small>Sangat Setuju / Sangat Tinggi</small></div>
+                        <div class="col-md-3"><span class="badge bg-danger rounded-pill px-3 py-2">1</span><br><small>Sangat Tidak Setuju</small></div>
+                        <div class="col-md-3"><span class="badge bg-warning rounded-pill px-3 py-2">2</span><br><small>Tidak Setuju</small></div>
+                        <div class="col-md-3"><span class="badge bg-info rounded-pill px-3 py-2">3</span><br><small>Setuju</small></div>
+                        <div class="col-md-3"><span class="badge bg-success rounded-pill px-3 py-2">4</span><br><small>Sangat Setuju</small></div>
                     </div>
                 </div>
 
                 {{-- Table --}}
                 <div class="table-container">
                     <div class="table-responsive">
-                        <table class="table table-bordered align-middle text-center">
+                        <table class="table table-bordered align-middle text-center outer-border-bold">
                             <thead>
                                 <tr>
-                                    <th rowspan="2" style="width: 50px;">No</th>
-                                    <th rowspan="2" class="text-start" style="min-width: 300px;">Indikator</th>
-                                    <th colspan="4">Nilai Harapan</th>
-                                    <th colspan="4" class="border-start">Nilai Kinerja</th>
+                                    <th rowspan="2" style="width: 50px;" class="fw-bold border-bold">No</th>
+                                    <th rowspan="2" class="text-start border-bold" style="min-width: 300px;">Indikator</th>
+                                    <th colspan="4" class="border-bold">Nilai Harapan</th>
+                                    <th colspan="4" class="border-bold">Nilai Kinerja</th>
                                 </tr>
                                 <tr>
-                                    <th style="width: 50px;">1</th>
-                                    <th style="width: 50px;">2</th>
-                                    <th style="width: 50px;">3</th>
-                                    <th style="width: 50px;">4</th>
-                                    <th style="width: 50px;">1</th>
-                                    <th style="width: 50px;">2</th>
-                                    <th style="width: 50px;">3</th>
-                                    <th style="width: 50px;">4</th>
+                                    <th class="border-left-bold">1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th class="border-left-bold">1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -175,28 +175,28 @@
 
                                 @foreach ($indikator as $kategori => $pertanyaans)
                                     <tr>
-                                        <td colspan="10" class="category-header text-start">
+                                        <td colspan="10" class="category-header text-start border-bold">
                                             <strong>{{ $kategori }}</strong>
                                         </td>
                                     </tr>
                                     @php $categoryNumber = 1; @endphp
                                     @foreach ($pertanyaans as $index => $pertanyaan)
                                         <tr>
-                                            <td class="fw-semibold">{{ $categoryNumber }}</td>
+                                            <td class="fw-bold">{{ $categoryNumber }}</td>
                                             <td class="text-start">{{ $pertanyaan }}</td>
 
                                             {{-- Harapan --}}
                                             @for ($h = 1; $h <= 4; $h++)
-                                            <td>
+                                            <td @if($h == 1) class="border-left-bold" @endif>
                                                 <input type="radio" name="harapan[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $h }}" class="radio-input" required>
                                             </td>
                                             @endfor
 
                                             {{-- Kinerja --}}
                                             @for ($k = 1; $k <= 4; $k++)
-                                                <td @if ($k == 1) class="border-start" @endif>
-                                                    <input type="radio" name="kinerja[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $k }}" class="radio-input" required>
-                                                </td>
+                                            <td @if($k == 1) class="border-left-bold" @endif>
+                                                <input type="radio" name="kinerja[{{ $kategori }}][{{ $categoryNumber }}]" value="{{ $k }}" class="radio-input" required>
+                                            </td>
                                             @endfor
                                         </tr>
                                         @php $categoryNumber++; @endphp
@@ -209,7 +209,7 @@
 
                 {{-- Tombol Kirim --}}
                 <div class="text-center mt-4 mb-5">
-                    <button type="submit" class="btn btn-primary px-4 py-2">
+                    <button type="submit" class="btn btn-primary px-4 py-2 text-white fw-bold">
                         <i class="fas fa-paper-plane me-2"></i> Kirim Penilaian
                     </button>
                 </div>
@@ -253,10 +253,27 @@ label.form-label {
     background-color: #f1f1f1;
     font-weight: 600;
 }
-.table th.border-start,
-.table td.border-start {
-    border-left: 3px solid #000 !important;
+
+/* Border tebal hanya di bagian luar */
+.outer-border-bold {
+    border: 2px solid #000 !important;
 }
+.outer-border-bold th.border-bold {
+    border: 2px solid #000 !important;
+}
+.outer-border-bold td.border-bold {
+    border: 2px solid #000 !important;
+}
+/* Border kiri tebal untuk pemisah kolom */
+.border-left-bold {
+    border-left: 2px solid #000 !important;
+}
+/* Border normal untuk konten dalam */
+.outer-border-bold td:not(.border-bold):not(.border-left-bold),
+.outer-border-bold th:not(.border-bold):not(.border-left-bold) {
+    border: 1px solid #dee2e6 !important;
+}
+
 .table tbody tr:hover {
     background-color: #fdfdfd;
 }
@@ -266,6 +283,9 @@ label.form-label {
 .radio-input {
     transform: scale(1.1);
     cursor: pointer;
+}
+.btn-primary.text-white {
+    color: white !important;
 }
 </style>
 @endpush
@@ -278,7 +298,7 @@ label.form-label {
 document.getElementById('surveyForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Validasi data diri (SUDAH DIPERBAIKI)
+    // Validasi data diri
     const nama = document.querySelector('select[name="kandidat"]').value;
     const jenisKelamin = document.querySelector('select[name="jenis_kelamin"]').value;
     const umur = document.querySelector('input[name="umur"]').value;
@@ -290,14 +310,13 @@ document.getElementById('surveyForm').addEventListener('submit', function(e) {
         return;
     }
     
-    // Validasi radio buttons (SUDAH DIPERBAIKI)
+    // Validasi radio buttons
     const radioGroups = document.querySelectorAll('input[type="radio"]');
     const groupNames = [...new Set(Array.from(radioGroups).map(r => r.name))];
     
     let allFilled = true;
     for (let groupName of groupNames) {
-        // Menggunakan backtick (`) untuk template literal
-        const groupRadios = document.querySelectorAll(input[name="${groupName}"]);
+        const groupRadios = document.querySelectorAll(`input[name="${groupName}"]`);
         const isChecked = Array.from(groupRadios).some(radio => radio.checked);
         if (!isChecked) {
             allFilled = false;
