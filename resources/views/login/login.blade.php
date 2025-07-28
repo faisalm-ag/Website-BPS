@@ -191,27 +191,32 @@
         margin-bottom: 30px;
     }
 
+    /* DIMODIFIKASI: Mengatur warna header form menjadi gelap agar terlihat */
     .signin-title {
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 5px;
         letter-spacing: -0.5px;
+        color: #2c3e50; /* Warna gelap */
     }
 
     .signin-subtitle {
         font-size: 14px;
         font-weight: 400;
         margin: 0;
+        color: #888; /* Warna abu-abu */
     }
 
+    /* DIHAPUS: Aturan ini yang menyebabkan semua teks jadi putih */
+    /*
     .white-section * {
-    color: white !important;
+        color: white !important;
     }
-
     .signin-title,
     .signin-subtitle {
         color: white !important;
     }
+    */
 
     /* Form Inputs */
     .input-group-custom {
@@ -219,6 +224,7 @@
         margin-bottom: 20px;
     }
 
+    /* DIMODIFIKASI: Mengatur warna input agar normal */
     .form-control-custom {
         width: 100%;
         height: 45px;
@@ -226,10 +232,11 @@
         border-radius: 22px;
         padding: 0 20px;
         font-size: 14px;
-        font-weight: 400;
-        background: white;
+        font-weight: 500; /* Sedikit lebih tebal agar mudah dibaca */
+        background: #fdfdfd; /* Background sedikit off-white */
         transition: all 0.3s ease;
         outline: none;
+        color: #333; /* Warna teks input menjadi gelap */
     }
 
     .form-control-custom::placeholder {
@@ -238,9 +245,31 @@
     }
 
     .form-control-custom:focus {
-        border-color: #2196F3;
-        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+        border-color: #2c3e50;
+        box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
     }
+    
+    /* DIMODIFIKASI: Memindahkan style icon dari inline ke CSS */
+    #togglePassword {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #999; /* Warna icon abu-abu */
+    }
+
+    #togglePassword:hover {
+        color: #333; /* Warna icon lebih gelap saat di-hover */
+    }
+
+
+    /* DIHAPUS: Blok "FIX" yang lama tidak diperlukan lagi */
+    /*
+    .white-section input.form-control-custom { ... }
+    .white-section input::placeholder { ... }
+    #togglePassword { ... }
+    */
 
     /* Login Button */
     .btn-login {
@@ -254,131 +283,62 @@
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
         margin-top: 10px;
     }
 
     .btn-login:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+        box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
     }
 
     .btn-login:active {
         transform: translateY(0);
     }
 
-    /* Responsive Design */
+    /* Responsive Design (Tidak diubah) */
     @media (max-width: 768px) {
-        .login-card {
-            margin: 10px;
-            max-width: 90%;
-            min-height: 400px;
-        }
-
-        .blue-section {
-            padding: 30px 20px;
-        }
-
-        .white-section {
-            padding: 30px 20px;
-        }
-
-        .main-title {
-            font-size: 24px;
-        }
-
-        .subtitle {
-            font-size: 14px;
-        }
-
-        .signin-title {
-            font-size: 20px;
-        }
-
-        .logo-text span {
-            font-size: 10px;
-        }
+        .login-card { margin: 10px; max-width: 90%; min-height: 400px; }
+        .blue-section { padding: 30px 20px; }
+        .white-section { padding: 30px 20px; }
+        .main-title { font-size: 24px; }
+        .subtitle { font-size: 14px; }
+        .signin-title { font-size: 20px; }
+        .logo-text span { font-size: 10px; }
     }
-
     @media (max-width: 480px) {
-        .login-card {
-            margin: 5px;
-            max-width: 95%;
-            min-height: 350px;
-        }
-
-        .main-title {
-            font-size: 20px;
-        }
-
-        .blue-section, .white-section {
-            padding: 20px 15px;
-        }
+        .login-card { margin: 5px; max-width: 95%; min-height: 350px; }
+        .main-title { font-size: 20px; }
+        .blue-section, .white-section { padding: 20px 15px; }
     }
 
-    /* Animations */
-    .login-card {
-        animation: fadeInUp 0.8s ease-out;
-    }
+    /* Animations (Tidak diubah) */
+    .login-card { animation: fadeInUp 0.8s ease-out; }
+    .content-left { animation: slideInLeft 0.8s ease-out 0.2s both; }
+    .login-form-wrapper { animation: slideInRight 0.8s ease-out 0.2s both; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
 
-    .content-left {
-        animation: slideInLeft 0.8s ease-out 0.2s both;
-    }
+.form-control-custom {
+    width: 100%;
+    height: 45px;
+    border-radius: 22px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    outline: none;
 
-    .login-form-wrapper {
-        animation: slideInRight 0.8s ease-out 0.2s both;
-    }
+    /* STRATEGI BARU: Memaksa warna dengan !important */
+    background-color: #fdfdfd !important;
+    color: #333 !important;
+    border: 2px solid #E0E0E0 !important;
 
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    /* FIX: Biar input text dan password warnanya putih */
-    .white-section input.form-control-custom {
-        color: white !important;
-        background-color: rgba(255, 255, 255, 0.1); /* transparan sedikit biar kelihatan */
-        border-color: rgba(255, 255, 255, 0.4);
-    }
-
-    /* FIX: Placeholder putih */
-    .white-section input::placeholder {
-        color: rgba(255, 255, 255, 0.7) !important;
-    }
-
-    /* FIX: Icon toggle password warna hitam */
-    #togglePassword {
-        color: #000 !important;
-    }
-
+    /* Nonaktifkan gaya asli dari browser (tambahan) */
+    -webkit-appearance: none;
+    appearance: none;
+}
 </style>
 @endsection
 

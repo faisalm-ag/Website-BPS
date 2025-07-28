@@ -31,7 +31,7 @@
     </div>
 
     <!-- Statistics Overview -->
-    <div class="row mb-5 fade-up">
+    <div class="row mb-5 fade-up" id="statistik-overview">
         <div class="col-md-3 mb-3">
             <div class="card border-0 shadow-sm h-100 bg-primary">
                 <div class="card-body text-center text-white">
@@ -61,7 +61,7 @@
         </div>
         <div class="col-md-3 mb-3">
             <div class="card border-0 shadow-sm h-100 bg-warning">
-                <div class="card-body text-center text-dark">
+                <div class="card-body text-center text-white">
                     <i class="fas fa-users fa-2x mb-2 text-dark"></i>
                     <h3 class="fw-bold mb-1 text-dark">46</h3>
                     <p class="mb-0 text-dark">Total Pegawai</p>
@@ -403,4 +403,45 @@
 </script>
 @endpush
 
+@push('styles')
+<style>
+    /* 1. MENGAKTIFKAN ANIMASI FADE-UP SAAT SCROLL */
+    .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* 2. ANIMASI INTERAKTIF SAAT KURSOR DI ATAS KARTU */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    /* 3. MEMPERBAIKI TEKS "TOTAL NILAI" AGAR MENJADI PUTIH */
+    .text-white-force,
+    .text-white-force * {
+        color: white !important;
+    }
+
+    /* 4. [PERBAIKAN BARU] MEMAKSA KONTEN KARTU KUNING MENJADI PUTIH */
+    .bg-warning .card-body * {
+        color: white !important;
+    }
+
+    /* GANTI ATURAN .bg-warning LAMA DENGAN YANG INI */
+    #statistik-overview .card-body * {
+        color: white !important;
+    }
+</style>
+@endpush
 @endsection
