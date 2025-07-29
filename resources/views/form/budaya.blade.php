@@ -3,20 +3,85 @@
 @section('content')
 {{-- Google Font --}}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        {{-- Header --}}
 
-<div class="container py-5">
-    <div class="card shadow-lg border-0">
-        <div class="card-body">
-            {{-- Header --}}
+        <div class="container py-5">
             <div class="text-center mb-4">
-                <h1 class="text-primary fw-bold" id="form-title">Penilaian Budaya Organisasi</h1>
-                <p class="text-muted" style="font-family: 'Poppins', sans-serif;">BPS Kabupaten Tasikmalaya</p>
+                <div class="mb-3">
+                    <i class="fas fa-chart-pie fa-2x text-primary"></i>
+                </div>
+                <h2 class="fw-bold text-primary mb-2">Penilaian Budaya Organisasi</h2>
+                <p class="text-muted fs-5 mb-1">Sistem Evaluasi Nilai Harapan & Kinerja</p>
+                <p class="text-muted fs-5 mb-3">BPS Kabupaten Tasikmalaya</p>
             </div>
+        </div>
+
+            {{-- Description Section --}}
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-primary text-white py-3">
+                    <h5 class="mb-0 fw-bold">
+                        <i class="fas fa-info-circle me-2"></i>Tentang Survei Ini
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <p class="mb-1">
+                                Survei ini bertujuan untuk melihat gambaran <span style="color: #2b6cb0; font-weight: 600;">Budaya Organisasi</span> di lingkungan BPS Kabupaten Tasikmalaya.
+                                Survei ini mengukur implementasi nilai dasar ASN BerAKHLAK melalui penilaian terhadap perilaku kerja pegawai
+                                menggunakan indikator berikut dengan dua aspek penilaian: <strong>Nilai Harapan</strong> dan <strong>Nilai Kinerja</strong>.
+                            </p>
+                            <div class="alert alert-light border-start border-4 border-primary">
+                                <h6 class="fw-bold text-primary mb-2">Indikator Penilaian:</h6>
+                                <ul class="mb-0">
+                                    <li><strong>Indikator Perilaku Kerja Pegawai </strong>- (PriKer)</li>
+                                    <li><strong>Indikator Leadership Budaya Organisasi </strong> - (LeadBO)</li>
+                                    <li><strong>Indikator People Budaya Organisasi </strong> - (PeBO)</li>
+                                    <li><strong>Indikator System Budaya Organisasi </strong> - (SysBO)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card bg-light border-0">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-chart-pie fa-3x text-primary mb-3"></i>
+                                    <h6 class="fw-bold">Skala Penilaian</h6>
+                                    <div class="row text-center mt-3">
+                                        <div class="col-6 mb-2">
+                                            <span class="badge bg-danger" style="color: white !important;">1 - STS</span>
+                                            <small class="d-block">Sangat Tidak Setuju</small>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <span class="badge bg-warning" style="color: white !important;">2 - TS</span>
+                                            <small class="d-block">Tidak Setuju</small>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <span class="badge bg-info" style="color: white !important;">3 - S</span>
+                                            <small class="d-block">Setuju</small>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <span class="badge bg-success" style="color: white !important;">4 - SS</span>
+                                            <small class="d-block">Sangat Setuju</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container py-2">
+    <div class="card shadow-lg border-0">
+        <div class="card-body">    
 
             {{-- Form --}}
             <form action="#" method="POST" id="surveyForm">
                 @csrf
-
                 {{-- Input Data Diri --}}
                 <div class="row mb-3">
                     <div class="col-md-12">
@@ -66,17 +131,6 @@
                             <option value="S3">S3</option>
                         </select>
                     </div>
-                </div>
-
-                {{-- Deskripsi --}}
-                <div class="alert alert-info border-start border-4 border-primary shadow-sm">
-                    <h5 class="fw-bold"><i class="fas fa-info-circle me-2 text-primary"></i>Tentang Survei Ini</h5>
-                    <p class="mb-1">
-                        Survei ini bertujuan untuk melihat gambaran <span style="color: #2b6cb0; font-weight: 600;">Budaya Organisasi</span> di lingkungan BPS Kabupaten Tasikmalaya.
-                        Survei ini mengukur implementasi nilai dasar ASN BerAKHLAK melalui penilaian terhadap perilaku kerja pegawai
-                        menggunakan indikator berikut dengan dua aspek penilaian: <strong>Nilai Harapan</strong> dan <strong>Nilai Kinerja</strong>.
-                    </p>
-                    <p class="mb-0">Setiap indikator dinilai menggunakan skala Likert 1 – 4.</p>
                 </div>
 
                 {{-- Skala --}}

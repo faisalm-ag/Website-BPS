@@ -41,7 +41,8 @@
                 <div class="card-body d-flex flex-column">
                     <div class="d-flex mb-2">
                         <div class="me-3 d-flex align-items-start">
-                            <span class="badge bg-primary rounded-circle text-white p-3 fs-6">
+                            <span class="badge bg-primary rounded-circle text-white p-3 fs-6"
+                                style="color: #fff !important;">
                                 {{ $index + 1 }}
                             </span>
                         </div>

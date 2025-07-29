@@ -12,7 +12,7 @@
 <div class="container py-5">
     <div class="text-center mb-4">
         <div class="mb-3">
-            <i class="fas fa-trophy fa-2x text-warning"></i>
+            <i class="fas fa-trophy fa-2x text-primary"></i>
         </div>
         <h2 class="fw-bold text-primary mb-2">Penilaian Pegawai Teladan</h2>
         <p class="text-muted fs-5 mb-1">Sistem Evaluasi Kinerja & Budaya Organisasi</p>
@@ -52,19 +52,19 @@
                                     <h6 class="fw-bold">Skala Penilaian</h6>
                                     <div class="row text-center mt-3">
                                         <div class="col-6 mb-2">
-                                            <span class="badge bg-danger">1 - STS</span>
+                                            <span class="badge bg-danger" style="color: white !important;">1 - STS</span>
                                             <small class="d-block">Sangat Tidak Setuju</small>
                                         </div>
                                         <div class="col-6 mb-2">
-                                            <span class="badge bg-warning">2 - TS</span>
+                                            <span class="badge bg-warning" style="color: white !important;">2 - TS</span>
                                             <small class="d-block">Tidak Setuju</small>
                                         </div>
                                         <div class="col-6 mb-2">
-                                            <span class="badge bg-info">3 - S</span>
+                                            <span class="badge bg-info" style="color: white !important;">3 - S</span>
                                             <small class="d-block">Setuju</small>
                                         </div>
                                         <div class="col-6 mb-2">
-                                            <span class="badge bg-success">4 - SS</span>
+                                            <span class="badge bg-success" style="color: white !important;">4 - SS</span>
                                             <small class="d-block">Sangat Setuju</small>
                                         </div>
                                     </div>

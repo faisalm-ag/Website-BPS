@@ -64,7 +64,8 @@
             <div class="card h-100 shadow-sm border-0 rounded-4">
                 <div class="card-body d-flex">
                     <div class="me-3 d-flex align-items-start justify-content-center">
-                        <span class="badge bg-{{ $item['color'] }} text-white rounded-circle p-3 fs-6">
+                        <span class="badge bg-{{ $item['color'] }} text-white rounded-circle p-3 fs-6"
+                            style="color: #fff !important;">
                             {{ $index + 1 }}
                         </span>
                     </div>
