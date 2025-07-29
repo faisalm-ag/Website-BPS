@@ -110,7 +110,7 @@
                         <p class="text-muted small">{{ $data['keterangan'] }}</p>
 
                         {{-- Status --}}
-                        <span class="badge bg-{{ $data['badge'] }} px-3 py-2 mt-auto">{{ $data['status'] }}</span>
+                        <span class="badge bg-{{ $data['badge'] }} text-white px-3 py-2 mt-auto">{{ $data['status'] }}</span>
                     </div>
                 </div>
             </a>
@@ -147,7 +147,7 @@
                         <p class="text-muted small">{{ $data['keterangan'] }}</p>
 
                         {{-- Status --}}
-                        <span class="badge bg-{{ $data['badge'] }} px-3 py-2 mt-auto">{{ $data['status'] }}</span>
+                        <span class="badge bg-{{ $data['badge'] }} text-white px-3 py-2 mt-auto">{{ $data['status'] }}</span>
                     </div>
                 </div>
             @if($data['status'] === 'Terpilih')
@@ -239,6 +239,10 @@ a:hover .card {
     top: 56px;
     z-index: 1020;
     background-color: #0d6efd;
+}
+
+.badge.bg-secondary {
+    color: white !important;
 }
 </style>
 @endpush

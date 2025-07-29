@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Penilaian Pegawai Teladan')
 @section('content')
 
 {{-- Google Font --}}
@@ -25,15 +26,15 @@
     <div class="row mb-4">
         <div class="col-12">
             <div class="card border-0 shadow-sm">
-                <div class="card-header bg-primary text-white py-3">
-                    <h5 class="mb-0 fw-bold">
-                        <i class="fas fa-info-circle me-2"></i>Informasi Penilaian
-                    </h5>
-                </div>
                 <div class="card-body">
+                    <div class="card-header bg-primary text-white py-3 mb-4 rounded-3">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="fas fa-info-circle me-2"></i>Informasi Penilaian
+                        </h5>
+                    </div>
                     <div class="row">
                         <div class="col-lg-8">
-                            <p class="text-dark mb-3">
+                            <p class="text-dark mb-3 justify">
                                 Form ini bertujuan untuk memilih pegawai teladan di lingkungan BPS Kabupaten Tasikmalaya yang diadakan per triwulan secara objektif dan transparan.
                             </p>
                             <div class="alert alert-light border-start border-4 border-primary">
@@ -81,10 +82,12 @@
     <div class="row">
         <div class="col-12">
             <div class="card border-0 shadow-lg">
-                <div class="card-header bg-gradient-primary text-white">
-                    <h4 class="mb-0"><i class="fas fa-edit me-2"></i>Form Penilaian Pegawai Teladan</h4>
-                </div>
                 <div class="card-body p-4">
+                    <div class="card-header bg-primary text-white py-3 mb-4 rounded-3">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="fas fa-edit me-2"></i>Form Penilaian Pegawai Teladan
+                        </h5>
+                    </div>
                     <form action="#" method="POST" id="penilaianForm">
                         @csrf
 

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Penilaian Budaya Organisasi')
+
 @section('content')
+<div class="container-fluid px-3">
 {{-- Google Font --}}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
         {{-- Header --}}
@@ -20,18 +23,18 @@
     <div class="row mb-4">
         <div class="col-12">
             <div class="card border-0 shadow-sm">
-                <div class="card-header bg-primary text-white py-3">
+                <div class="card-body">
+                    <div class="card-header bg-primary text-white py-3 mb-4 rounded-3">
                     <h5 class="mb-0 fw-bold">
                         <i class="fas fa-info-circle me-2"></i>Tentang Survei Ini
                     </h5>
                 </div>
-                <div class="card-body">
                     <div class="row">
                         <div class="col-lg-8">
-                            <p class="mb-1">
-                                Survei ini bertujuan untuk melihat gambaran <span style="color: #2b6cb0; font-weight: 600;">Budaya Organisasi</span> di lingkungan BPS Kabupaten Tasikmalaya.
+                            <p class="mb-1 justify">
+                                Survei ini bertujuan untuk melihat gambaran Budaya Organisasi di lingkungan BPS Kabupaten Tasikmalaya.
                                 Survei ini mengukur implementasi nilai dasar ASN BerAKHLAK melalui penilaian terhadap perilaku kerja pegawai
-                                menggunakan indikator berikut dengan dua aspek penilaian: <strong>Nilai Harapan</strong> dan <strong>Nilai Kinerja</strong>.
+                                menggunakan indikator berikut dengan dua aspek penilaian: Nilai Harapan dan Nilai Kinerja.
                             </p>
                             <div class="alert alert-light border-start border-4 border-primary">
                                 <h6 class="fw-bold text-primary mb-2">Indikator Penilaian:</h6>
@@ -75,13 +78,19 @@
         </div>
     </div>
 
-<div class="container py-2">
+
     <div class="card shadow-lg border-0">
         <div class="card-body">    
 
             {{-- Form --}}
             <form action="#" method="POST" id="surveyForm">
                 @csrf
+                {{-- Main Form Header --}}
+                <div class="card-header bg-primary text-white py-3 mb-4 rounded-3">
+                    <h5 class="mb-0 fw-bold">
+                        <i class="fas fa-edit me-2"></i>Form Penilaian Budaya Organisasi
+                    </h5>
+                </div>
                 {{-- Input Data Diri --}}
                 <div class="row mb-3">
                     <div class="col-md-12">
@@ -130,17 +139,6 @@
                             <option value="S2">S2</option>
                             <option value="S3">S3</option>
                         </select>
-                    </div>
-                </div>
-
-                {{-- Skala --}}
-                <div class="bg-light p-3 rounded mb-4 border">
-                    <h6 class="fw-bold mb-3"><i class="fas fa-scale-balanced me-2 text-secondary"></i>Keterangan Skala Penilaian</h6>
-                    <div class="row text-center">
-                        <div class="col-md-3"><span class="badge bg-danger rounded-pill px-3 py-2">1</span><br><small>Sangat Tidak Setuju</small></div>
-                        <div class="col-md-3"><span class="badge bg-warning rounded-pill px-3 py-2">2</span><br><small>Tidak Setuju</small></div>
-                        <div class="col-md-3"><span class="badge bg-info rounded-pill px-3 py-2">3</span><br><small>Setuju</small></div>
-                        <div class="col-md-3"><span class="badge bg-success rounded-pill px-3 py-2">4</span><br><small>Sangat Setuju</small></div>
                     </div>
                 </div>
 
@@ -270,7 +268,6 @@
             </form>
         </div>
     </div>
-</div>
 
 @push('styles')
 <style>

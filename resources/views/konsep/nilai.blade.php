@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Nilai-Nilai Inti BPS')
+
 @section('content')
 <div class="container py-5 justify">
     <div class="text-center mb-5 fade-up">

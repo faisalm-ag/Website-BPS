@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'System Budaya Organisasi')
+@section('title', 'System Budaya Organisasi (SysBO)')
 
 @section('content')
 <div class="container py-5 justify">

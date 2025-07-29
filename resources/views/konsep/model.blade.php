@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Model Implementasi Budaya')
+
 @section('content')
 <div class="container py-5 justify">
     <div class="text-center mb-5 fade-up">

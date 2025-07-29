@@ -2,6 +2,28 @@
 
 @section('title', 'Hasil Penilaian Budaya Organisasi')
 
+@section('content')
+<div class="container main-container">
+    <div class="text-center mb-4">
+        <h1 class="text-primary fw-bold">Hasil Penilaian Budaya Organisasi</h1>
+        <p class="text-muted">Gabungan Empat Aspek dalam Satu Diagram Cartesius</p>
+    </div>
+
+    <div class="chart-card">
+        <div class="chart-title text-primary">Diagram Cartesius: PriKer, Leadership, People, System</div>
+        <div style="height: 500px;">
+            <canvas id="combinedChart"></canvas>
+        </div>
+        <div class="legend-custom mt-3">
+            <div class="legend-item"><div class="legend-color" style="background:#007dc5;"></div> PriKer</div>
+            <div class="legend-item"><div class="legend-color" style="background:#28a745;"></div> Leadership</div>
+            <div class="legend-item"><div class="legend-color" style="background:#dc3545;"></div> People</div>
+            <div class="legend-item"><div class="legend-color" style="background:#ffc107;"></div> System</div>
+        </div>
+    </div>
+</div>
+@endsection
+
 @push('styles')
 <!-- Tambahan CSS -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -44,27 +66,6 @@
 </style>
 @endpush
 
-@section('content')
-<div class="container main-container">
-    <div class="text-center mb-4">
-        <h1 class="text-primary fw-bold">Hasil Penilaian Budaya Organisasi</h1>
-        <p class="text-muted">Gabungan Empat Aspek dalam Satu Diagram Cartesius</p>
-    </div>
-
-    <div class="chart-card">
-        <div class="chart-title text-primary">Diagram Cartesius: PriKer, Leadership, People, System</div>
-        <div style="height: 500px;">
-            <canvas id="combinedChart"></canvas>
-        </div>
-        <div class="legend-custom mt-3">
-            <div class="legend-item"><div class="legend-color" style="background:#007dc5;"></div> PriKer</div>
-            <div class="legend-item"><div class="legend-color" style="background:#28a745;"></div> Leadership</div>
-            <div class="legend-item"><div class="legend-color" style="background:#dc3545;"></div> People</div>
-            <div class="legend-item"><div class="legend-color" style="background:#ffc107;"></div> System</div>
-        </div>
-    </div>
-</div>
-@endsection
 
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -158,3 +159,4 @@
     });
 </script>
 @endpush
+

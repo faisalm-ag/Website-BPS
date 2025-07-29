@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
+@section('title', 'Hasil Penilaian Pegawai Teladan')
+
 @section('content')
 <div class="container py-5">
-    <!-- Header Section -->
     <div class="text-center mb-5 fade-up">
         <div class="mb-3">
             <i class="fas fa-trophy fa-3x text-primary"></i>
         </div>
-        <h1 class="fw-bold display-4 text-primary">Pegawai Teladan</h1>
+        {{-- Mengubah kelas agar sesuai dengan heading di halaman pertama --}}
+        <h1 class="text-primary fw-bold">Hasil Penilaian Pegawai Teladan</h1>
         <p class="lead">BPS Kabupaten Tasikmalaya</p>
         <div class="row justify-content-center mt-4">
             <div class="col-md-8">
@@ -18,7 +20,6 @@
         </div>
     </div>
 
-    <!-- Filter Section -->
     <div class="row mb-4">
         <div class="col-12 text-end">
             <label for="filterTahun" class="form-label fw-semibold me-2">Filter Tahun:</label>
@@ -30,7 +31,6 @@
         </div>
     </div>
 
-    <!-- Statistics Overview -->
     <div class="row mb-5 fade-up" id="statistik-overview">
         <div class="col-md-3 mb-3">
             <div class="card border-0 shadow-sm h-100 bg-primary">
@@ -62,15 +62,14 @@
         <div class="col-md-3 mb-3">
             <div class="card border-0 shadow-sm h-100 bg-warning">
                 <div class="card-body text-center text-white">
-                    <i class="fas fa-users fa-2x mb-2 text-dark"></i>
-                    <h3 class="fw-bold mb-1 text-dark">46</h3>
-                    <p class="mb-0 text-dark">Total Pegawai</p>
+                    <i class="fas fa-users fa-2x mb-2 text-white"></i>
+                    <h3 class="fw-bold mb-1 text-white">46</h3>
+                    <p class="mb-0 text-white">Total Pegawai</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Data Pegawai Teladan 2025 -->
     <div class="data-tahun" data-tahun="2025">
         <div class="row mb-4 fade-up">
             <div class="col-12">
@@ -80,7 +79,6 @@
             </div>
         </div>
 
-        <!-- TW I 2025 - Featured Winner -->
         <div class="row mb-5 fade-up">
             <div class="col-12">
                 <div class="card border-0 shadow-lg">
@@ -111,7 +109,6 @@
                             <div class="col-md-8">
                                 <h3 class="fw-bold text-primary mb-3">Muhamad Sobari, S.ST., M.Stat.</h3>
                                 
-                                <!-- Info Detail -->
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <div class="mb-2">
@@ -131,7 +128,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Nilai -->
                                 <div class="row text-center mb-4">
                                     <div class="col-md-3">
                                         <div class="p-3 bg-light rounded">
@@ -152,14 +148,13 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="p-3 bg-secondary rounded">
+                                        <div class="p-3 bg-secondary rounded text-white-force">
                                             <h4 class="fw-bold mb-1 text-white">95.0</h4>
                                             <small class="text-white">Nilai Akhir</small>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Prestasi -->
                                 <div>
                                     <h5 class="fw-bold mb-3">
                                         <i class="fas fa-medal me-2"></i>Pencapaian Utama
@@ -179,7 +174,6 @@
         </div>
     </div>
 
-    <!-- Data Pegawai Teladan 2024 -->
     <div class="data-tahun" data-tahun="2024">
         <div class="row mb-4 fade-up">
             <div class="col-12">
@@ -268,7 +262,6 @@
                         </div>
                     </div>
                     <div class="card-body p-4">
-                        <!-- Profile Section -->
                         <div class="row align-items-center mb-4">
                             <div class="col-5">
                                 <img src="{{ asset('foto/' . $data['foto']) }}" 
@@ -285,7 +278,6 @@
                             </div>
                         </div>
                         
-                        <!-- Score Section -->
                         <div class="mb-3">
                             <h6 class="fw-bold mb-2">Penilaian dengan Skala Likert 4:</h6>
                             <div class="mb-2">
@@ -316,7 +308,6 @@
         </div>
     </div>
 
-    <!-- Info Kriteria -->
     <div class="row mt-5 fade-up">
         <div class="col-12">
             <div class="card border-0 bg-light">
@@ -404,7 +395,14 @@
 @endpush
 
 @push('styles')
+{{-- Menambahkan Font Poppins agar sesuai dengan halaman pertama --}}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
+    body {
+        /* Terapkan font Poppins */
+        font-family: 'Poppins', sans-serif;
+    }
+
     /* 1. MENGAKTIFKAN ANIMASI FADE-UP SAAT SCROLL */
     .fade-up {
         opacity: 0;
@@ -433,12 +431,7 @@
         color: white !important;
     }
 
-    /* 4. [PERBAIKAN BARU] MEMAKSA KONTEN KARTU KUNING MENJADI PUTIH */
-    .bg-warning .card-body * {
-        color: white !important;
-    }
-
-    /* GANTI ATURAN .bg-warning LAMA DENGAN YANG INI */
+    /* 4. [PERBAIKAN BARU] MEMAKSA KONTEN KARTU STATISTIK MENJADI PUTIH */
     #statistik-overview .card-body * {
         color: white !important;
     }

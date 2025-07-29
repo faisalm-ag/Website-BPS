@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Perilaku Kerja Pegawai (PriKer)')
+
 @section('content')
 <div class="container py-5 justify">
     <div class="mb-5 text-center">
