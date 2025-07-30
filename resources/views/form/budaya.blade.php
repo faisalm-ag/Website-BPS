@@ -186,7 +186,7 @@
                                             'Pimpinan melaksanakan program mentoring yang efektif untuk membantu pegawai mengembangkan kompetensi.',
                                             'Pimpinan mendorong semua anak buahnya untuk selalu memberikan layanan yang terbaik.',
                                         ],
-                                        'People Budaya Organisasi' => [
+                                        'People Budaya Organisasi (PeBO)' => [
                                             'Pegawai memahami dan memenuhi kebutuhan masyarakat.',
                                             'Pegawai ramah, cekatan, solutif dan dapat diandalkan.',
                                             'Pegawai melakukan perbaikan tiada henti.',
@@ -209,7 +209,7 @@
                                             'Pegawai terbuka dalam bekerja sama untuk menghasilkan nilai tambah.',
                                             'Pegawai menggerakkan pemanfaatan berbagai sumber daya untuk tujuan bersama.',
                                         ],
-                                        'System Budaya Organisasi' => [
+                                        'System Budaya Organisasi (SysBO)' => [
                                             'BPS Kabupaten Tasikmalaya memberikan sanksi terhadap pegawai yang melakukan tindakan yang tidak sesuai dengan BerAKHLAK.',
                                             'BPS Kabupaten Tasikmalaya memiliki standar yang jelas dalam mengimplementasikan BerAKHLAK.',
                                             'BPS Kabupaten Tasikmalaya memberikan penghargaan kepada pegawai yang menunjukkan nilai BerAKHLAK yang sangat baik.',
@@ -227,7 +227,7 @@
 
                                 @foreach ($indikator as $kategori => $pertanyaans)
                                     <tr>
-                                        <td colspan="10" class="category-header text-start border-bold">
+                                        <td colspan="10" class="category-header text-center align-middle border-bold">
                                             <strong>{{ $kategori }}</strong>
                                         </td>
                                     </tr>
@@ -268,6 +268,22 @@
             </form>
         </div>
     </div>
+    {{-- Footer Info --}}
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card border-0 bg-light">
+                <div class="card-body text-center">
+                    <h6 class="text-muted mb-3">Sistem Penilaian Budaya Organisasi</h6>
+                    <p class="text-muted small mb-0">
+                        <i class="fas fa-building me-1"></i>BPS Kabupaten Tasikmalaya | 
+                        <i class="fas fa-calendar me-1"></i>{{ date('Y') }} | 
+                        <i class="fas fa-shield-alt me-1"></i>Data Terlindungi
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @push('styles')
 <style>

@@ -88,7 +88,7 @@
 
 <!-- Daftar Pegawai Triwulan 2024 -->
 <div class="container mb-5">
-    <h3 class="text-center mb-4 fw-bold">Pegawai Teladan Tahun 2024</h3>
+    <h3 class="text-center mb-4 fw-bold tahun-heading" data-tahun="2024">Pegawai Teladan Tahun 2024</h3>
     <div class="row g-4 tahun-section" data-tahun="2024">
         @foreach ($pegawai2024 as $tw => $data)
         <div class="col-md-6 col-lg-3">
@@ -121,7 +121,7 @@
 
 <!-- Daftar Pegawai Triwulan 2025 -->
 <div class="container mb-5">
-    <h3 class="text-center mb-4 fw-bold">Pegawai Teladan Tahun 2025</h3>
+    <h3 class="text-center mb-4 fw-bold tahun-heading" data-tahun="2025">Pegawai Teladan Tahun 2025</h3>
     <div class="row g-4 tahun-section" data-tahun="2025">
         @foreach ($pegawai2025 as $tw => $data)
         <div class="col-md-6 col-lg-3">
@@ -273,13 +273,33 @@ a:hover .card {
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Tahun Filter Logic
-    document.getElementById('filterTahun').addEventListener('change', function() {
-        const selected = this.value;
-        document.querySelectorAll('.tahun-section').forEach(section => {
-            const tahun = section.getAttribute('data-tahun');
-            section.style.display = (selected === 'all' || selected === tahun) ? 'flex' : 'none';
-        });
+document.getElementById('filterTahun').addEventListener('change', function () {
+    const selected = this.value;
+
+    // Simpan posisi heading lama sebelum berubah
+    const oldHeading = document.querySelector('.tahun-heading:not([style*="display: none"])');
+    const oldTop = oldHeading ? oldHeading.getBoundingClientRect().top : 0;
+
+    // Tampilkan/sembunyikan section dan heading
+    document.querySelectorAll('.tahun-section').forEach(section => {
+        const tahun = section.getAttribute('data-tahun');
+        section.style.display = (selected === 'all' || selected === tahun) ? 'flex' : 'none';
     });
+
+    document.querySelectorAll('.tahun-heading').forEach(heading => {
+        const tahun = heading.getAttribute('data-tahun');
+        heading.style.display = (selected === 'all' || selected === tahun) ? 'block' : 'none';
+    });
+
+    // Scroll ke posisi heading baru tapi tetap di posisi layar yg sama
+    const newHeading = document.querySelector(`.tahun-heading[data-tahun="${selected}"]`);
+    if (newHeading && selected !== 'all') {
+        const newTop = newHeading.getBoundingClientRect().top;
+        const diff = newTop - oldTop;
+        window.scrollBy({ top: diff, behavior: 'instant' }); // Bisa pakai 'smooth' kalau mau animasi
+    }
+});
+
+
 </script>
 @endpush
