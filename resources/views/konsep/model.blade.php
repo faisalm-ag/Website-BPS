@@ -13,7 +13,7 @@
 
     <div class="fade-up mb-4 nilai">
         <p class="lead">
-            Model implementasi budaya organisasi BPS dipengaruhi oleh tiga variabel utama yang saling terkait, yaitu 
+            Penerapan Model implementasi budaya organisasi BPS dipengaruhi oleh tiga variabel utama yang saling terkait, yaitu 
             <strong>Leadership</strong>, <strong>People</strong>, dan <strong>System</strong> (LPS). 
             Ketiga variabel ini diwujudkan dalam delapan pilar utama budaya organisasi:
         </p>
@@ -52,9 +52,9 @@
                 'color' => 'primary',
                 'desc' => 'Aspek sistem kerja yang mendukung nilai budaya:',
                 'list' => [
-                    'Standard & Measurement yang jelas dan terukur',
-                    'Improvement & Innovation berkelanjutan',
-                    'Reward & Punishment yang adil dan transparan'
+                    'Standard & Measurement yang jelas dan terukur dalam implementasi nilai budaya ',
+                    'Improvement & Innovation secara berkelanjutan dalam meningkatkan implementasi nilai budaya',
+                    'Improvement & Innovation secara berkelanjutan dalam meningkatkan implementasi nilai budaya'
                 ]
             ]
         ];
@@ -89,8 +89,7 @@
     </div>
 
     <div class="mt-5 fade-up nilai">
-        <p class="fs-5">
-            Model Implementasi Budaya ini membantu BPS mengidentifikasi kekuatan dan kelemahan dalam penerapan budaya kerja BerAKHLAK, serta memetakan aspek mana—Leadership, People, atau System—yang perlu ditingkatkan.
+        <p class="fs-5">Model Implementasi Budaya dapat mengidentifikasi kekuatan dan kelemahan dari implementasi BerAKHLAK. Model ini mampu memetakan pilar mana yang perlu ditingkatkan dari 3 variabel budaya Leadership, People atau System.
         </p>
     </div>
 </div>
