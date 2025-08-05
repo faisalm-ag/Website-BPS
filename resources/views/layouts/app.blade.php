@@ -118,7 +118,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('login.login') ? 'active' : '' }}" href="{{ route('login.login') }}" title="Login">
+                    <a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}" title="Login">
                         <i class="fas fa-user-circle"></i>
                     </a>
                 </li>

@@ -13,7 +13,7 @@
 <div class="container py-5">
     <div class="text-center mb-4">
         <div class="mb-3">
-            <i class="fas fa-trophy fa-2x text-primary"></i>
+            <i class="fas fa-pie-chart fa-2x text-primary"></i>
         </div>
         <h2 class="fw-bold text-primary mb-2">Penilaian Pegawai Teladan</h2>
         <p class="text-muted fs-5 mb-1">Sistem Evaluasi Kinerja & Budaya Organisasi</p>
@@ -293,7 +293,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="card border-info">
-                                    <div class="card-header bg-info text-white">
+                                    <div class="card-header bg-primary text-white">
                                         <h6 class="mb-0"><i class="fas fa-comments me-1"></i>Catatan Tambahan</h6>
                                     </div>
                                     <div class="card-body">

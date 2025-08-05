@@ -3,7 +3,7 @@
 @section('title', 'Hasil Penilaian Pegawai Teladan')
 
 @section('content')
-<div class="container py-5">
+<div class="container main-container">
     <div class="text-center mb-5 fade-up">
         <div class="mb-3">
             <i class="fas fa-trophy fa-3x text-primary"></i>
@@ -435,6 +435,10 @@
     #statistik-overview .card-body * {
         color: white !important;
     }
+    .main-container {
+        margin-top: 80px;
+    }
+
 </style>
 @endpush
 @endsection
