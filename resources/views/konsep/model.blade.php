@@ -19,68 +19,30 @@
         </p>
     </div>
 
-    @php
-        $models = [
-            [
-                'title' => 'Leadership',
-                'icon' => 'chess-king',
-                'color' => 'primary',
-                'desc' => 'Aspek kepemimpinan yang menunjang implementasi nilai inti BerAKHLAK:',
-                'list' => [
-                    'Commitment yang ditunjukkan oleh seluruh pimpinan',
-                    'Coaching & Mentoring dari pimpinan kepada seluruh pegawai'
-                ]
-            ],
-            [
-                'title' => 'People',
-                'icon' => 'users',
-                'color' => 'primary',
-                'desc' => 'Aspek sumber daya manusia yang mencerminkan perilaku BerAKHLAK:',
-                'list' => [
-                    'Berorientasi Pelayanan',
-                    'Akuntabel',
-                    'Kompeten',
-                    'Harmonis',
-                    'Loyal',
-                    'Adaptif',
-                    'Kolaboratif'
-                ]
-            ],
-            [
-                'title' => 'System',
-                'icon' => 'cogs',
-                'color' => 'primary',
-                'desc' => 'Aspek sistem kerja yang mendukung nilai budaya:',
-                'list' => [
-                    'Standard & Measurement yang jelas dan terukur dalam implementasi nilai budaya ',
-                    'Improvement & Innovation secara berkelanjutan dalam meningkatkan implementasi nilai budaya',
-                    'Improvement & Innovation secara berkelanjutan dalam meningkatkan implementasi nilai budaya'
-                ]
-            ]
-        ];
-    @endphp
-
+    {{-- Data dari database --}}
     <div class="row g-4">
         @foreach($models as $index => $item)
         <div class="col-md-6 col-lg-4 fade-up">
             <div class="card h-100 shadow-sm border-0 rounded-4">
                 <div class="card-body d-flex">
                     <div class="me-3 d-flex align-items-start justify-content-center">
-                        <span class="badge bg-{{ $item['color'] }} text-white rounded-circle p-3 fs-6"
+                        <span class="badge bg-{{ $item->color }} text-white rounded-circle p-3 fs-6"
                             style="color: #fff !important;">
                             {{ $index + 1 }}
                         </span>
                     </div>
                     <div>
-                        <h6 class="fw-semibold text-{{ $item['color'] }} mb-2">
-                            <i class="fas fa-{{ $item['icon'] }} me-2 text-secondary"></i>{{ $item['title'] }}
+                        <h6 class="fw-semibold text-{{ $item->color }} mb-2">
+                            <i class="fas fa-{{ $item->icon }} me-2 text-secondary"></i>{{ $item->title }}
                         </h6>
-                        <p class="text-body mb-2">{{ $item['desc'] }}</p>
-                        <ul class="text-body ps-3 mb-0">
-                            @foreach($item['list'] as $point)
-                            <li>{{ $point }}</li>
-                            @endforeach
-                        </ul>
+                        <p class="text-body mb-2">{{ $item->description }}</p>
+                        @if(!empty($item->points))
+                            <ul class="text-body ps-3 mb-0">
+                                @foreach($item->points as $point)
+                                    <li>{{ $point }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -89,7 +51,9 @@
     </div>
 
     <div class="mt-5 fade-up nilai">
-        <p class="fs-5">Model Implementasi Budaya dapat mengidentifikasi kekuatan dan kelemahan dari implementasi BerAKHLAK. Model ini mampu memetakan pilar mana yang perlu ditingkatkan dari 3 variabel budaya Leadership, People atau System.
+        <p class="fs-5">
+            Model Implementasi Budaya dapat mengidentifikasi kekuatan dan kelemahan dari implementasi BerAKHLAK. 
+            Model ini mampu memetakan pilar mana yang perlu ditingkatkan dari 3 variabel budaya Leadership, People atau System.
         </p>
     </div>
 </div>

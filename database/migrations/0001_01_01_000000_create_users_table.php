@@ -13,13 +13,39 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            // Username unik untuk login
+            $table->string('username')->unique();
+
+            // Nama lengkap user
             $table->string('name');
-            $table->string('email')->unique();
+
+            // Email (opsional kalau hanya pakai username login)
+            $table->string('email')->unique()->nullable();
+
+            // Waktu verifikasi email (opsional)
             $table->timestamp('email_verified_at')->nullable();
+
+            // Password
             $table->string('password');
+
+            // Role (admin, pegawai, kepala_direktur)
+            $table->enum('role', ['admin', 'pegawai', 'kepala_direktur'])->default('pegawai');
+
+            // Tambahan atribut user
+            $table->enum('gender', ['L', 'P'])->nullable();
+            $table->date('birth_date')->nullable();
+            $table->string('phone', 20)->nullable();
+            $table->text('address')->nullable();
+            $table->string('profile_photo')->nullable();
+            $table->string('education')->nullable();
+
+            // Token untuk remember me
             $table->rememberToken();
+
+            // Created_at & updated_at
             $table->timestamps();
         });
+
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
@@ -42,8 +68,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('users');
     }
 };

@@ -4,6 +4,7 @@
 
 @section('content')
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 <div class="login-container">
     <div class="login-card">
         <div class="row g-0">
@@ -14,7 +15,7 @@
                     <div class="logo-container">
                         <div class="logo-bps">
                             <div class="logo-icon">
-                                <img src="{{ asset('foto/Logo_BPS.png') }}" alt="Logo BPS" class="logo-img">
+                                <img src="{{ asset('foto/Logo_BPS.png') }}" alt="Logo BPS" class="logo-img logo-anim">
                             </div>
                             <div class="logo-text">
                                 <span class="text-white">BADAN PUSAT STATISTIK</span>
@@ -30,31 +31,42 @@
 
             <!-- Right Section - Login Form -->
             <div class="col-md-6 white-section">
-                <div class="login-form-wrapper">
+                <div id="login-form" class="login-form-wrapper form-hidden">
                     <div class="form-header">
                         <h2 class="signin-title">SIGN IN</h2>
                         <p class="signin-subtitle">TO ACCESS APPLICATION</p>
                     </div>
 
                     <!-- Login Form -->
-                    <form class="login-form">
+                    <form method="POST" action="{{ route('login.post') }}" class="login-form">
+                        @csrf
                         <!-- Username -->
                         <div class="input-group-custom">
-                            <input type="text" class="form-control-custom" 
-                                   id="username" placeholder="Username" required>
+                            <input type="text" name="username" class="form-control-custom" 
+                                   placeholder="Username" value="{{ old('username') }}" required autofocus>
+                            @error('username')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
 
+                        <!-- Password -->
                         <div class="input-group-custom" style="position: relative;">
-                            <input type="password" class="form-control-custom" id="password" placeholder="Password" required>
-
-                            <i class="fa-solid fa-eye" id="togglePassword"
-                            style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
-                                    cursor: pointer; color: #000;"></i>
+                            <input type="password" name="password" id="password" class="form-control-custom" placeholder="Password" required>
+                            <i class="fa-solid fa-eye" id="togglePassword"></i>
+                            @error('password')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
-                        
+
+                        <!-- Error global -->
+                        @if($errors->has('username'))
+                            <div class="alert alert-danger p-2">
+                                {{ $errors->first('username') }}
+                            </div>
+                        @endif
 
                         <!-- Login Button -->
-                        <button type="button" class="btn-login">
+                        <button type="submit" class="btn-login">
                             Log In
                         </button>
                     </form>
@@ -64,21 +76,28 @@
     </div>
 </div>
 
+<!-- Password toggle + animasi logo -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('password');
+        const form = document.getElementById('login-form');
 
+        // Toggle password
         togglePassword.addEventListener('click', function () {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
-
             this.classList.toggle('fa-eye');
             this.classList.toggle('fa-eye-slash');
         });
+
+        // Spawn form bareng animasi logo
+        setTimeout(() => {
+            form.classList.remove("form-hidden");
+            form.classList.add("form-show");
+        }, 300); // sedikit delay biar bareng logo
     });
 </script>
-
 
 <!-- Custom CSS -->
 <style>
@@ -138,23 +157,54 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
 
     .logo-img {
         width: 50px;
         height: 50px;
         object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
-    .logo-text span {
-        color: white;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        line-height: 1.2;
+    /* Logo Animasi - start fullscreen, mengecil ke posisi */
+    .logo-anim {
+        animation: logoIntro 2s ease forwards;
     }
 
-    /* Main Title */
+    @keyframes logoIntro {
+        0% {
+            transform: scale(8) translate(0, 0);
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+        }
+        30% {
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1) translate(0, 0);
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+    }
+
+    /* Form spawn bareng logo */
+    .form-hidden {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .form-show {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 1s ease;
+    }
+
+    /* Title */
     .main-title {
         color: white;
         font-size: 32px;
@@ -191,40 +241,26 @@
         margin-bottom: 30px;
     }
 
-    /* DIMODIFIKASI: Mengatur warna header form menjadi gelap agar terlihat */
     .signin-title {
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 5px;
         letter-spacing: -0.5px;
-        color: #2c3e50; /* Warna gelap */
+        color: #2c3e50;
     }
 
     .signin-subtitle {
         font-size: 14px;
         font-weight: 400;
         margin: 0;
-        color: #888; /* Warna abu-abu */
+        color: #888;
     }
 
-    /* DIHAPUS: Aturan ini yang menyebabkan semua teks jadi putih */
-    /*
-    .white-section * {
-        color: white !important;
-    }
-    .signin-title,
-    .signin-subtitle {
-        color: white !important;
-    }
-    */
-
-    /* Form Inputs */
     .input-group-custom {
         position: relative;
         margin-bottom: 20px;
     }
 
-    /* DIMODIFIKASI: Mengatur warna input agar normal */
     .form-control-custom {
         width: 100%;
         height: 45px;
@@ -232,11 +268,11 @@
         border-radius: 22px;
         padding: 0 20px;
         font-size: 14px;
-        font-weight: 500; /* Sedikit lebih tebal agar mudah dibaca */
-        background: #fdfdfd; /* Background sedikit off-white */
+        font-weight: 500;
+        background: #fdfdfd;
         transition: all 0.3s ease;
         outline: none;
-        color: #333; /* Warna teks input menjadi gelap */
+        color: #333;
     }
 
     .form-control-custom::placeholder {
@@ -249,29 +285,19 @@
         box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
     }
     
-    /* DIMODIFIKASI: Memindahkan style icon dari inline ke CSS */
     #togglePassword {
         position: absolute;
         right: 15px;
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
-        color: #999; /* Warna icon abu-abu */
+        color: #999;
     }
 
     #togglePassword:hover {
-        color: #333; /* Warna icon lebih gelap saat di-hover */
+        color: #333;
     }
 
-
-    /* DIHAPUS: Blok "FIX" yang lama tidak diperlukan lagi */
-    /*
-    .white-section input.form-control-custom { ... }
-    .white-section input::placeholder { ... }
-    #togglePassword { ... }
-    */
-
-    /* Login Button */
     .btn-login {
         width: 100%;
         height: 45px;
@@ -296,7 +322,7 @@
         transform: translateY(0);
     }
 
-    /* Responsive Design (Tidak diubah) */
+    /* Responsive */
     @media (max-width: 768px) {
         .login-card { margin: 10px; max-width: 90%; min-height: 400px; }
         .blue-section { padding: 30px 20px; }
@@ -311,108 +337,5 @@
         .main-title { font-size: 20px; }
         .blue-section, .white-section { padding: 20px 15px; }
     }
-
-    /* Animations (Tidak diubah) */
-    .login-card { animation: fadeInUp 0.8s ease-out; }
-    .content-left { animation: slideInLeft 0.8s ease-out 0.2s both; }
-    .login-form-wrapper { animation: slideInRight 0.8s ease-out 0.2s both; }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-
-.form-control-custom {
-    width: 100%;
-    height: 45px;
-    border-radius: 22px;
-    padding: 0 20px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    outline: none;
-
-    /* STRATEGI BARU: Memaksa warna dengan !important */
-    background-color: #fdfdfd !important;
-    color: #333 !important;
-    border: 2px solid #E0E0E0 !important;
-
-    /* Nonaktifkan gaya asli dari browser (tambahan) */
-    -webkit-appearance: none;
-    appearance: none;
-}
 </style>
 @endsection
-
-@push('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const usernameInput = document.getElementById('username');
-        const passwordInput = document.getElementById('password');
-        const loginBtn = document.querySelector('.btn-login');
-
-        // Input focus effects
-        [usernameInput, passwordInput].forEach(input => {
-            input.addEventListener('focus', function() {
-                this.style.transform = 'scale(1.02)';
-                this.style.borderColor = '#2196F3';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.style.transform = 'scale(1)';
-                if (!this.value) {
-                    this.style.borderColor = '#E0E0E0';
-                }
-            });
-        });
-
-        // Login button functionality
-        loginBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Reset styles
-            usernameInput.style.borderColor = '#E0E0E0';
-            passwordInput.style.borderColor = '#E0E0E0';
-            
-            // Validation
-            if (!usernameInput.value.trim()) {
-                usernameInput.style.borderColor = '#f44336';
-                usernameInput.focus();
-                return;
-            }
-            
-            if (!passwordInput.value.trim()) {
-                passwordInput.style.borderColor = '#f44336';
-                passwordInput.focus();
-                return;
-            }
-            
-            // Loading state
-            const originalText = this.innerHTML;
-            this.innerHTML = '<span style="display: inline-flex; align-items: center; gap: 8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle><path d="M16 12l-4-4-4 4"></path></svg>Signing In...</span>';
-            this.disabled = true;
-            
-            // Simulate login
-            setTimeout(() => {
-                this.innerHTML = originalText;
-                this.disabled = false;
-                alert('Login berhasil! (Demo)');
-            }, 2000);
-        });
-
-        // Enter key support
-        [usernameInput, passwordInput].forEach(input => {
-            input.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    loginBtn.click();
-                }
-            });
-        });
-    });
-</script>
-
-<style>
-    @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-</style>
-@endpush
