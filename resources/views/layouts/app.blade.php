@@ -176,12 +176,6 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.footer-links.index') }}">
-                                    <i class="fa fa-link me-2"></i>
-                                    <span>Footer Links</span>
-                                </a>
-                            </li>
-                            <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
