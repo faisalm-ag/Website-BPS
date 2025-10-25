@@ -1,27 +1,43 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Link Footer')
+@section('title', 'Edit Section Footer')
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4">Edit Link Footer</h1>
+    <h1>Edit Section Footer</h1>
 
-    <form action="{{ route('footer-links.update', $footerLink) }}" method="POST">
-        @csrf
-        @method('PUT')
-        <div class="mb-3">
-            <label>Section</label>
-            <input type="text" name="section" class="form-control" value="{{ $footerLink->section }}">
+    <div class="card">
+        <div class="card-body">
+            {{-- Form action sekarang benar: mengarah ke footers.update dengan ID yang benar --}}
+            {{-- Variabel sekarang benar: $footer->id --}}
+            <form action="{{ route('admin.footers.update', $footer->id) }}" method="POST"> 
+                @csrf
+                @method('PUT')
+
+                {{-- Input name sekarang benar: 'title' --}}
+                {{-- Variabel sekarang benar: $footer->title --}}
+                <div class="mb-3">
+                    <label for="title" class="form-label">Nama Section</label>
+                    <input type="text" 
+                           class="form-control @error('title') is-invalid @enderror" 
+                           id="title" 
+                           name="title" 
+                           value="{{ old('title', $footer->title) }}" 
+                           required>
+                    @error('title')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                {{-- Field link dan url dihapus --}}
+
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                {{-- Cancel button sekarang benar: mengarah ke footers.index --}}
+                <a href="{{ route('admin.footers.index') }}" class="btn btn-secondary">Batal</a>
+            </form>
         </div>
-        <div class="mb-3">
-            <label>Judul</label>
-            <input type="text" name="title" class="form-control" value="{{ $footerLink->title }}">
-        </div>
-        <div class="mb-3">
-            <label>URL</label>
-            <input type="text" name="url" class="form-control" value="{{ $footerLink->url }}">
-        </div>
-        <button class="btn btn-success">Update</button>
-    </form>
+    </div>
 </div>
 @endsection

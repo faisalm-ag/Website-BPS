@@ -8,43 +8,72 @@ use Illuminate\Http\Request;
 class FooterController extends Controller
 {
     /**
-     * Menampilkan halaman daftar footer sections dalam format HTML.
-     * Ini adalah fungsi yang diperbaiki.
+     * Menampilkan halaman daftar footer sections.
      */
     public function index()
     {
-        // 1. Ambil semua data section beserta link-link di dalamnya
         $sections = FooterSection::with('links')->get();
-
-        // 2. Kirim data tersebut ke sebuah "view" (template Blade) untuk ditampilkan
-        //    File view ini harus ada di: resources/views/admin/footers/index.blade.php
         return view('admin.footers.index', ['sections' => $sections]);
     }
 
     /**
-     * Menyimpan section baru yang dikirim melalui API.
-     * Fungsi ini (dan fungsi di bawahnya) sengaja dibiarkan mengembalikan JSON
-     * karena biasanya digunakan untuk proses di belakang layar (misal: via AJAX).
+     * Menampilkan form untuk membuat section baru.
+     */
+    public function create()
+    {
+        // Mengarahkan ke view create section yang sudah ada
+        return view('admin.footers.create');
+    }
+
+    /**
+     * Menyimpan section baru.
      */
     public function store(Request $request)
     {
         $request->validate(['title' => 'required|string|max:255']);
-        $section = FooterSection::create($request->only('title'));
-        return response()->json($section, 201);
+        FooterSection::create($request->only('title'));
+        
+        // Redirect ke index, bukan JSON
+        return redirect()->route('admin.footers.index')
+                         ->with('success', 'Section baru berhasil ditambahkan.');
     }
 
     /**
-     * Menambahkan link baru ke dalam section yang ada melalui API.
+     * Menampilkan form untuk mengedit judul section.
+     * $footer adalah objek FooterSection.
      */
-    public function addLink(Request $request, $sectionId)
+    public function edit(FooterSection $footer)
+    {
+        // Mengarahkan ke view edit section yang sudah ada
+        return view('admin.footers.edit', ['footer' => $footer]);
+    }
+
+    /**
+     * Menyimpan perubahan judul section.
+     */
+    public function update(Request $request, FooterSection $footer)
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'url'   => 'required|url',
         ]);
 
-        $section = FooterSection::findOrFail($sectionId);
-        $link = $section->links()->create($request->only('title', 'url'));
-        return response()->json($link, 201);
+        $footer->update([
+            'title' => $request->title,
+        ]);
+
+        return redirect()->route('admin.footers.index')
+                         ->with('success', 'Judul section berhasil diperbarui.');
+    }
+
+    /**
+     * Menghapus section (dan link di dalamnya via cascade).
+     */
+    public function destroy(FooterSection $footer)
+    {
+        // onDelete('cascade') di migrasi akan otomatis menghapus link
+        $footer->delete();
+
+        return redirect()->route('admin.footers.index')
+                         ->with('success', 'Section berhasil dihapus.');
     }
 }

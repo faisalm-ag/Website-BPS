@@ -688,10 +688,12 @@ small,
 /* ==== Patch untuk Teladan & Login Font Warna yang Ga Konsisten ==== */
 
 /* Secara eksplisit atur warna untuk teks dalam card dan table di Teladan */
+/* ==== Patch untuk Teladan & Login Font Warna yang Ga Konsisten ==== */
 .teladan-section *,
 .login-section *,
-.card *,
-.card-body *,
+/* KITA TAMBAHKAN :not() AGAR PATCH INI TIDAK MERUSAK FORM */
+.card *:not(.form-control):not(.form-select),
+.card-body *:not(.form-control):not(.form-select),
 .table td,
 .table th,
 .text-section *,
@@ -730,3 +732,17 @@ small,
     color: black !important;
 }
 
+/* ===== PERBAIKAN TEMA LIGHT MODE UNTUK FORM (Versi !important) ===== */
+
+[data-bs-theme="light"] .form-control,
+[data-bs-theme="light"] .form-select {
+    background-color: #ffffff !important; /* Background putih */
+    color: #212529 !important; /* Teks hitam (INI KUNCINYA) */
+    border-color: #dee2e6 !important; /* Border abu-abu standar */
+}
+
+[data-bs-theme="light"] body {
+    color-scheme: light;
+    background-color: #f8f9fa; /* Background body terang */
+    color: #212529; /* Teks body hitam */
+}

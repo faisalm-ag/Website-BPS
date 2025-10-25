@@ -6,10 +6,12 @@
 <div class="container">
     <h1 class="mb-4">Manajemen Tampilan Footer</h1>
 
-    {{-- Tombol ini sekarang diaktifkan dan akan mengarah ke halaman tambah link baru --}}
+    {{-- Tombol 'Tambah Link' mengarah ke 'footer-links.create' --}}
     <a href="{{ route('admin.footer-links.create') }}" class="btn btn-primary mb-3">Tambah Link Baru</a>
 
-    {{-- Menampilkan pesan sukses setelah menghapus atau mengedit --}}
+    {{-- Tombol 'Tambah Section' mengarah ke 'footers.create' --}}
+    <a href="{{ route('admin.footers.create') }}" class="btn btn-info mb-3">Tambah Section Baru</a>
+
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -26,12 +28,12 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4 class="mb-0">Section: {{ $section->title }}</h4>
                     <div>
-                        {{-- CATATAN: Tombol untuk SECTION akan memerlukan Controller & Route sendiri --}}
-                        <a href="#" class="btn btn-secondary btn-sm disabled">Edit Section</a>
-                        <form action="#" method="POST" class="d-inline">
+                        {{-- INI SUDAH DIPERBAIKI (Tombol Section) --}}
+                        <a href="{{ route('admin.footers.edit', $section->id) }}" class="btn btn-secondary btn-sm">Edit Section</a>
+                        <form action="{{ route('admin.footers.destroy', $section->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus section ini beserta semua link di dalamnya?')">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger btn-sm disabled">Hapus Section</button>
+                            <button type_submit" class="btn btn-danger btn-sm">Hapus Section</button>
                         </form>
                     </div>
                 </div>
@@ -50,7 +52,7 @@
                                     <td>{{ $link->title }}</td>
                                     <td><a href="{{ $link->url }}" target="_blank">{{ $link->url }}</a></td>
                                     <td>
-                                        {{-- INI BAGIAN YANG DIPERBAIKI (LINK) --}}
+                                        {{-- INI SUDAH BENAR (Tombol Link) --}}
                                         <a href="{{ route('admin.footer-links.edit', $link->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                         <form action="{{ route('admin.footer-links.destroy', $link->id) }}" method="POST" class="d-inline">
                                             @csrf
