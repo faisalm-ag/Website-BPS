@@ -4,6 +4,23 @@
 
 @section('content')
 <div class="container py-5">
+    <!-- Debug Info -->
+    @if(config('app.debug'))
+    <div class="alert alert-info">
+        <h5>Debug Information:</h5>
+        <ul>
+            @foreach($fotos as $foto)
+            <li>
+                <strong>Foto: {{ $foto->nama }}</strong><br>
+                Path DB: {{ $foto->file }}<br>
+                Full URL: {{ asset('storage/' . $foto->file) }}<br>
+                File Exists: {{ file_exists(storage_path('app/public/' . $foto->file)) ? 'Yes' : 'No' }}
+            </li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <!-- Judul Halaman -->
     <div class="text-center mb-5 fade-up">
         <h2 class="fw-bold text-primary">
@@ -18,9 +35,10 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card gallery-card border-0 shadow-sm h-100 overflow-hidden">
                     <div class="gallery-image-wrapper">
-                            <img src="{{ asset('storage/' . str_replace('public/', '', $foto->file)) }}" 
-                            class="card-img-top" 
-                            alt="{{ $foto->nama }}">
+                        <img src="{{ asset('storage/' . $foto->file) }}" 
+                             class="card-img-top" 
+                             alt="{{ $foto->nama }}"
+                             onerror="this.onerror=null; this.src='{{ asset('images/placeholder.jpg') }}'">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title mb-0">{{ $foto->nama }}</h5>
@@ -28,7 +46,6 @@
                 </div>
             </div>
         @empty
-            <!-- Jika tidak ada foto -->
             <div class="col-12 text-center">
                 <div class="alert alert-info shadow-sm" role="alert">
                     <i class="fas fa-info-circle me-2"></i> Belum ada foto yang tersedia.

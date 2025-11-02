@@ -14,6 +14,17 @@ class FotoController extends Controller
     public function publicIndex()
     {
         $fotos = Foto::all();
+        // Debug info
+        \Log::info('Loaded photos:', $fotos->map(function($foto) {
+            return [
+                'id' => $foto->id,
+                'nama' => $foto->nama,
+                'file' => $foto->file,
+                'full_path' => storage_path('app/public/' . $foto->file),
+                'exists' => file_exists(storage_path('app/public/' . $foto->file))
+            ];
+        })->toArray());
+        
         return view('galeri.foto', compact('fotos'));
     }
 
@@ -44,14 +55,40 @@ class FotoController extends Controller
             'file' => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
-        $path = $request->file('file')->store('foto', 'public');
+        try {
+            // Simpan file dengan nama asli
+            $file = $request->file('file');
+            $fileName = $file->getClientOriginalName();
+            $path = $file->storeAs('foto', $fileName, 'public');
+            
+            // Log informasi penyimpanan
+            \Log::info('File upload attempt', [
+                'original_name' => $fileName,
+                'stored_path' => $path,
+                'full_path' => storage_path('app/public/' . $path)
+            ]);
 
-        Foto::create([
-            'nama' => $request->nama,
-            'file' => $path,
-        ]);
+            // Cek apakah file berhasil disimpan
+            if (!Storage::disk('public')->exists($path)) {
+                throw new \Exception('File gagal disimpan ke storage');
+            }
 
-        return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil ditambahkan');
+            $foto = Foto::create([
+                'nama' => $request->nama,
+                'file' => $path,
+            ]);
+
+            return redirect()
+                ->route('admin.galeri.index')
+                ->with('success', 'Foto berhasil ditambahkan');
+
+        } catch (\Exception $e) {
+            \Log::error('Error uploading file: ' . $e->getMessage());
+            return redirect()
+                ->back()
+                ->with('error', 'Gagal mengupload foto: ' . $e->getMessage())
+                ->withInput();
+        }
     }
 
     /**
