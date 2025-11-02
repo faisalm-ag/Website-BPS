@@ -3,7 +3,6 @@
 @section('title', 'Galeri Kegiatan')
 
 @section('content')
-{{ dd($fotos) }}
 <div class="container py-5">
     <!-- Judul Halaman -->
     <div class="text-center mb-5 fade-up">
@@ -19,9 +18,9 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card gallery-card border-0 shadow-sm h-100 overflow-hidden">
                     <div class="gallery-image-wrapper">
-                             <img src="{{ asset('storage/' . $foto->file) }}" 
-                             class="card-img-top" 
-                             alt="{{ $foto->nama }}">
+                            <img src="{{ asset('storage/' . str_replace('public/', '', $foto->file)) }}" 
+                            class="card-img-top" 
+                            alt="{{ $foto->nama }}">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title mb-0">{{ $foto->nama }}</h5>
