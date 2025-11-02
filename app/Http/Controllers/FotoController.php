@@ -2,31 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Foto; // Pastikan ini ada
+use App\Models\Foto; // Pastikan model ini benar
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class FotoController extends Controller
 {
-    // ... (fungsi publicIndex, index, create, store Anda sudah benar, tidak diubah) ...
-
+    /**
+     * Tampilkan galeri foto untuk publik.
+     */
     public function publicIndex()
     {
         $fotos = Foto::all();
         return view('galeri.foto', compact('fotos'));
     }
 
+    /**
+     * Tampilkan daftar foto di panel admin.
+     */
     public function index()
     {
         $fotos = Foto::all();
         return view('admin.galeri.index', compact('fotos'));
     }
 
+    /**
+     * Tampilkan form untuk membuat foto baru.
+     */
     public function create()
     {
         return view('admin.galeri.create');
     }
 
+    /**
+     * Simpan foto baru ke database.
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -44,21 +54,15 @@ class FotoController extends Controller
         return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil ditambahkan');
     }
 
-    // --- [MULAI PERUBAHAN DI SINI] ---
-
     /**
      * Tampilkan form untuk mengedit foto.
      *
-     * @param  string  $id
+     * @param  \App\Models\Foto  $foto
      * @return \Illuminate\View\View
      */
-    public function edit($id) // UBAH: Terima $id, bukan (Foto $foto)
+    public function edit(Foto $foto) // DIUBAH: Menggunakan Route Model Binding
     {
-        // TAMBAH: Cari foto secara manual.
-        // findOrFail akan otomatis 404 jika ID tidak ada.
-        $foto = Foto::findOrFail($id); 
-
-        // Kirim $foto yang sudah ditemukan ke view.
+        // Tidak perlu findOrFail, Laravel sudah otomatis inject $foto
         return view('admin.galeri.edit', compact('foto'));
     }
 
@@ -66,31 +70,29 @@ class FotoController extends Controller
      * Update foto di database.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  string  $id
+     * @param  \App\Models\Foto  $foto
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id) // UBAH: Terima $id, bukan (Foto $foto)
+    public function update(Request $request, Foto $foto) // DIUBAH: Menggunakan Route Model Binding
     {
         $request->validate([
             'nama' => 'required|string|max:255',
-            'file' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'file' => 'nullable|image|mimes:jpg,jpeg,png|max:2048', // file boleh null saat update
         ]);
 
-        // TAMBAH: Cari foto yang mau di-update secara manual
-        $foto = Foto::findOrFail($id);
-
+        // Tidak perlu findOrFail, $foto sudah di-inject dari parameter
         $data = ['nama' => $request->nama];
 
         if ($request->hasFile('file')) {
-            // hapus file lama
+            // Hapus file lama jika ada
             if ($foto->file && Storage::disk('public')->exists($foto->file)) {
                 Storage::disk('public')->delete($foto->file);
             }
+            // Simpan file baru
             $data['file'] = $request->file('file')->store('foto', 'public');
         }
 
-        // $foto dari findOrFail di-update
-        $foto->update($data);
+        $foto->update($data); // Update model $foto yang sudah di-inject
 
         return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil diperbarui');
     }
@@ -98,23 +100,21 @@ class FotoController extends Controller
     /**
      * Hapus foto dari database.
      *
-     * @param  string  $id
+     * @param  \App\Models\Foto  $foto
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id) // UBAH: Terima $id, bukan (Foto $foto)
+    public function destroy(Foto $foto) // DIUBAH: Menggunakan Route Model Binding
     {
-        // TAMBAH: Cari foto yang mau dihapus secara manual
-        $foto = Foto::findOrFail($id);
+        // Tidak perlu findOrFail, $foto sudah di-inject dari parameter
 
+        // Hapus file dari storage
         if ($foto->file && Storage::disk('public')->exists($foto->file)) {
             Storage::disk('public')->delete($foto->file);
         }
         
-        // $foto dari findOrFail dihapus
+        // Hapus data dari database
         $foto->delete();
 
         return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil dihapus');
     }
-    
-    // --- [AKHIR PERUBAHAN] ---
 }

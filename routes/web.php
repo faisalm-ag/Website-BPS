@@ -77,5 +77,5 @@ Route::middleware(['auth', 'role:admin'])
         Route::resource('sysbo', SysboController::class);
         Route::resource('budaya', PertanyaanBudayaController::class);
         Route::resource('teladan', PertanyaanTeladanController::class);
-        Route::resource('galeri', FotoController::class)->parameters(['galeri' => 'foto']);
+        Route::resource('galeri', FotoController::class)->parameter('galeri', 'foto');
     });

@@ -1,89 +1,30 @@
-<?php
+@extends('layouts.app')
 
-namespace App\Http\Controllers;
+@section('content')
+<div class="container">
+    <h1>Edit Foto Galeri</h1>
 
-use App\Models\Foto;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+    <form action="{{ route('admin.galeri.update', $foto->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
 
-class FotoController extends Controller
-{
-    // ... (fungsi publicIndex dan index tidak berubah) ...
-    public function publicIndex()
-    {
-        $fotos = Foto::all();
-        return view('galeri.foto', compact('fotos'));
-    }
+        <div class="mb-3">
+            <label>Nama Foto</label>
+            <input type="text" name="nama" class="form-control" value="{{ old('nama', $foto->nama) }}" required>
+        </div>
 
-    public function index()
-    {
-        $fotos = Foto::all();
-        return view('admin.galeri.index', compact('fotos'));
-    }
+        <div class="mb-3">
+            <label>Foto Saat Ini</label><br>
+            <img src="{{ asset('storage/' . $foto->file) }}" alt="{{ $foto->nama }}" width="150" class="img-thumbnail mb-2">
+        </div>
 
-    public function create()
-    {
-        return view('admin.galeri.create');
-    }
+        <div class="mb-3">
+            <label>Ganti File (opsional)</label>
+            <input type="file" name="file" class="form-control" accept="image/*">
+        </div>
 
-    public function store(Request $request)
-    {
-        // ... (fungsi store tidak berubah) ...
-        $request->validate([
-            'nama' => 'required|string|max:255',
-            'file' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-        ]);
-
-        $path = $request->file('file')->store('foto', 'public');
-
-        Foto::create([
-            'nama' => $request->nama,
-            'file' => $path,
-        ]);
-
-        return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil ditambahkan');
-    }
-
-    // UBAH DI SINI: dari (Foto $foto) -> (Foto $galeri)
-    public function edit(Foto $galeri)
-    {
-        // View Anda mengharapkan variabel 'foto', jadi kita kirim
-        // $galeri sebagai 'foto'
-        return view('admin.galeri.edit', ['foto' => $galeri]);
-    }
-
-    // UBAH DI SINI: dari (Foto $foto) -> (Foto $galeri)
-    public function update(Request $request, Foto $galeri)
-    {
-        $request->validate([
-            'nama' => 'required|string|max:255',
-            'file' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-        ]);
-
-        $data = ['nama' => $request->nama];
-
-        if ($request->hasFile('file')) {
-            // hapus file lama
-            if ($galeri->file && Storage::disk('public')->exists($galeri->file)) {
-                Storage::disk('public')->delete($galeri->file);
-            }
-            $data['file'] = $request->file('file')->store('foto', 'public');
-        }
-
-        // Gunakan $galeri untuk update
-        $galeri->update($data);
-
-        return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil diperbarui');
-    }
-
-    // UBAH DI SINI: dari (Foto $foto) -> (Foto $galeri)
-    public function destroy(Foto $galeri)
-    {
-        if ($galeri->file && Storage::disk('public')->exists($galeri->file)) {
-            Storage::disk('public')->delete($galeri->file);
-        }
-        $galeri->delete();
-
-        return redirect()->route('admin.galeri.index')->with('success', 'Foto berhasil dihapus');
-    }
-}
+        <button type="submit" class="btn btn-primary">Perbarui</button>
+        <a href="{{ route('admin.galeri.index') }}" class="btn btn-secondary">Kembali</a>
+    </form>
+</div>
+@endsection
