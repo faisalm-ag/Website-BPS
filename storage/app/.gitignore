@@ -1,5 +1,4 @@
 *
-!private/
 !public/
 !.gitignore
-!storage/app/public/foto/
+!public/foto/
