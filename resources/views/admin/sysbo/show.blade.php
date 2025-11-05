@@ -11,8 +11,7 @@
             <h5 class="fw-bold">Indikator</h5>
             <p>{{ $sysbo->indikator }}</p>
 
-            <h5 class="fw-bold">Deskripsi</h5>
-            <p>{{ $sysbo->deskripsi }}</p>
+            {{-- BAGIAN DESKRIPSI YANG ERROR DIHAPUS --}}
 
             <h5 class="fw-bold">Warna</h5>
             <span class="badge bg-{{ $sysbo->color }}">{{ $sysbo->color }}</span>

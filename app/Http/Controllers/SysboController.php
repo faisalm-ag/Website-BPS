@@ -21,6 +21,13 @@ class SysboController extends Controller
         return view('admin.sysbo.index', compact('sysbos'));
     }
 
+    // --- TAMBAHKAN FUNGSI INI ---
+    public function show(Sysbo $sysbo)
+    {
+        return view('admin.sysbo.show', compact('sysbo'));
+    }
+    // --- AKHIR TAMBAHAN ---
+
     public function create()
     {
         return view('admin.sysbo.create');

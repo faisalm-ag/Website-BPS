@@ -17,16 +17,17 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>No</th>
+                <th style="width: 60px;">No</th>
                 <th>Konten</th>
-                <th>Warna</th>
-                <th>Aksi</th>
+                <th style="width: 100px;">Warna</th>
+                <th style="width: 150px;">Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($indicators as $i => $item)
+            {{-- PERBAIKAN: Menghapus "$i =>" dari perulangan --}}
+            @forelse ($indicators as $item)
             <tr>
-                <td>{{ $i + 1 }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{!! Str::limit($item->content, 80) !!}</td>
                 <td><span class="badge bg-{{ $item->color }}">{{ $item->color }}</span></td>
                 <td>
@@ -45,5 +46,8 @@
             @endforelse
         </tbody>
     </table>
+
+    {{-- Bagian pagination (links) sudah dihapus dari sini --}}
+
 </div>
 @endsection

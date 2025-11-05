@@ -30,7 +30,19 @@
                         @forelse($legalBases as $i => $lb)
                             <tr>
                                 <td>{{ $legalBases->firstItem() + $i }}</td>
-                                <td>{{ Str::limit($lb->title, 140) }}</td>
+                                
+                                {{-- INI BAGIAN YANG DIPERBAIKI --}}
+                                <td>
+                                    {{-- 1. Tampilkan Judul --}}
+                                    <strong class="text-dark">{{ $lb->title }}</strong>
+                                    <br>
+                                    {{-- 2. Tampilkan deskripsi yang sudah dibersihkan dari HTML/gambar --}}
+                                    <small class="text-muted">
+                                        {{ Str::limit(strip_tags($lb->description), 200) }}
+                                    </small>
+                                </td>
+                                {{-- AKHIR BAGIAN YANG DIPERBAIKI --}}
+
                                 <td class="text-end">
                                     <a href="{{ route('admin.legal-bases.edit', $lb) }}" class="btn btn-sm btn-warning">
                                         <i class="fa fa-edit"></i>

@@ -3,6 +3,7 @@
 @section('title', 'Galeri Kegiatan')
 
 @section('content')
+
 <div class="container py-5">
     <!-- Debug Info -->
     @if(config('app.debug'))
