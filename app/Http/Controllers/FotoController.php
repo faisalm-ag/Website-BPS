@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Foto; // Pastikan model ini benar
+use App\Models\Foto; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

@@ -2,9 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Foto extends Model
 {
-    protected $fillable = ['nama', 'file'];
+    use HasFactory;
+
+    protected $table = 'fotos';
+
+    protected $fillable = [
+        'nama',
+        'file',
+    ];
 }
